@@ -1,6 +1,6 @@
 package algorithm;
 
-import datastructure.TreeNode;
+import dataStructure.TreeNode;
 
 public class ConstructBSTByInorderAndPreorderTraversal {
 	

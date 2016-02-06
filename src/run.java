@@ -1,22 +1,79 @@
 
 import java.util.List;
 
+import algorithm.BestTimeToBuyAndSellStockIII;
 import algorithm.BinaryTreeInorderTraversal;
 import algorithm.ConstructBSTByInorderAndPostorderTraversal;
 import algorithm.ConstructBSTByInorderAndPreorderTraversal;
 import algorithm.ContainsDuplicate;
+import algorithm.ConvertSortedArrayToBinarySearchTree;
 import algorithm.FindMedianTwoSortedArrays;
+import algorithm.FlattenBinaryTreeToLinkedList;
 import algorithm.IntReverseBit;
 import algorithm.JumpGame;
 import algorithm.ReverseSingleLinkedList;
-import datastructure.ListNode;
-import datastructure.TreeNode;
+import algorithm.WordDictionary;
+import dataStructure.ListNode;
+import dataStructure.TreeNode;
 
 
 public class run {
 	
 	public static void main (String args[]) {
-		testConstructBSTByInorderAndPostorder();
+		testBestTimeToBuyAndSellStockIII();
+	}
+	
+	public static void testBestTimeToBuyAndSellStockIII() {
+		int[] prices = {2,5,3,7,4,9,6,8,11,13,15};
+		System.out.println(BestTimeToBuyAndSellStockIII.maxProfitDiscussion(prices));
+	}
+	
+	public static void testFlattenBinaryTreeToLinkedList() {
+		TreeNode root = new TreeNode(1);
+		TreeNode n2 = new TreeNode(2);
+		TreeNode n3 = new TreeNode(3);
+		TreeNode n4 = new TreeNode(4);
+		TreeNode n5 = new TreeNode(5);
+		TreeNode n6 = new TreeNode(6);
+		root.left = n2;
+		root.right = n5;
+		n2.left = n3;
+		n2.right = n4;
+		n5.right = n6;
+		
+		FlattenBinaryTreeToLinkedList fb = new FlattenBinaryTreeToLinkedList();
+		fb.flatten(root);
+		while (root != null) {
+			System.out.print(root.val + "\t");
+			root = root.right;
+		}
+	}
+	
+	public static void testWordDictionary() {
+		WordDictionary wd = new WordDictionary();
+		wd.addWord("bad");
+		wd.addWord("mad");
+		wd.addWord("dad");
+		System.out.println(wd.search("pad"));
+		System.out.println(wd.search("bad"));
+		System.out.println(wd.search(".ad"));
+		
+	}
+	
+	public static void testConvertSortedArrayToBinarySearchTree() {
+		int[] nums = {-1, 0, 1, 2};
+		TreeNode root = ConvertSortedArrayToBinarySearchTree.sortedArrayToBST(nums);
+		List<Integer> preList = BinaryTreeInorderTraversal.preorderTraversal(root);
+		List<Integer> inList = BinaryTreeInorderTraversal.inorderTraversal(root);
+		System.out.println("Final preorder: ");
+		for (Integer pre : preList) {
+			System.out.print(pre + "\t");
+		}
+		
+		System.out.println("\nFinal inorder: ");
+		for (Integer in : inList) {
+			System.out.print(in + "\t");
+		}
 	}
 	
 	public static void testConstructBSTByInorderAndPostorder() {

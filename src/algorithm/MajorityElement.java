@@ -1,6 +1,5 @@
 package algorithm;
-
-import org.javatuples.Pair;
+//import org.javatuples.Pair;
 
 public class MajorityElement {
 	public static int majorityElement(int[] nums) {
@@ -25,5 +24,29 @@ public class MajorityElement {
 //		return right;
 //	}
 	
+	/**
+	 * 利用的原理非常简单：遇重则加，不同则减。只有众数永远减不到0。
+	 * @param nums
+	 * @return
+	 */
+	public static int majorityElementDiscussion(int[] nums) {
+		int major = nums[0], count = 1;		
+        for(int i = 1; i < nums.length; i++){
+            if (count == 0){
+                count++;
+                major = nums[i];
+            } else if (major == nums[i]){
+                count++;
+            } else {
+                count--;
+            }
+            System.out.println("nums[" + i + "] = " + nums[i] + "; major = " + major + "; count = " + count);
+        }
+        return major;
+    }
 	
+	public static void main(String[] args) {
+		int[] nums = {1,2,3,4,3,4,5,6,2,2,2,2,2,2,2,2,2,4,2,3,2,5,2,2};
+		System.out.println(majorityElementDiscussion(nums));
+	}
 }

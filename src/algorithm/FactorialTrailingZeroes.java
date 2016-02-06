@@ -13,8 +13,26 @@ public class FactorialTrailingZeroes {
 		return sum;        
     }
 	
+	public static int trailingZeroesTD(int n) {
+        int count = 0;
+        int number = 0;
+        int rank = (int)Math.log(n)/(int)Math.log(5);
+        System.out.println(Math.log(n) + "\t" + (int)Math.log(n) + "\t" + Math.log(5) + "\t" + (int)Math.log(5) + "\t" + (int)(Math.log(n)/Math.log(5)));
+        //System.out.println(rank);
+        for(int i=rank; i>0; i--){
+            int a = n/(int)Math.pow(5,i);
+            //System.out.println("a = " + a + "\tpow = " + Math.pow(5,i) + "\t count = " + count + "\ti = " + i);
+            count = a - count;
+            number += count*i;
+            count = a;
+        }
+        return number;
+    }
+
+	
 	public static void main(String[] args) {
-		System.out.println(trailingZeroes(69));
+		System.out.println(trailingZeroesTD(2147483647));
+		System.out.println(trailingZeroesTD(2147483646));
 	}
 	
 	public static void test(int x) {

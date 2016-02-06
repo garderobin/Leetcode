@@ -1,6 +1,8 @@
 package algorithm;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Subsets {
@@ -17,6 +19,7 @@ public class Subsets {
         if (nums == null || nums.length == 0) {
         	return rst;
         }
+        Arrays.sort(nums);
         
         List<Integer> list = new ArrayList<Integer>();
         int i, j, len;
@@ -25,10 +28,10 @@ public class Subsets {
         	list = new ArrayList<Integer>();
         	list.add(nums[i]);        	          	
         	rst.add(new ArrayList<Integer>(list));
-        	len = rst.size() - 1;
+        	len = rst.size() - 1; //关键在这里
         	for (j = 1; j < len; j++) {
         		list = new ArrayList<Integer>(rst.get(j));
-        		list.add(nums[i]);
+        		list.add(0, nums[i]);
         		rst.add(new ArrayList<Integer>(list));
         	}
         	

@@ -3,7 +3,7 @@ package algorithm;
 import java.util.ArrayList;
 import java.util.List;
 
-import datastructure.TreeNode;
+import dataStructure.TreeNode;
 
 public class BinaryTreeInorderTraversal {
 	

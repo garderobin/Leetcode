@@ -1,6 +1,6 @@
 package algorithm;
 
-import datastructure.ListNode;
+import dataStructure.ListNode;
 
 public class ReverseSingleLinkedList {
 
