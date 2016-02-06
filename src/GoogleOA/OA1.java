@@ -12,49 +12,87 @@ public class OA1 {
 	private static int solution(int X) {
 		if (X == 0) { 
 			return 0; 
-		} else if (X > 0) { 
-			if (X < 10) {
-				return X * 10 + X;
-			}
-			int digitCount = (int) Math.log10((double)X) + 1;
-			// Get all digits
-			int[] digits = new int[digitCount];
-			int[] values = new int[digitCount];
-			for (int i = digitCount - 1, y = X, mod = 1; i >= 0; i--, y /= 10, mod *= 10) {
-				digits[i] = y % 10;
-				values[i] = digits[i] * mod;
-			}
-			
-			// Find the first peak point
-			for (int left = values[0], i = 1; i < digitCount; i++) {
-				if (digits[i] < digits[i-1]) { // peak point found
-					int rst = left * 10;
-					for (int j = i-1; j < digitCount; j++) {
-						rst += values[j];
-					}
-					return rst;
-				} else {
-					left += values[i];
+		} else {
+			int sign = (X > 0) ? 1 : -1;
+			int Y = Math.abs(X);
+			if (Y < 10) {
+				return (Y * 10 + Y) * sign;
+			} else {
+				// Initialization
+				int digitCount = (int) Math.log10((double) Y ) + 1;				
+				int[] digits = new int[digitCount];
+				int[] values = new int[digitCount];
+				for (int i = digitCount - 1, y = Y, mod = 1; i >= 0; i--, y /= 10, mod *= 10) {
+					digits[i] = y % 10;
+					values[i] = digits[i] * mod;
 				}
 				
+				// Find the first peak point
+				for (int left = values[0], i = 1; i < digitCount; i++) {
+					if (digits[i] * sign < digits[i-1] * sign) { // peak point found
+						int rst = left * 10;
+						for (int j = i-1; j < digitCount; j++) {
+							rst += values[j];
+						}
+						return rst * sign;
+					} else {
+						left += values[i];
+					}
+						
+				}
+	
+				return (Y * 10 + values[digitCount-1]) * sign;
 			}
-
-			return X * 10 + values[digitCount-1];
-				
-			
-			
-		} else { // X < 0
-			if (X > -10) {
-				return X * 10 + X;
-			}
-			
-			return 0;
 		}
 	}
 	
+	
+//	private static int solution(int X) {
+//		if (X == 0) { 
+//			return 0; 
+//		} else if (X > 0) { 
+//			if (X < 10) {
+//				return X * 10 + X;
+//			}
+//			int digitCount = (int) Math.log10((double)X) + 1;
+//			// Get all digits
+//			int[] digits = new int[digitCount];
+//			int[] values = new int[digitCount];
+//			for (int i = digitCount - 1, y = X, mod = 1; i >= 0; i--, y /= 10, mod *= 10) {
+//				digits[i] = y % 10;
+//				values[i] = digits[i] * mod;
+//			}
+//			
+//			// Find the first peak point
+//			for (int left = values[0], i = 1; i < digitCount; i++) {
+//				if (digits[i] < digits[i-1]) { // peak point found
+//					int rst = left * 10;
+//					for (int j = i-1; j < digitCount; j++) {
+//						rst += values[j];
+//					}
+//					return rst;
+//				} else {
+//					left += values[i];
+//				}
+//				
+//			}
+//
+//			return X * 10 + values[digitCount-1];
+//				
+//			
+//			
+//		} else { // X < 0
+//			if (X > -10) {
+//				return X * 10 + X;
+//			}
+//			
+//			return 0;
+//		}
+//	}
+	
 	public static void main(String[] args) {
 //		int[] list = {12511, 12345, 31245, 123, 12, 1, 0};
-		int[] list = {12223, 122243, 54321, 11111, 53421, 13324};
+		int[] list = {12223, 122243, 54321, 11111, 53421, 13324, -12223, -122243, -54321, -11111, -53421, -13324, 2, -2, 0};
 		for (int X: list) {
 			System.out.println(solution(X));
 //			int digitCount = (int) Math.log10((double)X) + 1;
