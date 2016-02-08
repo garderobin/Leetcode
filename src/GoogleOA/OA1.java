@@ -1,15 +1,45 @@
 package GoogleOA;
 
+import java.util.Scanner;
+
 public class OA1 {
 	
+	public static int maxDuplicate2(int X) {
+    	int trail = 1, max = 0, num = X;
+    	while(trail <= num) {
+    		trail *= 10;
+    		int second = num % trail, first = (num - second) * 10, between = second / (trail / 10);
+    		int result = first + second + between * trail;
+    		if(result > max) {
+    			max = result;
+    		}
+    	}
+    	return max;
+    }
+	
+	public static int maxDuplicate(int num) {
+    	int trail = 1, max = 0;
+    	while(trail <= num) {
+    		trail *= 10;
+    		int second = num % trail, first = (num - second) * 10, between = second / (trail / 10);
+    		int result = first + second + between * trail;
+    		if(result > max) {
+    			max = result;
+    		}
+    		System.out.println("X = " + num + ",\t trail = " + trail + ",\t first = " + first + ",\t second = " + second + 
+    				",\t between = " + between + ",\t result = " + result + ",\t max = " + max);
+    	}
+    	return max;
+    }
+	
 	/**
+	 * Task 1 in first round OA.
 	 * Find the largest number that can be obtained from X by duplicating one if its digits.
 	 * 这道题的关键是找到从左边开始第一个peek点，即正数从这个点往后开始下降，负数从这个点往后开始上升。
-	 * 等于也视作找到了断点
 	 * @param X
 	 * @return
 	 */
-	private static int solution(int X) {
+	private static int solution1(int X) {
 		if (X == 0) { 
 			return 0; 
 		} else {
@@ -46,11 +76,18 @@ public class OA1 {
 		}
 	}
 	
+	private static void testSolution1() {
+		int X = 0;
+        Scanner in = new Scanner(System.in);
+        X = in.nextInt();
+        System.out.println(solution1(X));
+	}
 	
 	public static void main(String[] args) {
-		int[] list = {12223, 122243, 54321, 11111, 53421, 13324, -12223, -122243, -54321, -11111, -53421, -13324, 2, -2, 0};
+		int[] list = {1110, 1112, 12223, 122243, 54321, 11111, 53421, 13324};
 		for (int X: list) {
-			System.out.println(solution(X));			
+//			System.out.println(maxDuplicate(X));	
+			System.out.println(((-1) * X) % (-10));
 		}
 		
 	}
