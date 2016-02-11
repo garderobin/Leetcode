@@ -62,6 +62,8 @@ public class StrobogrammaticNumberIII {
 		case 8: //
 		case 9: //
 		}
+		
+		return -1;
 	}
 	
 	/**

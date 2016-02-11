@@ -10,9 +10,31 @@ import java.util.Set;
 //System.out.println("this is a debug message");
 import java.util.Stack;
 
+/**
+ * 这是2016/02/10晚上实际提交上去的结果，不是最优化的。
+ * 第一题: 找到连续两个相同的数位，删掉其中一个以后的最大值。
+ * 第二题：计算所有含有图片的路径（不重复，不包括图片文件名）总长度模以1000000007。
+ * 
+ * @author jasmineliu
+ *
+ */
 class Solution {
+	
+	public static int solutionOA1Actual(int X) {
+    	int trail = 1, max = 0, num = X;
+    	while(trail <= num) {
+    		trail *= 10;
+    		int second = num % trail, first = (num - second) / 10, between = second / (trail / 10);
+    		int result = first + second + between * trail;
+    		if(result > max) {
+    			max = result;
+    		}
+    	}
+    	return max;
+    }
+	
 	final static int mod = 1000000007;
-	public static int solution(String S) {
+	public static int solutionOA2Actual(String S) {
 		Stack<String> path = new Stack<String>();
 		Set<String> pathSet = new HashSet<String>();
 		int dirLevel = 0;
@@ -48,26 +70,8 @@ class Solution {
 		
 		return (int)rst;
 	}
-	
-	public static void main (String args[]) {
-		String[] test = {"dir1\n dir11\n dir12\n  picture.jpeg\n  dir121\n  longlonglong.txt\ndir2\n file2.gif",
-				"dir2\n file2.png", 
-				"dir2\n file1.png\n file2.jpeg\n file33.gif\n",
-				"a.gif",
-				"gif\n dir11\n dir12\n  pictures.jpeg\n  dir121\n   1.png\ndir2\n file2.gif",
-				"dir1\n dir11\n dir12\n  dir122\n   pictures.png\n  pictures.jpeg\n  dir121\n   1.png\ndir2\n file2.gif\n1234567890123456789012345678901234567890.png"
-				};
-		for (String s: test) {
-			System.out.println(solution(s));
-			
-		}
-//		String s = "/gif/dir12/pictures.jpeg";
-//		System.out.println(s.length());
-//		String s = "dir1\n dir11\n dir12\n  picture.jpeg\n  dir121\n  longlonglong.txt\ndir2\n file2.gif";
-//		testKangran(s);
-	}
  
- private static boolean isPictureExtension(String str, int index) {
+	private static boolean isPictureExtension(String str, int index) {
 		return str.startsWith(".jpeg", index) || str.startsWith(".png", index) || str.startsWith(".gif", index);
 	}
 	
