@@ -18,14 +18,20 @@ import java.util.Stack;
  * @author jasmineliu
  *
  */
-class Solution {
+public class ActualSubmit {
 	
 	public static int solutionOA1Actual(int X) {
-    	int trail = 1, max = 0, num = X;
+    	int trail = 10, max = 0, num = X, prev= num % trail;
     	while(trail <= num) {
     		trail *= 10;
-    		int second = num % trail, first = (num - second) / 10, between = second / (trail / 10);
-    		int result = first + second + between * trail;
+    		int second = num % trail, 
+    				first = (num - second) / trail, 
+    				between = second / (trail / 10);
+    		if (between != prev) {
+    			prev = between;
+    			continue;
+    		}
+    		int result = first * (trail / 10) + second % (trail / 10);
     		if(result > max) {
     			max = result;
     		}

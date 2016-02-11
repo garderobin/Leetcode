@@ -15,8 +15,8 @@ public class ActualOptimization {
 		for (int i = 1, prev = s.charAt(0)-'0', digit = prev; i < digitCount; i++, prev = digit) {
 			digit = s.charAt(i) - '0';
 			if (digit == prev) {
+				dupIndex = i; 
 				if (bottomFound) { break; }
-				else { dupIndex = i; }
 			} else if (digit > prev) {
 				if (dupIndex == i-1) { break; }
 				else { bottomFound = true; } // bottom found, but duplicate not found
@@ -32,15 +32,18 @@ public class ActualOptimization {
 	}
 	
 	public static void main(String[] args) {
-		int[] list = {2101334226, 1110, 1112, 12223, 122243, 11111, 13324};
+		int[] list = {887899, 8811, 8899, 201334226, 1110, 1112, 12223, 122243, 11111, 13324};
 		long startTime1 = System.nanoTime();
 
 //		for (int i = 0; i < 100000; i++) {
 			for (int X: list) {
-//				optimizeOA1(X);	
-				System.out.println(ActualSubmitt.solutionOA1Actual(X));
+				System.out.println(optimizeOA1(X));	
+//				System.out.println(optimizeOA1(88765699));	
+//				ActualSubmitt.solutionOA1Actual(X);
 			}
 //		}
+	
+	// 88765699
 
 		long endTime1 = System.nanoTime();
 		System.out.println((endTime1 - startTime1)/1000000.0 + " ms");
@@ -55,6 +58,9 @@ public class ActualOptimization {
 //	   543210123422677
 //	2101334226
 //	210134226
-//	210133426
+//	210133426\
+//	88765699
+//	8765699
+//	8876569
 	
 }
