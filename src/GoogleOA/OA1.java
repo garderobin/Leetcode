@@ -1,7 +1,5 @@
 package GoogleOA;
 
-import java.util.Scanner;
-
 public class OA1 {
 	
 	public static int maxDuplicate2(int X) {
@@ -39,6 +37,7 @@ public class OA1 {
 	 * @param X
 	 * @return
 	 */
+	@SuppressWarnings("unused")
 	private static int solution1(int X) {
 		if (X == 0) { 
 			return 0; 
@@ -76,13 +75,13 @@ public class OA1 {
 		}
 	}
 	
-	private static void testSolution1() {
-		int X = 0;
-        Scanner in = new Scanner(System.in);
-        X = in.nextInt();
-        System.out.println(solution1(X));
-	}
-	
+//	private static void testSolution1() {
+//		int X = 0;
+//        Scanner in = new Scanner(System.in);
+//        X = in.nextInt();
+//        System.out.println(solution1(X));
+//	}
+//	
 	public static void main(String[] args) {
 		int[] list = {1110, 1112, 12223, 122243, 54321, 11111, 53421, 13324};
 		for (int X: list) {
