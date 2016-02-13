@@ -26,13 +26,13 @@ public class FlipGameII {
         return false; //我方不论怎么走，都无法保证接下来全胜
     }
 	
-	private static boolean mustLose(String s) {
-		List<String> oneMove = generatePossibleNextMoves(s);
-        if (oneMove.size() == 0) {
-        	return true;
-        }
-        return false;
-	}
+//	private static boolean mustLose(String s) {
+//		List<String> oneMove = generatePossibleNextMoves(s);
+//        if (oneMove.size() == 0) {
+//        	return true;
+//        }
+//        return false;
+//	}
 	
 //	private static boolean helper(String s, ) {
 //		

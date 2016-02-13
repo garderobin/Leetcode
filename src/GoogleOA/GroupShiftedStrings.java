@@ -66,10 +66,10 @@ public class GroupShiftedStrings {
 	 * @param s2
 	 * @return
 	 */
-	private static boolean sharesShiftingPattern(String s1, String s2) {
-		for (int i = 1, len = s1.length(), delta = s1.charAt(0) - s2.charAt(0) ; i < len; i++) {
-			if (s1.charAt(i) - s2.charAt(i) != delta) { return false; }
-		}
-		return true;
-	}
+//	private static boolean sharesShiftingPattern(String s1, String s2) {
+//		for (int i = 1, len = s1.length(), delta = s1.charAt(0) - s2.charAt(0) ; i < len; i++) {
+//			if (s1.charAt(i) - s2.charAt(i) != delta) { return false; }
+//		}
+//		return true;
+//	}
 }
