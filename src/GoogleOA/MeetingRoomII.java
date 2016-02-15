@@ -37,14 +37,12 @@ public class MeetingRoomII {
 	}
 	
 	private static Comparator<Interval> comparatorByStartTimeAscending = new Comparator<Interval>() {
-		@Override
 		public int compare(Interval m1, Interval m2) {
 			return m1.start - m2.start;
 		}
 	};
 	
 	private static Comparator<Interval> comparatorByEndTimeAscending = new Comparator<Interval>() {
-		@Override
 		public int compare(Interval m1, Interval m2) {
 			return m1.end - m2.end;
 		}
