@@ -44,16 +44,16 @@ public class ThreeSumSmaller {
         return rst;
     }
 	
-	private static int combination(int total, int select) {
-		if (total < select || select < 0) { return 0; }
-		select = Math.min(select, total - select);
-		long divident = 1, divider = 1;
-		for (int i = 0; i < select; i++) {
-			divident *= (total-i);
-			divider *= (i+1);
-		}
-		return (int) (divident / divider);
-	}
+//	private static int combination(int total, int select) {
+//		if (total < select || select < 0) { return 0; }
+//		select = Math.min(select, total - select);
+//		long divident = 1, divider = 1;
+//		for (int i = 0; i < select; i++) {
+//			divident *= (total-i);
+//			divider *= (i+1);
+//		}
+//		return (int) (divident / divider);
+//	}
 	
 	public static void main(String[] args) {
 		int[] nums = {-2, 0, 1, 3}; 

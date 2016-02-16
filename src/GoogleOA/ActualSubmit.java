@@ -78,7 +78,7 @@ public class ActualSubmit {
 	}
  
 	private static boolean isPictureExtension(String str, int index) {
-		return str.startsWith(".jpeg", index) || str.startsWith(".png", index) || str.startsWith(".gif", index);
+		return str.endsWith(".jpeg") || str.endsWith(".png") || str.endsWith(".gif");
 	}
 	
 	private static int getLevelOfLine(String line) {
