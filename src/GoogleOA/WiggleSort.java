@@ -6,7 +6,7 @@ package GoogleOA;
  *
  */
 public class WiggleSort {
-	public void wiggleSort(int[] nums) {
+	public static void wiggleSort(int[] nums) {
 		for (int i = 1; i < nums.length; i++) {
 	        int a = nums[i-1];
 	        if ((i%2 == 1) == (a > nums[i])) {
@@ -15,4 +15,12 @@ public class WiggleSort {
 	        }
 	    }
     }
+	
+	public static void main(String[] args) {
+		int[] test = {1,2,2,3};
+		wiggleSort(test);
+		for (int e : test) {
+			System.out.print(e + ",\t");
+		}
+	}
 }

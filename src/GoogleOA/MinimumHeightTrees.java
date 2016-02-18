@@ -32,14 +32,11 @@ public class MinimumHeightTrees {
 	    }
 
 	    while (n > 2) { // 为什么这个阈值是2？
-//	    	printList("leaves", leaves);
 	        n -= leaves.size();
-//	        System.out.println(n);
 	        List<Integer> newLeaves = new ArrayList<>();
 	        for (int i : leaves) {
 	            int j = adj.get(i).iterator().next(); //这一点比取get(0)要安全一些。
 	            adj.get(j).remove(i);
-//	            printSet("remove " + i + " from adj[" + j + "] ", adj.get(j));
 	            if (adj.get(j).size() == 1) { 
 	            	newLeaves.add(j); 
 	            }
@@ -49,21 +46,21 @@ public class MinimumHeightTrees {
 	    return leaves;
 	}
 	
-	private static void printSet(String p, Set<Integer> leaves) {
-		StringBuilder sb = new StringBuilder(p + " = [");
-		for (int e: leaves) {
-			sb.append(e + ", ");
-		}
-		System.out.println(sb.toString() + "]");
-	}
-	
-	private static void printList(String p, List<Integer> leaves) {
-		StringBuilder sb = new StringBuilder(p + " = [");
-		for (int e: leaves) {
-			sb.append(e + ", ");
-		}
-		System.out.println(sb.toString() + "]");
-	}
+//	private static void printSet(String p, Set<Integer> leaves) {
+//		StringBuilder sb = new StringBuilder(p + " = [");
+//		for (int e: leaves) {
+//			sb.append(e + ", ");
+//		}
+//		System.out.println(sb.toString() + "]");
+//	}
+//	
+//	private static void printList(String p, List<Integer> leaves) {
+//		StringBuilder sb = new StringBuilder(p + " = [");
+//		for (int e: leaves) {
+//			sb.append(e + ", ");
+//		}
+//		System.out.println(sb.toString() + "]");
+//	}
 
 	public static void main(String[] args) {
 		//n = 6, edges = [[0, 3], [1, 3], [2, 3], [4, 3], [5, 4]]
