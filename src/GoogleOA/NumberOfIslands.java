@@ -25,7 +25,7 @@ public class NumberOfIslands {
 		grid[x][y] = 'x';
 		for (int i = 0, r = grid.length, c = grid[0].length; i < dx.length; i++) {
 			int xm = x + dx[i], ym = y + dy[i];
-			if (xm >= 0 && xm < r && ym >= 0 && ym < c && grid[xm][ym] == '1') {
+			if (xm >= 0 && xm < r && ym >= 0 && ym < c && grid[xm][ym] == '1') { //等于‘1’这个条件千万别忘了带上
 				explore(grid, xm, ym);
 			}
 		}
