@@ -11,6 +11,7 @@ import algorithm.FindMedianTwoSortedArrays;
 import algorithm.FlattenBinaryTreeToLinkedList;
 import algorithm.IntReverseBit;
 import algorithm.JumpGame;
+import algorithm.RangeSumQuery2DImmutable;
 import algorithm.ReverseSingleLinkedList;
 import algorithm.WordDictionary;
 import dataStructure.ListNode;
@@ -20,7 +21,16 @@ import dataStructure.TreeNode;
 public class run {
 	
 	public static void main (String args[]) {
-		testBestTimeToBuyAndSellStockIII();
+		testRangeSum2D();
+	}
+	
+	public static void testRangeSum2D() {
+		int[][] matrix = {{3,0,1,4,2},{5,6,3,2,1},{1,2,0,1,5},{4,1,0,1,7},{1,0,3,0,5}};
+		RangeSumQuery2DImmutable rs = new RangeSumQuery2DImmutable(matrix);
+		System.out.println(rs.sumRegion(2,1,4,3));
+		System.out.println(rs.sumRegion(1,1,2,2));
+		System.out.println(rs.sumRegion(1,2,2,4));
+		
 	}
 	
 	public static void testBestTimeToBuyAndSellStockIII() {

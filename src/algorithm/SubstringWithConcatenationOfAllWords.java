@@ -12,6 +12,54 @@ import java.util.Set;
 import dataStructure.Trie;
 
 public class SubstringWithConcatenationOfAllWords {
+	/**
+	 * Sliding window, O(KN) time complexity.
+	 */
+	public List<Integer> findSubstringDiscussion(String S, String[] L) {
+        List<Integer> res = new LinkedList<>();
+        if (L.length == 0 || S.length() < L.length * L[0].length())   return res;
+        Map<String, Integer> map = new HashMap<>(), curMap = new HashMap<>();
+        for (String s : L) {
+        	map.put(s, (map.containsKey(s)) ? map.get(s) + 1 : 1);
+        }
+        int N = S.length(), M = L.length, K = L[0].length();   
+        String str = null, tmp = null;
+        
+        for (int i = 0; i < K; i++) { // 充分利用每个单词等长这个条件，超过K的位置会被前面的计算cover到的。
+            int count = 0;  // remark: reset count 
+            for (int l = i, r = i; r + K <= N; r += K) {
+                str = S.substring(r, r + K);
+                
+                if (map.containsKey(str)) {
+                	curMap.put(str, (curMap.containsKey(str)) ? curMap.get(str) + 1 : 1);
+                    if (curMap.get(str) <= map.get(str)) { count++; }
+                    
+                    // 发现了因为单词过量而不符合条件的序列，把探索的脚步往前走，中途遇到字典中的单词也需要抹去
+                    while (curMap.get(str) > map.get(str)) {
+                        tmp = S.substring(l, l + K);
+                        curMap.put(tmp, curMap.get(tmp) - 1); 
+                        l += K;
+                        if (curMap.get(tmp) < map.get(tmp)) { count--; } 
+                    }
+                    if (count == M) {
+                        res.add(l);
+                        tmp = S.substring(l, l + K);
+                        curMap.put(tmp, curMap.get(tmp) - 1);
+                        l += K;
+                        count--;
+                    }            
+                }else {
+                    curMap.clear();
+                    count = 0;
+                    l = r + K;
+                }
+                
+            }
+            
+            curMap.clear();
+        }
+        return res;
+    }
 	
 	/**
 	 * 此方法超时。
@@ -22,7 +70,7 @@ public class SubstringWithConcatenationOfAllWords {
 	public static List<Integer> findSubstringV2(String s, String[] words) {
 		List<Integer> rst = new ArrayList<Integer>();
 		if (s == null || words == null || words.length == 0) { return rst; }
-        int step = words[0].length(), len = s.length(), rest = words.length, seqLen = step * rest, noMatchCount = step, j, limit = len + 1 - seqLen + step;
+        int step = words[0].length(), len = s.length(), rest = words.length, seqLen = step * rest, j, limit = len + 1 - seqLen + step;
         if (len < seqLen) { return rst; }
         HashMap<String, Integer> map = new HashMap<>(rest), initialMap = new HashMap<>(rest), subMap = new HashMap<>(rest);
         for (String word: words) {

@@ -10,12 +10,13 @@
 #include <unordered_map>
 #include <vector>
 #include <cstdlib>
+#include <string>
 
 using namespace std;
 
 class WordDistance {
 private:
-    unordered_map<string, vector<int>> map;
+    unordered_map<string, vector<size_t>> map;
 public:
     WordDistance(vector<string>& words) {
         for (size_t i = 0, len = words.size(); i < len; i++) {
@@ -24,10 +25,10 @@ public:
     }
     
     int shortestDistance(string& word1, string& word2) {
-        vector<int> list1 = map[word1], list2 = map[word2];
+        vector<size_t> list1 = map[word1], list2 = map[word2];
         int i = 0, j = 0, rst = INT_MAX, len1 = (int)(list1.size()), len2 = (int)(list2.size());
         while (i < len1 && j < len2) {
-            rst = min(rst, abs(list1[i] - list2[j]));
+            rst = min(rst, abs((int)(list1[i] - list2[j])));
             if (rst == 0) { return rst; }
             else if (list1[i] < list2[j]) { i++; }
             else { j++; }

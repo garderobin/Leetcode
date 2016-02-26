@@ -8,9 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0E647E791C7D507000F4F260 /* CoinChange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E647E781C7D507000F4F260 /* CoinChange.cpp */; };
+		0E682C5D1C7D754400F4ED68 /* RangeSumArrayImmutable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E682C5C1C7D754400F4ED68 /* RangeSumArrayImmutable.cpp */; };
 		0E7ACA041C76EEEB0046F9D7 /* WordDistance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E7ACA031C76EEEB0046F9D7 /* WordDistance.cpp */; };
 		0E7ACA061C76F9970046F9D7 /* MaximumSizeSubarraySumEqualsK.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E7ACA051C76F9970046F9D7 /* MaximumSizeSubarraySumEqualsK.cpp */; };
-		0ECA17421C767FF800BC514D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA17411C767FF800BC514D /* main.cpp */; };
+		0EACED6F1C7E445E00646A75 /* RangeSumArrayMutable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EACED6E1C7E445E00646A75 /* RangeSumArrayMutable.cpp */; };
+		0EACED711C7E839A00646A75 /* WallsAndGates.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EACED701C7E839A00646A75 /* WallsAndGates.cpp */; };
+		0EACED731C7E857600646A75 /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EACED721C7E857600646A75 /* test.cpp */; };
+		0EACED751C7EA12F00646A75 /* ShortestDistanceFromAllBuildings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EACED741C7EA12F00646A75 /* ShortestDistanceFromAllBuildings.cpp */; };
 		0ECA174A1C76806E00BC514D /* SurroundedRegions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA17481C76806E00BC514D /* SurroundedRegions.cpp */; };
 		0ECA174D1C76BBCC00BC514D /* TwoSumDesign.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA174B1C76BBCC00BC514D /* TwoSumDesign.cpp */; };
 		0ECA174F1C76C6B900BC514D /* LRUCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA174E1C76C6B900BC514D /* LRUCache.cpp */; };
@@ -30,10 +34,14 @@
 
 /* Begin PBXFileReference section */
 		0E647E781C7D507000F4F260 /* CoinChange.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoinChange.cpp; sourceTree = "<group>"; };
+		0E682C5C1C7D754400F4ED68 /* RangeSumArrayImmutable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RangeSumArrayImmutable.cpp; sourceTree = "<group>"; };
 		0E7ACA031C76EEEB0046F9D7 /* WordDistance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WordDistance.cpp; sourceTree = "<group>"; };
 		0E7ACA051C76F9970046F9D7 /* MaximumSizeSubarraySumEqualsK.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MaximumSizeSubarraySumEqualsK.cpp; sourceTree = "<group>"; };
+		0EACED6E1C7E445E00646A75 /* RangeSumArrayMutable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RangeSumArrayMutable.cpp; sourceTree = "<group>"; };
+		0EACED701C7E839A00646A75 /* WallsAndGates.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WallsAndGates.cpp; sourceTree = "<group>"; };
+		0EACED721C7E857600646A75 /* test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
+		0EACED741C7EA12F00646A75 /* ShortestDistanceFromAllBuildings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShortestDistanceFromAllBuildings.cpp; sourceTree = "<group>"; };
 		0ECA173E1C767FF800BC514D /* LeetcodeC++ */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "LeetcodeC++"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0ECA17411C767FF800BC514D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		0ECA17481C76806E00BC514D /* SurroundedRegions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SurroundedRegions.cpp; sourceTree = "<group>"; };
 		0ECA174B1C76BBCC00BC514D /* TwoSumDesign.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TwoSumDesign.cpp; sourceTree = "<group>"; };
 		0ECA174E1C76C6B900BC514D /* LRUCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LRUCache.cpp; sourceTree = "<group>"; };
@@ -69,13 +77,17 @@
 		0ECA17401C767FF800BC514D /* LeetcodeC++ */ = {
 			isa = PBXGroup;
 			children = (
-				0ECA17411C767FF800BC514D /* main.cpp */,
 				0ECA17481C76806E00BC514D /* SurroundedRegions.cpp */,
 				0ECA174B1C76BBCC00BC514D /* TwoSumDesign.cpp */,
 				0ECA174E1C76C6B900BC514D /* LRUCache.cpp */,
 				0E7ACA031C76EEEB0046F9D7 /* WordDistance.cpp */,
 				0E7ACA051C76F9970046F9D7 /* MaximumSizeSubarraySumEqualsK.cpp */,
 				0E647E781C7D507000F4F260 /* CoinChange.cpp */,
+				0E682C5C1C7D754400F4ED68 /* RangeSumArrayImmutable.cpp */,
+				0EACED6E1C7E445E00646A75 /* RangeSumArrayMutable.cpp */,
+				0EACED701C7E839A00646A75 /* WallsAndGates.cpp */,
+				0EACED721C7E857600646A75 /* test.cpp */,
+				0EACED741C7EA12F00646A75 /* ShortestDistanceFromAllBuildings.cpp */,
 			);
 			path = "LeetcodeC++";
 			sourceTree = "<group>";
@@ -137,9 +149,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0ECA174F1C76C6B900BC514D /* LRUCache.cpp in Sources */,
+				0EACED751C7EA12F00646A75 /* ShortestDistanceFromAllBuildings.cpp in Sources */,
 				0E7ACA061C76F9970046F9D7 /* MaximumSizeSubarraySumEqualsK.cpp in Sources */,
 				0ECA174A1C76806E00BC514D /* SurroundedRegions.cpp in Sources */,
-				0ECA17421C767FF800BC514D /* main.cpp in Sources */,
+				0EACED731C7E857600646A75 /* test.cpp in Sources */,
+				0EACED711C7E839A00646A75 /* WallsAndGates.cpp in Sources */,
+				0E682C5D1C7D754400F4ED68 /* RangeSumArrayImmutable.cpp in Sources */,
+				0EACED6F1C7E445E00646A75 /* RangeSumArrayMutable.cpp in Sources */,
 				0ECA174D1C76BBCC00BC514D /* TwoSumDesign.cpp in Sources */,
 				0E647E791C7D507000F4F260 /* CoinChange.cpp in Sources */,
 				0E7ACA041C76EEEB0046F9D7 /* WordDistance.cpp in Sources */,
@@ -231,6 +247,10 @@
 		0ECA17461C767FF800BC514D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CXX0X_EXTENSIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -238,6 +258,10 @@
 		0ECA17471C767FF800BC514D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CXX0X_EXTENSIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
