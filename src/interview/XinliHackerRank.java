@@ -1,10 +1,5 @@
 package interview;
 
-import java.io.*;
-import java.util.*;
-import java.math.*;
-import java.text.StringCharacterIterator;
-import java.util.regex.*;
 public class XinliHackerRank {
 	
 	static String isPangram(String[] strings) {		
@@ -32,5 +27,4 @@ public class XinliHackerRank {
 		System.out.println(isPangramLine("e promptly judged antique ivory buckles for the next prize"));
 	}
 	
-//	StringCharacterIterator iter = new StringCharacterIterator(s);
 }

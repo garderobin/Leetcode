@@ -8,6 +8,7 @@ import algorithm.ConstructBSTByInorderAndPreorderTraversal;
 import algorithm.ContainsDuplicate;
 import algorithm.ConvertSortedArrayToBinarySearchTree;
 import algorithm.FindMedianTwoSortedArrays;
+import algorithm.FindTheCelebrity;
 import algorithm.FlattenBinaryTreeToLinkedList;
 import algorithm.IntReverseBit;
 import algorithm.JumpGame;
@@ -21,7 +22,12 @@ import dataStructure.TreeNode;
 public class run {
 	
 	public static void main (String args[]) {
-		testRangeSum2D();
+		testFindCelebrity(2);
+	}
+	
+	public static void testFindCelebrity(int n) {
+		FindTheCelebrity f = new FindTheCelebrity();
+		System.out.println(f.findCelebrity(n));
 	}
 	
 	public static void testRangeSum2D() {
