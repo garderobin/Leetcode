@@ -18,6 +18,8 @@
 		0ECA174A1C76806E00BC514D /* SurroundedRegions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA17481C76806E00BC514D /* SurroundedRegions.cpp */; };
 		0ECA174D1C76BBCC00BC514D /* TwoSumDesign.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA174B1C76BBCC00BC514D /* TwoSumDesign.cpp */; };
 		0ECA174F1C76C6B900BC514D /* LRUCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA174E1C76C6B900BC514D /* LRUCache.cpp */; };
+		0EF28AF91C8541E200B47D31 /* BurstBalloon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EF28AF81C8541E200B47D31 /* BurstBalloon.cpp */; };
+		0EF28AFB1C855FFF00B47D31 /* DistinctSubsequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EF28AFA1C855FFF00B47D31 /* DistinctSubsequence.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +47,8 @@
 		0ECA17481C76806E00BC514D /* SurroundedRegions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SurroundedRegions.cpp; sourceTree = "<group>"; };
 		0ECA174B1C76BBCC00BC514D /* TwoSumDesign.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TwoSumDesign.cpp; sourceTree = "<group>"; };
 		0ECA174E1C76C6B900BC514D /* LRUCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LRUCache.cpp; sourceTree = "<group>"; };
+		0EF28AF81C8541E200B47D31 /* BurstBalloon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BurstBalloon.cpp; sourceTree = "<group>"; };
+		0EF28AFA1C855FFF00B47D31 /* DistinctSubsequence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DistinctSubsequence.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 				0EACED701C7E839A00646A75 /* WallsAndGates.cpp */,
 				0EACED721C7E857600646A75 /* test.cpp */,
 				0EACED741C7EA12F00646A75 /* ShortestDistanceFromAllBuildings.cpp */,
+				0EF28AF81C8541E200B47D31 /* BurstBalloon.cpp */,
+				0EF28AFA1C855FFF00B47D31 /* DistinctSubsequence.cpp */,
 			);
 			path = "LeetcodeC++";
 			sourceTree = "<group>";
@@ -152,6 +158,8 @@
 				0EACED751C7EA12F00646A75 /* ShortestDistanceFromAllBuildings.cpp in Sources */,
 				0E7ACA061C76F9970046F9D7 /* MaximumSizeSubarraySumEqualsK.cpp in Sources */,
 				0ECA174A1C76806E00BC514D /* SurroundedRegions.cpp in Sources */,
+				0EF28AFB1C855FFF00B47D31 /* DistinctSubsequence.cpp in Sources */,
+				0EF28AF91C8541E200B47D31 /* BurstBalloon.cpp in Sources */,
 				0EACED731C7E857600646A75 /* test.cpp in Sources */,
 				0EACED711C7E839A00646A75 /* WallsAndGates.cpp in Sources */,
 				0E682C5D1C7D754400F4ED68 /* RangeSumArrayImmutable.cpp in Sources */,
