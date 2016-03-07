@@ -2,6 +2,7 @@ package GoogleOA;
 
 public class StrobogrammaticNumberIII {
 	public static int strobogrammaticInRange(String low, String high) {
+		
 		if (high == null || low == null || high.length() == 0 || high.charAt(0) == '-' || high.charAt(0) == '0') { return 0; } //这里默认开头为零其后不为零不是合法
 		int lowLen = low.length(), highLen = high.length();
 		if (lowLen == 0 || low.charAt(0) == '0') { return strobogrammaticInRange("0", high); }
