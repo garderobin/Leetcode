@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E1BB4191C8F603100154F7D /* ScrambleString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E1BB4181C8F603100154F7D /* ScrambleString.cpp */; };
+		0E2BBD4E1C8E5CAD007A67BF /* WordCombinations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E2BBD4D1C8E5CAD007A67BF /* WordCombinations.cpp */; };
 		0E647E791C7D507000F4F260 /* CoinChange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E647E781C7D507000F4F260 /* CoinChange.cpp */; };
 		0E682C5D1C7D754400F4ED68 /* RangeSumArrayImmutable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E682C5C1C7D754400F4ED68 /* RangeSumArrayImmutable.cpp */; };
 		0E7ACA041C76EEEB0046F9D7 /* WordDistance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E7ACA031C76EEEB0046F9D7 /* WordDistance.cpp */; };
@@ -35,6 +37,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0E1BB4181C8F603100154F7D /* ScrambleString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScrambleString.cpp; sourceTree = "<group>"; };
+		0E2BBD4D1C8E5CAD007A67BF /* WordCombinations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WordCombinations.cpp; sourceTree = "<group>"; };
 		0E647E781C7D507000F4F260 /* CoinChange.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoinChange.cpp; sourceTree = "<group>"; };
 		0E682C5C1C7D754400F4ED68 /* RangeSumArrayImmutable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RangeSumArrayImmutable.cpp; sourceTree = "<group>"; };
 		0E7ACA031C76EEEB0046F9D7 /* WordDistance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WordDistance.cpp; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 				0EACED741C7EA12F00646A75 /* ShortestDistanceFromAllBuildings.cpp */,
 				0EF28AF81C8541E200B47D31 /* BurstBalloon.cpp */,
 				0EF28AFA1C855FFF00B47D31 /* DistinctSubsequence.cpp */,
+				0E2BBD4D1C8E5CAD007A67BF /* WordCombinations.cpp */,
+				0E1BB4181C8F603100154F7D /* ScrambleString.cpp */,
 			);
 			path = "LeetcodeC++";
 			sourceTree = "<group>";
@@ -167,6 +173,8 @@
 				0ECA174D1C76BBCC00BC514D /* TwoSumDesign.cpp in Sources */,
 				0E647E791C7D507000F4F260 /* CoinChange.cpp in Sources */,
 				0E7ACA041C76EEEB0046F9D7 /* WordDistance.cpp in Sources */,
+				0E2BBD4E1C8E5CAD007A67BF /* WordCombinations.cpp in Sources */,
+				0E1BB4191C8F603100154F7D /* ScrambleString.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
