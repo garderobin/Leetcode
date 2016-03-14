@@ -1,4 +1,4 @@
-package interview;
+package interview.others;
 
 public class XinliHackerRank {
 	

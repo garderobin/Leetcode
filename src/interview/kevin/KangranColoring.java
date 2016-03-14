@@ -1,4 +1,4 @@
-package interview;
+package interview.kevin;
 
 public class KangranColoring {
 	

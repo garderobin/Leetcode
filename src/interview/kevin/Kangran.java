@@ -1,4 +1,4 @@
-package interview;
+package interview.kevin;
 
 public class Kangran {
 	public static int removeDuplicates(int[] nums) {

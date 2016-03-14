@@ -1,4 +1,4 @@
-package interview;
+package interview.others;
 
 import java.util.Scanner;
 public class Xinli_HR_2 {
