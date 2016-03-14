@@ -1,4 +1,4 @@
-package algorithm;
+package WayFair;
 
 public class SingleNumberII {
 	

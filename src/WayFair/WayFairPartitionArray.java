@@ -5,8 +5,8 @@ package WayFair;
  */
 public class WayFairPartitionArray {
 	/*
-	 * Bubble sort. O(N) time, O(N) space.
-	 * 前提：输入中没有零
+	 * In-place version. O(N^2) time, O(1) space.
+	 * Bubble sort. 
 	 */
 	public static void partitionArray1(int[] nums) {
 		if (nums == null || nums.length < 2) { return; }
@@ -21,9 +21,8 @@ public class WayFairPartitionArray {
 	}
 	
 	/*
-	 * In-place version. O(N^2) time, O(1) space.
+	 * O(N) time, O(N) space.
 	 * Two-pass.
-	 * 前提：输入中没有零
 	 */
 	public static void partitionArray2(int[] nums) {
 		if (nums == null || nums.length < 2) { return; }
@@ -37,7 +36,7 @@ public class WayFairPartitionArray {
 		
 		// Second pass: build sorted array.
 		for (int e: backup) {
-			if (e < 0) 	{ nums[left++] = e; }
+			if (e < 0) 	{ nums[left++] = e;  }
 			else 		{ nums[right++] = e; }
 		}
 	}
