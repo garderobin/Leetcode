@@ -1,4 +1,4 @@
-package algorithm;
+package interview;
 
 public class Kangran {
 	public static int removeDuplicates(int[] nums) {
@@ -37,15 +37,15 @@ public class Kangran {
 		return i;
 	}
 	
-	private static void swap(int[] nums, int i, int j) {
-		int temp = nums[i];
-		nums[i] = nums[j];
-		nums[j] = temp;
-	}
+//	private static void swap(int[] nums, int i, int j) {
+//		int temp = nums[i];
+//		nums[i] = nums[j];
+//		nums[j] = temp;
+//	}
 	
 	public static void main(String[] args) {
-		int[] nums0 = {1, 2};
-		int[] nums1 = {0,0,0,3,3,5,5,7,8};
+//		int[] nums0 = {1, 2};
+//		int[] nums1 = {0,0,0,3,3,5,5,7,8};
 		int[] nums2 = {0,0,2,2,4,4,6,6,8,8,9,10};
 		System.out.println(removeDuplicates(nums2));
 	}

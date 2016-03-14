@@ -53,8 +53,8 @@ public class AddBinary {
 	public static void main(String args[]) {
 		String s1 = "11";
 		String s2 = "1";
-		char[] c = {'1', '1', '0'};
-		int[] d = {1, 1, 0};
+//		char[] c = {'1', '1', '0'};
+//		int[] d = {1, 1, 0};
 		System.out.println(addBinary(s1, s2));
 		//System.out.println((char)((3 % 2) + 48));
 	}

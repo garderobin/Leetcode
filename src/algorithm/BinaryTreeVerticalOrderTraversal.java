@@ -30,6 +30,7 @@ public class BinaryTreeVerticalOrderTraversal {
 		// compute range
 		TreeNodeVertical vroot = generateVNode(root, 0);
 		int n = max - min + 1;
+		@SuppressWarnings("unchecked")
 		List<Integer>[] arr = new List[n];
 		for (int i = 0; i < n; ++i) { arr[i] = new ArrayList<Integer>(); }
 		

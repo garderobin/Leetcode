@@ -39,8 +39,8 @@ public class CombinationSum3 {
 	}
 	
 	public static void main(String[] args) {
-		int[] candidates = {2,3,6,7};
-		int target = 8;
+//		int[] candidates = {2,3,6,7};
+//		int target = 8;
 		List<List<Integer>> rst = combinationSum3(3, 9);
 		for (int i = 0; i < rst.size(); i++) {
 			ArrayList<Integer> cur = (ArrayList<Integer>) rst.get(i);

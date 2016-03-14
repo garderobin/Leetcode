@@ -26,10 +26,10 @@ public class ImplementStrStr {
         return -1;
 	}
 	
-	// ""
 	
 	/**
 	 * 退火算法
+	 * 我还没有掌握
 	 * @param haystack
 	 * @param needle
 	 * @return
@@ -87,9 +87,8 @@ public class ImplementStrStr {
         if (h < n) {
         	return -1;
         }
-        char ch, cn;
         for (; i < h && j < n; i++) {
-        	if ( (ch = haystack.charAt(i)) == (cn = needle.charAt(j)) ) {
+        	if (haystack.charAt(i) == needle.charAt(j)) {
         		j++;
         	} else {
         		j = 0;

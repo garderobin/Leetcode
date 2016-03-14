@@ -36,7 +36,8 @@ public class InterleavingString {
     }
 	
 	public static void main(String[] args) {
-		String s1 = "aabcc", s2 = "dbbca",s3 = "aadbbcbcac", s4 = "aadbbbaccc";
+		String s1 = "aabcc", s2 = "dbbca", s4 = "aadbbbaccc";
+//		String s3 = "aadbbcbcac";
 		System.out.println(isInterleave(s1, s2, s4));
 	}
 }

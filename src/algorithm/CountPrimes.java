@@ -56,19 +56,13 @@ public class CountPrimes {
         composite[2] = false;
        
         int limit = (int)Math.sqrt(n);
-        int count = primes.size();
         int p, i, j, k, m = 0;
         outer:        	
         for (j = 0; j < primes.size(); j++) {
         	p = primes.get(j);
-        	inner:
         	for (i = j + 1; i < limit; i++) {
-                if (composite[i]) {
-                	continue outer;
-                }            	        	
-            	if (i % p == 0) {
-            		continue outer;
-            	}              	
+                if (composite[i]) { continue outer; }            	        	
+            	if (i % p == 0) { continue outer; }              	
             }
         	m = n/i;
      	    for (k = i; k <= m; k++) {

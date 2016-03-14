@@ -2,9 +2,6 @@ package algorithm;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Hashtable;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -57,72 +54,72 @@ public class GroupAnagrams {
         return list;
 	}
 	
-	public static List<List<String>> groupAnagrams(String[] strs) {
-        List<List<String>> rst = new ArrayList<List<String>>();
-        Hashtable<HashSet<Character>, List<String>> pool = new Hashtable<HashSet<Character>, List<String>>(); 
-        
-        for (int i = 0; i < strs.length; i++) {
-        	Iterator iter = pool.entrySet().iterator(); 
-        	while (iter.hasNext()) { 
-        	    Map.Entry entry = (Map.Entry) iter.next(); 
-        	    HashSet<Character> key = (HashSet<Character>)entry.getKey(); 
-        	    List<String> val = (List<String>)entry.getValue();
-        	    if (isAnagram(key, strs[i])) {
-        	    	val = pubAnagramInsertSort(val, strs[i]);
-        	    	pool.put(key, val);
-        	    }
-        	} 
-        }
-        Iterator iter2 = pool.entrySet().iterator(); 
-    	while (iter2.hasNext()) { 
-    	    Map.Entry entry = (Map.Entry) iter2.next(); 
-    	    List<String> val = (List<String>)entry.getValue();
-    	    rst.add(val);
-    	} 
-        
-        
-        return rst;
-    }
+//	public static List<List<String>> groupAnagrams(String[] strs) {
+//        List<List<String>> rst = new ArrayList<List<String>>();
+//        Hashtable<HashSet<Character>, List<String>> pool = new Hashtable<HashSet<Character>, List<String>>(); 
+//        
+//        for (int i = 0; i < strs.length; i++) {
+//        	Iterator iter = pool.entrySet().iterator(); 
+//        	while (iter.hasNext()) { 
+//        	    Map.Entry entry = (Map.Entry) iter.next(); 
+//        	    HashSet<Character> key = (HashSet<Character>)entry.getKey(); 
+//        	    List<String> val = (List<String>)entry.getValue();
+//        	    if (isAnagram(key, strs[i])) {
+//        	    	val = pubAnagramInsertSort(val, strs[i]);
+//        	    	pool.put(key, val);
+//        	    }
+//        	} 
+//        }
+//        Iterator iter2 = pool.entrySet().iterator(); 
+//    	while (iter2.hasNext()) { 
+//    	    Map.Entry entry = (Map.Entry) iter2.next(); 
+//    	    List<String> val = (List<String>)entry.getValue();
+//    	    rst.add(val);
+//    	} 
+//        
+//        
+//        return rst;
+//    }
 	
-	private static boolean isAnagram(HashSet<Character> set, String word) {
-		if (word.length() != set.size()) {
-			return false;
-		}
-		int len = word.length();
-		for (int i = 0; i < len; i++) {
-			if (set.add(word.charAt(i))) {
-				return false;
-			}
-		}
-		return true;
-	}
+//	private static boolean isAnagram(HashSet<Character> set, String word) {
+//		if (word.length() != set.size()) {
+//			return false;
+//		}
+//		int len = word.length();
+//		for (int i = 0; i < len; i++) {
+//			if (set.add(word.charAt(i))) {
+//				return false;
+//			}
+//		}
+//		return true;
+//	}
+//	
+//	private static List<String> pubAnagramInsertSort(List<String> val, String s) {
+//		int len = val.size();
+//		for (int i = 0; i < len; i++) {
+//			if (!compareTo(val.get(i), s)) {
+//				val.add(i, s);
+//				break;
+//			}
+//		}
+//		return val;
+//	}
 	
-	private static List<String> pubAnagramInsertSort(List<String> val, String s) {
-		int len = val.size();
-		for (int i = 0; i < len; i++) {
-			if (!compareTo(val.get(i), s)) {
-				val.add(i, s);
-				break;
-			}
-		}
-		return val;
-	}
-	
-	/**
-	 * 
-	 * @param s1
-	 * @param s2
-	 * @return true if s1 should be in front of s2.
-	 */
-	private static boolean compareTo(String s1, String s2) {
-		int i, len = s1.length();
-		for (i = 0; i < len; i++) {
-			if (s1.charAt(i) == s2.charAt(i)) {
-				continue;
-			} 
-		}
-		return s1.charAt(i) <= s2.charAt(i);
-	}
-	
+//	/**
+//	 * 
+//	 * @param s1
+//	 * @param s2
+//	 * @return true if s1 should be in front of s2.
+//	 */
+//	private static boolean compareTo(String s1, String s2) {
+//		int i, len = s1.length();
+//		for (i = 0; i < len; i++) {
+//			if (s1.charAt(i) == s2.charAt(i)) {
+//				continue;
+//			} 
+//		}
+//		return s1.charAt(i) <= s2.charAt(i);
+//	}
+//	
 	
 }

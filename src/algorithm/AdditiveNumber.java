@@ -7,7 +7,7 @@ public class AdditiveNumber {
 		if (num == null || num.length() == 0)  { return false; }
         int len = num.length(), i, j;
         if (len < 10) {
-        	int sum = 0, n1, n2;
+        	int n1, n2;
         	try {
 	        	for (i = 1; i < len; i++) {
 	        		if (num.charAt(i) =='0') { //第二个数字不能是零开头
@@ -26,7 +26,7 @@ public class AdditiveNumber {
         		return false;
         	}
         } else if (len < 20) { //long最长用十进制表示是19位数
-        	long sum = 0, n1, n2;
+        	long n1, n2;
         	try {
 	        	for (i = 1; i < len; i++) {
 	        		if (num.charAt(i) =='0') { //第二个数字不能是零开头

@@ -33,7 +33,7 @@ public class EvaluateReversePolishNotation {
     }
 	
 	public static void main(String args[]) {
-		String[] tokens = {"2", "1", "+", "3", "*"};
+//		String[] tokens = {"2", "1", "+", "3", "*"};
 		String[] t2 = {"4", "13", "5", "/", "+"};
 		System.out.println(evalRPN(t2));
 	}

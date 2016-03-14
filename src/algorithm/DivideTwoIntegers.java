@@ -19,7 +19,7 @@ public class DivideTwoIntegers {
         } 
         if (divisor==Integer.MIN_VALUE) { return 0; }
         
-        int quotient = 0, remainder = 0, sign = ((dividend>0 && divisor<0) || (dividend<0 && divisor>0)) ? -1 : 1 ;
+        int sign = ((dividend>0 && divisor<0) || (dividend<0 && divisor>0)) ? -1 : 1 ;
         long dvd = Math.abs(dividend);
         long dvs = Math.abs(divisor);
         int res = 0;
@@ -33,14 +33,6 @@ public class DivideTwoIntegers {
             res += multiple;
         }
         return sign == 1 ? res : -res; 
-        
-//        if (sign < 0) {
-//        	quotient = 0 - quotient;
-//        	if (remainder < 0) {
-//        		--quotient;
-//        	}
-//        }
-//        return quotient;
     }
 }
 		

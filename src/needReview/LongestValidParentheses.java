@@ -1,8 +1,10 @@
-package algorithm;
+package needReview;
 
 public class LongestValidParentheses {
+	/* 这里为什么没有discussion, 我还需要再看这道题*/
+	
 	public static int longestValidParentheses(String s) {
-		int max = 0, i, n = s.length(), start = 0, late_opens = 1, j;
+		int max = 0, i, n = s.length(), start = 0, late_opens = 1;
 		int[] early_opens = new int[n]; // early_opens[i] stores how many trailing open parenthesis can be added into valid are in the left of this index.
 		int[] len = new int[n+1]; //len[i] stores the length of current max valid sequence that ends at index i.
 		early_opens[0] = 0;
@@ -57,7 +59,7 @@ public class LongestValidParentheses {
 	 */
 	public static int longestValidParenthesesV0(String s) {
 		if (s == null || s.length() == 0 ) { return 0; }
-        int max = 0, i, n = s.length(), start = 0, late_opens = 1, j;
+        int max = 0, i, n = s.length(), start = 0, late_opens = 1;
 		int[] early_opens = new int[n]; // early_opens[i] stores how many trailing open parenthesis can be added into valid are in the left of this index.
 		int[] len = new int[n]; //len[i] stores the length of current max valid sequence that ends at index i.
 		early_opens[0] = 0;
@@ -103,9 +105,9 @@ public class LongestValidParentheses {
     }
 	
 	public static void main(String[] args) {
-		String s0 = ")()())";
-		String s = ")(((((()())()()))()(()))(";
-		String s1 = "))()()((())";
+//		String s0 = ")()())";
+//		String s = ")(((((()())()()))()(()))(";
+//		String s1 = "))()()((())";
 		String s2 = "()(())";
 		System.out.println(longestValidParenthesesV0(s2));
 	}

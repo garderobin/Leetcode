@@ -1,7 +1,5 @@
 package algorithm;
 
-import java.util.List;
-
 public class AlienDictionary {
 	
 	/*

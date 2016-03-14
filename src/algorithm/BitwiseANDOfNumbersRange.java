@@ -43,7 +43,7 @@ public class BitwiseANDOfNumbersRange {
 	
 	public static void main(String[] args) {
 //		System.out.println(rangeBitwiseAnd(6, 7));
-		int bits = 1, i = 0;
+//		int bits = 1, i = 0;
 //		int a = 2 & 3, b = (1<<(bits+1)-1);
 //		System.out.println(((1<<(bits-i)) - 1) << (i+1));
 //		System.out.println(((1<<(bits+1))-1));

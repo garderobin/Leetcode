@@ -1,7 +1,5 @@
 package algorithm;
 
-import java.util.HashSet;
-
 import dataStructure.RandomListNode;
 
 public class CopyListWithRandomPointer {
@@ -59,28 +57,28 @@ public class CopyListWithRandomPointer {
 	    return pseudoHead.next;
 	}
 	
-	public RandomListNode copyRandomList(RandomListNode head) {
-		HashSet<RandomListNode> visited = new HashSet<RandomListNode>();
-		HashSet<RandomListNode> created = new HashSet<RandomListNode>();
-//		RandomListNode node = new RandomListNode(head.label);
-//		created.add(node);
-		return head;        
-    }
-	
-	private RandomListNode copyNode(HashSet<RandomListNode> visited,
-			HashSet<RandomListNode> created, RandomListNode cur) {
-		RandomListNode copy = new RandomListNode(cur.label);
-		if (visited.add(cur.next)) {
-			copy.next = copyNode(visited, created, cur.next);			
-		} else {
-			//cur.next = created
-		}
-		if (visited.add(cur.random)) {
-			copy.random = copyNode(visited, created, cur.random);
-		} else {
-			
-		}
-		
-		return copy;
-	}
+//	public RandomListNode copyRandomList(RandomListNode head) {
+//		HashSet<RandomListNode> visited = new HashSet<RandomListNode>();
+//		HashSet<RandomListNode> created = new HashSet<RandomListNode>();
+////		RandomListNode node = new RandomListNode(head.label);
+////		created.add(node);
+//		return head;        
+//    }
+//	
+//	private RandomListNode copyNode(HashSet<RandomListNode> visited,
+//			HashSet<RandomListNode> created, RandomListNode cur) {
+//		RandomListNode copy = new RandomListNode(cur.label);
+//		if (visited.add(cur.next)) {
+//			copy.next = copyNode(visited, created, cur.next);			
+//		} else {
+//			//cur.next = created
+//		}
+//		if (visited.add(cur.random)) {
+//			copy.random = copyNode(visited, created, cur.random);
+//		} else {
+//			
+//		}
+//		
+//		return copy;
+//	}
 }

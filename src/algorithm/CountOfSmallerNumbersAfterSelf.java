@@ -7,7 +7,7 @@ import java.util.Stack;
 public class CountOfSmallerNumbersAfterSelf {
 	public static List<Integer> countSmaller(int[] nums) {
 		if (nums == null || nums.length == 0) { return new ArrayList<Integer>(); }
-        int n = nums.length, min = Integer.MIN_VALUE, max = Integer.MAX_VALUE;
+        int n = nums.length;
         Stack<Integer> stack = new Stack<Integer>();
         int[] dp = new int[n+1], arr = new int[n+1];
         for (int i = 0; i < n; ++i) { arr[i] = nums[i]; }

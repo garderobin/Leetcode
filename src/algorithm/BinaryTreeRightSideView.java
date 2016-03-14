@@ -39,14 +39,14 @@ public class BinaryTreeRightSideView {
 		}
 	}
 	
-	private TreeNode getRightMostChild(TreeNode node) {
-		if (node == null) {
-			return null;
-		}
-		if (node.right != null) {
-			return node.right;
-		} 
-		return node.left;		
-	}
+//	private TreeNode getRightMostChild(TreeNode node) {
+//		if (node == null) {
+//			return null;
+//		}
+//		if (node.right != null) {
+//			return node.right;
+//		} 
+//		return node.left;		
+//	}
 }
 

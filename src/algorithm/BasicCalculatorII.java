@@ -71,8 +71,8 @@ public class BasicCalculatorII {
     }
 	
 	public static void main(String[] args) {
-		String s = "3+2*2";
-		String s1 = "3 + 5 / 2 ";
+//		String s = "3+2*2";
+//		String s1 = "3 + 5 / 2 ";
 		String s2 = "46";
 		System.out.println(calculate(s2));
 	}

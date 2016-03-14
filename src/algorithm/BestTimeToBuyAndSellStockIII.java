@@ -39,11 +39,11 @@ public class BestTimeToBuyAndSellStockIII {
         int[] maxProfit = new int[prices.length];
         
         int last = prices.length - 1;
-        int i, p1, p2;
+        int i;
         twice[0][0] = 0; twice[0][1] = 0; twice[0][2] = 0; twice[0][3] = 0; twice[0][4] = 0;
         once[0][0] = 0; once[0][1] = 0; once[0][2] = 0;        
         maxProfit[0] = 0;
-        boolean a, b, c, d;
+        boolean a, b, c;
         for (i = 1; i < prices.length; i++) {
         	// compute once[i]
         	a = prices[i] > prices[once[i-1][1]];
@@ -69,7 +69,7 @@ public class BestTimeToBuyAndSellStockIII {
         	a = prices[i] > prices[twice[i-1][3]];
         	b = prices[i] - prices[twice[i-1][4]] > prices[twice[i-1][3]] - prices[twice[i-1][2]];
         	c = prices[i] - prices[twice[i-1][4]] > prices[twice[i-1][1]] - prices[twice[i-1][0]];
-        	d = prices[twice[i-1][1]] - prices[twice[i-1][0]] > prices[twice[i-1][3]] - prices[twice[i-1][2]];
+//        	d = prices[twice[i-1][1]] - prices[twice[i-1][0]] > prices[twice[i-1][3]] - prices[twice[i-1][2]];
         	if (b && c) {
         		
         	}
