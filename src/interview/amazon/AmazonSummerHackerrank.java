@@ -1,8 +1,7 @@
-package algorithm;
+package interview.amazon;
 
-import java.io.*;
 import java.util.Scanner;
-public class TEST {
+public class AmazonSummerHackerrank {
 	
 public static void main(String args[] ){
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */
@@ -44,6 +43,8 @@ public static void main(String args[] ){
         }
         System.out.print(matrix[i][j]);
     }
+    
+    in.close();
 }
     public static int[][] shift(int[][] matrix) {
         

@@ -1,11 +1,8 @@
 package algorithm;
 
-import java.util.ArrayList;
 import java.util.Deque;
 import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.List;
-import java.util.PriorityQueue;
 
 public class PeekingIterator implements Iterator<Integer> {
 	Deque<Integer> list;

@@ -3,7 +3,7 @@ package algorithm;
 
 public class MajorityElement {
 	public static int majorityElement(int[] nums) {
-		int k = nums.length / 2;
+//		int k = nums.length / 2;
 		//int left = maforityElement(0)
         return -1;
     }

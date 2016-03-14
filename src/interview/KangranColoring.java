@@ -19,7 +19,6 @@ public class KangranColoring {
         if (k == 1 && n > 2) { return 0; }
 		int diffColorCount = k, sameColorCount = 0;
 		for (int i = 1; i < n; i++){
-			int temp = diffColorCount;
 			diffColorCount = (sameColorCount + diffColorCount) * (k-1);
 			sameColorCount = diffColorCount;
 		}

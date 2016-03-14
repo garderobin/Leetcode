@@ -52,7 +52,7 @@ public class NumberOfDigitOne {
 	
 	public static void main(String args[]) {
 		//test digit
-		int n = 237;
+//		int n = 237;
 		System.out.println(countDigitOne(1100));	
 	}
 }

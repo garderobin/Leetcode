@@ -75,7 +75,6 @@ public class SearchRanges {
 	
 	public static void main(String[] args) {
 		int[] nums = {5, 7, 7, 8, 8, 10};
-		int[] nums1 = {1};
 		int[] rst = searchRange(nums, 1);
 		System.out.println(rst[0] + ", " + rst[1]);
 	}

@@ -26,8 +26,8 @@ public class PalindromeNumber {
     }
 	
 	public static void main(String[] args) {
-		int x = 16461;
-		int h = 232;
+//		int x = 16461;
+//		int h = 232;
 		//System.out.println(isPalindrome(h));
 		System.out.println(Integer.MAX_VALUE);
 	}

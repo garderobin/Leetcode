@@ -62,7 +62,8 @@ public class MaximumGap {
 		else if (nums.length == 2) { return Math.abs(nums[1] - nums[0]); }
 		
         int n = nums.length, maxNum = 0, minNum = Integer.MAX_VALUE, maxGap = 0;
-        PriorityQueue<Integer>[] buckets = new PriorityQueue[n];
+        @SuppressWarnings("unchecked")
+		PriorityQueue<Integer>[] buckets = new PriorityQueue[n];
         
         // 1st pass: find the range of the elements.
         for (int i = 0; i < n; ++i) {

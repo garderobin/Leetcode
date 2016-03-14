@@ -1,6 +1,5 @@
 package interview;
 
-import java.io.*;
 import java.util.Scanner;
 public class Xinli_HR_2 {
 	
@@ -16,7 +15,9 @@ public class Xinli_HR_2 {
         	sb.append(countBeers(cases[i][0], cases[i][1], cases[i][2]));
         	sb.append('\n');
         }
-        sb.deleteCharAt(sb.length()-1);
+        in.close();
+        
+        sb.deleteCharAt(sb.length()-1);        
         System.out.println(sb.toString());
 	}
 

@@ -34,7 +34,7 @@ public class LiveLampOAFrogJump {
 	
 	public static void main(String[] args) {
 		int[] arr = {1, 3, 1, 4, 2, 5};
-		int[] a2 = {};
+//		int[] a2 = {};
 		System.out.println(frogJumpGreedy(arr, 7, 3));
 		//System.out.println(frogJumpMine(arr, 7, 3));
 		//System.out.println(frogJumpMine(arr, 5, 1));

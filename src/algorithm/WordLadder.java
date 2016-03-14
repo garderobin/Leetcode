@@ -1,6 +1,5 @@
 package algorithm;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -87,6 +86,7 @@ public class WordLadder {
 	private static final int ZPLUS = (int)'z' + 1;
 	private static final int NUM_A = (int)'a';
 	
+	@SuppressWarnings("rawtypes")
 	public static int ladderLength(String beginWord, String endWord, Set<String> wordDict) {		
 		if (beginWord == null  && endWord == null) {
 			return 0;
@@ -98,9 +98,10 @@ public class WordLadder {
 			return 0;
 		}
 		wordDict.add(endWord);
-		int wordLen = beginWord.length();
+//		int wordLen = beginWord.length();
 		int curLen = 1;
-		HashMap<String, Integer> curLayer = changeOneChar(beginWord, wordDict, -1), nextLayer = new HashMap<String, Integer>();
+		HashMap<String, Integer> curLayer = changeOneChar(beginWord, wordDict, -1);
+//		nextLayer = new HashMap<String, Integer>();
 		
 		//for (int i = -1; i < wordLen; i++) {
 		while (curLen < 100) {

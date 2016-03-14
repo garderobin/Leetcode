@@ -4,14 +4,15 @@ public class StrobogrammaticNumberIII {
 	public static int strobogrammaticInRange(String low, String high) {
 		
 		if (high == null || low == null || high.length() == 0 || high.charAt(0) == '-' || high.charAt(0) == '0') { return 0; } //这里默认开头为零其后不为零不是合法
-		int lowLen = low.length(), highLen = high.length();
+		int lowLen = low.length();
+//		int highLen = high.length();
 		if (lowLen == 0 || low.charAt(0) == '0') { return strobogrammaticInRange("0", high); }
 		char cl = low.charAt(0), ch = high.charAt(0);
 		if (cl == '+' || cl == '0') { return strobogrammaticInRange(low.substring(1), high); }
 		if (ch == '+' || ch == '0') { return strobogrammaticInRange(low, high.substring(1)); }
 		
-		boolean startFromZero = low.startsWith("0");
-		int[] count = new int[highLen], sum = new int[highLen];
+//		boolean startFromZero = low.startsWith("0");
+//		int[] count = new int[highLen], sum = new int[highLen];
 		return -1;
     }
 	
@@ -64,7 +65,7 @@ public class StrobogrammaticNumberIII {
 		case 9: //
 		}
 		
-		return -1;
+		return rst;
 	}
 	
 	/**

@@ -2,13 +2,8 @@ package algorithm;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Hashtable;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Iterator;
 
 public class SubsetII {
 	/**
@@ -52,19 +47,20 @@ public class SubsetII {
         return rst;
     }
 	
-	private static List<List<Integer>> mapToList(Hashtable<Integer, ArrayList<Integer>> map) {
-		List<List<Integer>> rst = new ArrayList<List<Integer>>();
-		Iterator<Entry<Integer, ArrayList<Integer>>> iter = map.entrySet().iterator(); 
-		while (iter.hasNext()) { 
-		    Entry<Integer, ArrayList<Integer>> entry = iter.next(); 
-		    ArrayList<Integer> val = entry.getValue(); 
-		    rst.add(val);
-		} 
-		return rst;
-	}
+//	private static List<List<Integer>> mapToList(Hashtable<Integer, ArrayList<Integer>> map) {
+//		List<List<Integer>> rst = new ArrayList<List<Integer>>();
+//		Iterator<Entry<Integer, ArrayList<Integer>>> iter = map.entrySet().iterator(); 
+//		while (iter.hasNext()) { 
+//		    Entry<Integer, ArrayList<Integer>> entry = iter.next(); 
+//		    ArrayList<Integer> val = entry.getValue(); 
+//		    rst.add(val);
+//		} 
+//		return rst;
+//	}
 	
 	public static void main(String[] args) {
-		int[] test = {2,2,2,2,2}, t2 = {1,1}, t3 = {1,2,2};
+		int[] test = {2,2,2,2,2};
+//		int[] t2 = {1,1}, t3 = {1,2,2};
 //		ArrayList<Integer> l1 = new ArrayList<Integer>();
 //		ArrayList<Integer> l2 = new ArrayList<Integer>();
 //		ArrayList<Integer> l3 = new ArrayList<Integer>();

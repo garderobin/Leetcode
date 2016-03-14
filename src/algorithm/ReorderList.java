@@ -7,7 +7,7 @@ public class ReorderList {
 		if (head == null || head.next == null || head.next.next == null) { return head; }
         ListNode dummy = new ListNode(0);
         dummy.next = head;
-        ListNode prev, after, cur, slow = dummy, fast = dummy, last;
+        ListNode prev, after, cur, slow = dummy, fast = dummy;
         
         // Reverse the right half part or the list
         for (; fast.next != null && fast.next.next != null; slow = slow.next, fast = fast.next.next) {}

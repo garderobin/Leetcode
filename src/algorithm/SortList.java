@@ -1,7 +1,5 @@
 package algorithm;
 
-import java.util.Arrays;
-
 import dataStructure.ListNode;
 
 public class SortList {

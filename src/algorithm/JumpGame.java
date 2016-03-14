@@ -6,7 +6,7 @@ package algorithm;
  *
  */
 public class JumpGame {
-	public static boolean canJump(int[] nums) {
+	public boolean canJump(int[] nums) {
         if (nums == null) {
             return false;
         }
@@ -21,6 +21,26 @@ public class JumpGame {
         }
         return f[nums.length - 1];
     }
+	
+	public static int jump(int[] nums) {
+		if (nums == null || nums.length == 0) {
+            return -1;
+        }
+        int start = 0, end = 0, jumps = 0;
+        while (end < nums.length - 1) {
+            jumps++;
+            int farthest = end;
+            for (int i = start; i <= end; i++) {
+                if (nums[i] + i > farthest) {
+                    farthest = nums[i] + i;
+                }
+            }
+            start = end + 1;
+            end = farthest;
+            System.out.println("start = " + start + ";\tend = " + end + ";\tfarthest = " + farthest);
+        }
+        return jumps;
+	}
 	
 //	public static void main(String args[]) {
 //		int[] nums = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
@@ -63,23 +83,5 @@ public class JumpGame {
 //        return f[nums.length - 1];
 //    }
 	
-	public static int jump(int[] nums) {
-		if (nums == null || nums.length == 0) {
-            return -1;
-        }
-        int start = 0, end = 0, jumps = 0;
-        while (end < nums.length - 1) {
-            jumps++;
-            int farthest = end;
-            for (int i = start; i <= end; i++) {
-                if (nums[i] + i > farthest) {
-                    farthest = nums[i] + i;
-                }
-            }
-            start = end + 1;
-            end = farthest;
-            System.out.println("start = " + start + ";\tend = " + end + ";\tfarthest = " + farthest);
-        }
-        return jumps;
-	}
+	
 }

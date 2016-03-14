@@ -23,12 +23,12 @@ public class ReverseBits {
 	}
 	public static void main(String[] args) {
 //		int[] bits = new int[32];
-		int n = 31;
-		int m = n>>>1;
-		int l = n<<1;
-		String s0 = Integer.toBinaryString(n);
-		String s1 = Integer.toBinaryString(m);
-		String s2 = Integer.toBinaryString(l);
+//		int n = 31;
+//		int m = n>>>1;
+//		int l = n<<1;
+//		String s0 = Integer.toBinaryString(n);
+//		String s1 = Integer.toBinaryString(m);
+//		String s2 = Integer.toBinaryString(l);
 		
 //		System.out.println(s0);
 //		System.out.println(s1);

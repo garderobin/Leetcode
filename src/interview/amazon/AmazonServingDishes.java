@@ -27,7 +27,7 @@ public class AmazonServingDishes {
 		if (pref == null || pref.length == 0) {
 			return 0;
 		}
-		int n = pref.length;
+//		int n = pref.length;
 		int k = pref[0].length;
 		
 		

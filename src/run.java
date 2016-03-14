@@ -4,7 +4,6 @@ import java.util.List;
 import algorithm.BestTimeToBuyAndSellStockIII;
 import algorithm.BinaryTreeInorderTraversal;
 import algorithm.ConstructBSTByInorderAndPostorderTraversal;
-import algorithm.ConstructBSTByInorderAndPreorderTraversal;
 import algorithm.ContainsDuplicate;
 import algorithm.ConvertSortedArrayToBinarySearchTree;
 import algorithm.FindMedianTwoSortedArrays;
@@ -215,7 +214,7 @@ public class run {
 		ListNode n7 = new ListNode(7);
 		ListNode n8 = new ListNode(8);
 		ListNode n9 = new ListNode(9);
-		ListNode n10 = new ListNode(10);
+//		ListNode n10 = new ListNode(10);
 		n1.next = n2;
 		n2.next = n3;
 		n3.next = n4;
@@ -238,8 +237,8 @@ public class run {
 	
 	public static void testContainsNearbyDuplicate() {
 		int[] nums = {1,0,1,1};
-		int k = 1;
-		System.out.println(ContainsDuplicate.containsNearbyDuplicate(nums, 2));
+		int k = 2;
+		System.out.println(ContainsDuplicate.containsNearbyDuplicate(nums, k));
 	}
 	
 	public static void testReverseKGroup() {

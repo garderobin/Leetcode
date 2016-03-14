@@ -1,9 +1,5 @@
 package interview.amazon;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
-
 public class LiuMingVideo {
 //	public static void findSymmetric(ArrayList<Pair<Integer, Integer>> arr) {
 //		HashMap<Integer, Set<Integer>> map = new HashMap<>();

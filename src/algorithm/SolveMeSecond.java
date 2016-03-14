@@ -1,8 +1,5 @@
 package algorithm;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class SolveMeSecond {
 	static int solveMeSecond(int a, int b) {
         return a+b;

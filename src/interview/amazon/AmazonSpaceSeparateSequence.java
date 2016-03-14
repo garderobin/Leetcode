@@ -27,6 +27,7 @@ public class AmazonSpaceSeparateSequence {
 		return null;
 	}
 	
+	@SuppressWarnings("unused")
 	private static String intListToString(int[] nums) {
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < nums.length - 1; i++) {

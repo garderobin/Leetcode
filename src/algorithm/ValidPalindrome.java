@@ -39,7 +39,7 @@ public class ValidPalindrome {
     }
 	
 	public static void main(String[] args) {
-		String s1 = "A man, a plan, a canal: Panama";
+//		String s1 = "A man, a plan, a canal: Panama";
 		System.out.println(isPalindrome(".,"));
 		String s2 = "race a car";
 		System.out.println(isPalindrome(s2));

@@ -184,7 +184,7 @@ public class ReverseSingleLinkedList {
         ListNode cur = head;
         ListNode after = null;
         ListNode end = head;
-        ListNode end2 = end.next;
+//        ListNode end2 = end.next;
         dummy.next = head;
         ListNode before = dummy;        
 
@@ -209,7 +209,7 @@ public class ReverseSingleLinkedList {
                 if (end == null) {
                 	canReverse = false;
                 } else {
-                	end2 = end.next;
+//                	end2 = end.next;
                 }
         		after = cur.next;
                 cur.next = prev;

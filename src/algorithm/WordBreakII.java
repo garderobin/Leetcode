@@ -16,7 +16,8 @@ public class WordBreakII {
 	 * @return
 	 */
 	public List<String> wordBreakDiscussion2(String s, Set<String> wordDict) {
-        LinkedList<String>[] dp = (LinkedList<String>[]) new LinkedList<?>[s.length()+1];
+        @SuppressWarnings("unchecked")
+		LinkedList<String>[] dp = (LinkedList<String>[]) new LinkedList<?>[s.length()+1];
         for(int i = s.length()-1; i >= 0; i--){
             if(wordDict.contains(s.substring(i,s.length()))) break; //我觉得这一步检查毫无用处。
             if(i == 0) return new LinkedList<String>();

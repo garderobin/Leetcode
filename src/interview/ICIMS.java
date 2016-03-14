@@ -70,7 +70,7 @@ public class ICIMS {
 //		String S = "BBBBBBBBBBABBCC";
 ////		String S = "ACACACACACACACACACACACACACA";
 //		String s1 = "ACACACACACACACACACACACACACAC";
-		String s = "BACABACABACABACABACBCBCBCACACABABAABCCCCBABAAABBCB";
+//		String s = "BACABACABACABACABACBCBCBCACACABABAABCCCCBABAAABBCB";
 		System.out.println(solution("ABBCC"));
 //		System.out.println(solution(s1));
 	}
@@ -78,7 +78,7 @@ public class ICIMS {
 	public static int simplify (int[] A) {
 		if (A == null || A.length == 0) { return 0; }
 		if (A.length == 1) { return 1; }
-		int leftPos = -1, rightPos, s = 0, e = 1, cur = A[0], count = 1, i;
+		int leftPos = -1, cur = A[0], count = 1, i;
 		for (i = 1; i < A.length && A[i] == cur; i++) { }  // left most of the array
 		if (i == A.length) { return 1; } // all elements are same
 		
@@ -102,7 +102,7 @@ public class ICIMS {
 	public static int arraySolution (int[] A) {
 		if (A == null || A.length == 0) { return 0; }
 		if (A.length == 1) { return 1; }
-		int leftPos = -1, rightPos, s = 0, e = 1, cur = A[0], count = 1, i;
+		int leftPos = -1, cur = A[0], count = 1, i;
 		for (i = 1; i < A.length; i++) {  // left most of the array
 			if (A[i] != cur) {
 				leftPos = i-1;		

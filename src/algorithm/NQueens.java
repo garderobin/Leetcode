@@ -3,6 +3,7 @@ package algorithm;
 import java.util.ArrayList;
 import java.util.List;
 
+/* See C++ version. */
 public class NQueens {
 	class Pos {
 		int x;
@@ -34,10 +35,10 @@ public class NQueens {
         return helper(n, rst, new ArrayList<String>(n), new int[n]);
     }
 
-	private static int[] solveNQueenPosition(int n) {
-		int[] y = new int[n]; //the y-index for each queen on row 0 ~ n-1
-		return y;
-	}
+//	private static int[] solveNQueenPosition(int n) {
+//		int[] y = new int[n]; //the y-index for each queen on row 0 ~ n-1
+//		return y;
+//	}
 	
 	private static List<List<String>> helper(int n, List<List<String>> rst, List<String> sol, int[] y) {
 		int i, j;

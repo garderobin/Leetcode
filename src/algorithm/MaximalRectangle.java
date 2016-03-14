@@ -55,7 +55,7 @@ public class MaximalRectangle {
 		if (matrix == null || matrix.length == 0) {
 			return 0;
 		}
-		int rows = matrix.length, cols = matrix[0].length, maxR = 0, i, j, temp = 0;
+		int rows = matrix.length, cols = matrix[0].length, maxR = 0, i, temp = 0;
 		int [][][] f;
 		if (rows < cols) {
 			f = new int[rows][cols][rows];

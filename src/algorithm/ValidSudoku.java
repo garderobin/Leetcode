@@ -175,7 +175,7 @@ public class ValidSudoku {
     }
 	
 	public static void backTracingSudoku(int i, int j, char[][] board) {
-		int k, x, temp;
+		int k, x;
         char cur = '.';
 		cur = board[i][j];        
 		k = getAreaNumberByPosition(i, j);   		

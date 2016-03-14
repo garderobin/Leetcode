@@ -11,7 +11,8 @@ public class PalindromePartitioning {
 	 */
 	public static List<List<String>> partitionDiscussion(String s) {
         int len = s.length();
-        List<List<String>>[] result = new List[len + 1];
+        @SuppressWarnings("unchecked")
+		List<List<String>>[] result = new List[len + 1];
         result[0] = new ArrayList<List<String>>();
         result[0].add(new ArrayList<String>());
 

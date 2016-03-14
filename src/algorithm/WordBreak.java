@@ -31,11 +31,11 @@ public class WordBreak {
 		System.out.println(wordBreak(s, wordDict));
 	}
 	
-	private boolean wordBreakSub(String s, Set<String> wordDict, boolean[][] f, int start, int end) {
-//		if (star)
-//		for (int i = 1; i < len && !rst; i++) {
-//        	rst = rst || (wordBreak(s.substring(0, i), wordDict) && wordBreak(s.substring(i, len), wordDict));
-//        }	
-		return false;
-	}
+//	private boolean wordBreakSub(String s, Set<String> wordDict, boolean[][] f, int start, int end) {
+////		if (star)
+////		for (int i = 1; i < len && !rst; i++) {
+////        	rst = rst || (wordBreak(s.substring(0, i), wordDict) && wordBreak(s.substring(i, len), wordDict));
+////        }	
+//		return false;
+//	}
 }

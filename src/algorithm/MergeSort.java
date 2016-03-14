@@ -13,14 +13,15 @@ public class MergeSort
 		System.out.println(Arrays.toString(a));
 	}
 
-	public static void mergeSort(Comparable[] a)
+	public static void mergeSort(@SuppressWarnings("rawtypes") Comparable[] a)
 	{
+		@SuppressWarnings("rawtypes")
 		Comparable[] tmp = new Comparable[a.length];
 		mergeSort(a, tmp,  0,  a.length - 1);
 	}
 
 
-	private static void mergeSort(Comparable [ ] a, Comparable [ ] tmp, int left, int right)
+	private static void mergeSort(@SuppressWarnings("rawtypes") Comparable [ ] a, @SuppressWarnings("rawtypes") Comparable [ ] tmp, int left, int right)
 	{
 		mergeSortCounter++;
 		int pn = mergeSortCounter;
@@ -37,7 +38,8 @@ public class MergeSort
 	}
 
 
-    private static void merge(Comparable[ ] a, Comparable[ ] tmp, int left, int right, int rightEnd )
+    @SuppressWarnings("unchecked")
+	private static void merge(@SuppressWarnings("rawtypes") Comparable[ ] a, @SuppressWarnings("rawtypes") Comparable[ ] tmp, int left, int right, int rightEnd )
     {
     	mergeCounter++;
     	System.out.println("Merge: " + mergeCounter + ";\na = " + printArray(a) + "; temp = " + printArray(tmp) + "; left = " + left + "; right = " + right + "; rightEnd = " + rightEnd);
@@ -63,7 +65,7 @@ public class MergeSort
             a[rightEnd] = tmp[rightEnd];
     }
     
-    private static String printArray(Comparable[ ] a) {
+    private static String printArray(@SuppressWarnings("rawtypes") Comparable[ ] a) {
     	String res = "{";
     	int i = 0;
     	for (i = 0; i < a.length - 1; i++ ) {

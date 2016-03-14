@@ -15,6 +15,7 @@ public class WhitePagesOA {
 	 * Final version
 	 * @throws InputMismatchException
 	 */
+	@SuppressWarnings("resource")
 	public static void shortestPathStream() {
 		Scanner sc = new Scanner(System.in);
 		
@@ -30,6 +31,7 @@ public class WhitePagesOA {
 							nextRange = i + step;
 						}
 					} catch (InputMismatchException e) {
+						sc.close();
 						throw e;
 					} catch (NoSuchElementException e) {
 						System.out.println(sb.toString() + "out");
@@ -39,10 +41,13 @@ public class WhitePagesOA {
 				}
 				if (nextRange <= range) { throw new Exception();}
 				sb.append(pos + " ");
-			}			
+			}	
+			
 		} catch (Exception e1) {
-			 System.out.print("failure"); System.exit(0);
+			sc.close();
+			System.out.print("failure"); System.exit(0);
 		}
+		
 	}
 	
 	public static List<Integer> shortestPathGreedyV2(int[] nums) {
@@ -190,13 +195,16 @@ public class WhitePagesOA {
 		return (List<Integer>) rst;
 	}
 	
+	@SuppressWarnings("unused")
 	private static int[] readNumsArray() {
 		List<Integer> list = new ArrayList<>();
 		Scanner sc = new Scanner(System.in);
 		while (sc.hasNext()) { list.add(sc.nextInt()); }
 		int[] nums = new int[list.size()];
+		
 		for (int i = 0; i < list.size(); ++i) { nums[i] = list.get(i); }
 		
+		sc.close();
 		return nums;
 	}
 	

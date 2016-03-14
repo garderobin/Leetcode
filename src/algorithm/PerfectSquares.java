@@ -31,7 +31,7 @@ public class PerfectSquares {
 	}
 	
 	public static int numSquares(int n) {
-		int sqrt = (int)Math.sqrt(n), min = n, i, j, i_sqrt, temp, k;
+		int sqrt = (int)Math.sqrt(n), min = n, i, j, i_sqrt, k;
         int[][] f = new int[n + 1][sqrt + 1]; 
         //f[i][j] mins the least num squares with the allows max sqrt is j.
         for (i = 0; i < n + 1; i++) {
@@ -43,7 +43,7 @@ public class PerfectSquares {
         	i_sqrt = (int)Math.sqrt(i);
         	min = i;
         	for (j = 2; j * j < i + 1; j++) {
-        		if ((temp = 1 + f[i - j * j][j]) < i) {
+        		if (1 + f[i - j * j][j] < i) {
         			f[i][j] = 1 + f[i - j * j][j];
                 	if (f[i][j] < min) {
                 		min = f[i][j];
