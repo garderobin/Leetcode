@@ -1,4 +1,4 @@
-package algorithm.needAgain.copy;
+package algorithm;
 
 public class LongestValidParentheses {
 	/* 这里为什么没有discussion, 我还需要再看这道题*/
