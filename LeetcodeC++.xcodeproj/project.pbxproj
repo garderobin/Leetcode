@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0E1BB4191C8F603100154F7D /* ScrambleString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E1BB4181C8F603100154F7D /* ScrambleString.cpp */; };
+		0E1BB41B1C8F974D00154F7D /* WordLadderII.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E1BB41A1C8F974D00154F7D /* WordLadderII.cpp */; };
+		0E1BB41E1C8FABA300154F7D /* XQueens.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E1BB41D1C8FABA300154F7D /* XQueens.cpp */; };
+		0E1BB4201C8FD8DD00154F7D /* NQueens.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E1BB41F1C8FD8DD00154F7D /* NQueens.cpp */; };
+		0E1BB4221C9001D500154F7D /* NQueensII.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E1BB4211C9001D500154F7D /* NQueensII.cpp */; };
 		0E2BBD4E1C8E5CAD007A67BF /* WordCombinations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E2BBD4D1C8E5CAD007A67BF /* WordCombinations.cpp */; };
 		0E647E791C7D507000F4F260 /* CoinChange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E647E781C7D507000F4F260 /* CoinChange.cpp */; };
 		0E682C5D1C7D754400F4ED68 /* RangeSumArrayImmutable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E682C5C1C7D754400F4ED68 /* RangeSumArrayImmutable.cpp */; };
@@ -20,6 +24,12 @@
 		0ECA174A1C76806E00BC514D /* SurroundedRegions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA17481C76806E00BC514D /* SurroundedRegions.cpp */; };
 		0ECA174D1C76BBCC00BC514D /* TwoSumDesign.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA174B1C76BBCC00BC514D /* TwoSumDesign.cpp */; };
 		0ECA174F1C76C6B900BC514D /* LRUCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA174E1C76C6B900BC514D /* LRUCache.cpp */; };
+		0ED947BC1C93523C00C46D8F /* Trie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ED947BA1C93523C00C46D8F /* Trie.cpp */; };
+		0ED947BE1C9353CA00C46D8F /* PalindromePairs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ED947BD1C9353CA00C46D8F /* PalindromePairs.cpp */; };
+		0ED947C11C93BC3800C46D8F /* SlidingWindowMaximum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ED947C01C93BC3800C46D8F /* SlidingWindowMaximum.cpp */; };
+		0ED947C41C93CCE500C46D8F /* SkylineProblem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ED947C21C93CCE500C46D8F /* SkylineProblem.cpp */; };
+		0ED947C61C93FCE400C46D8F /* TrappingRainWater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ED947C51C93FCE400C46D8F /* TrappingRainWater.cpp */; };
+		0ED947C81C9504BC00C46D8F /* AlienOrder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ED947C71C9504BC00C46D8F /* AlienOrder.cpp */; };
 		0EF28AF91C8541E200B47D31 /* BurstBalloon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EF28AF81C8541E200B47D31 /* BurstBalloon.cpp */; };
 		0EF28AFB1C855FFF00B47D31 /* DistinctSubsequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EF28AFA1C855FFF00B47D31 /* DistinctSubsequence.cpp */; };
 /* End PBXBuildFile section */
@@ -38,6 +48,10 @@
 
 /* Begin PBXFileReference section */
 		0E1BB4181C8F603100154F7D /* ScrambleString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScrambleString.cpp; sourceTree = "<group>"; };
+		0E1BB41A1C8F974D00154F7D /* WordLadderII.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WordLadderII.cpp; sourceTree = "<group>"; };
+		0E1BB41D1C8FABA300154F7D /* XQueens.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XQueens.cpp; sourceTree = "<group>"; };
+		0E1BB41F1C8FD8DD00154F7D /* NQueens.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NQueens.cpp; sourceTree = "<group>"; };
+		0E1BB4211C9001D500154F7D /* NQueensII.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NQueensII.cpp; sourceTree = "<group>"; };
 		0E2BBD4D1C8E5CAD007A67BF /* WordCombinations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WordCombinations.cpp; sourceTree = "<group>"; };
 		0E647E781C7D507000F4F260 /* CoinChange.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoinChange.cpp; sourceTree = "<group>"; };
 		0E682C5C1C7D754400F4ED68 /* RangeSumArrayImmutable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RangeSumArrayImmutable.cpp; sourceTree = "<group>"; };
@@ -51,6 +65,13 @@
 		0ECA17481C76806E00BC514D /* SurroundedRegions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SurroundedRegions.cpp; sourceTree = "<group>"; };
 		0ECA174B1C76BBCC00BC514D /* TwoSumDesign.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TwoSumDesign.cpp; sourceTree = "<group>"; };
 		0ECA174E1C76C6B900BC514D /* LRUCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LRUCache.cpp; sourceTree = "<group>"; };
+		0ED947BA1C93523C00C46D8F /* Trie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Trie.cpp; sourceTree = "<group>"; };
+		0ED947BD1C9353CA00C46D8F /* PalindromePairs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PalindromePairs.cpp; sourceTree = "<group>"; };
+		0ED947BF1C93555E00C46D8F /* Trie.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Trie.hpp; sourceTree = "<group>"; };
+		0ED947C01C93BC3800C46D8F /* SlidingWindowMaximum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SlidingWindowMaximum.cpp; sourceTree = "<group>"; };
+		0ED947C21C93CCE500C46D8F /* SkylineProblem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkylineProblem.cpp; sourceTree = "<group>"; };
+		0ED947C51C93FCE400C46D8F /* TrappingRainWater.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TrappingRainWater.cpp; sourceTree = "<group>"; };
+		0ED947C71C9504BC00C46D8F /* AlienOrder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AlienOrder.cpp; sourceTree = "<group>"; };
 		0EF28AF81C8541E200B47D31 /* BurstBalloon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BurstBalloon.cpp; sourceTree = "<group>"; };
 		0EF28AFA1C855FFF00B47D31 /* DistinctSubsequence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DistinctSubsequence.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +121,17 @@
 				0EF28AFA1C855FFF00B47D31 /* DistinctSubsequence.cpp */,
 				0E2BBD4D1C8E5CAD007A67BF /* WordCombinations.cpp */,
 				0E1BB4181C8F603100154F7D /* ScrambleString.cpp */,
+				0E1BB41A1C8F974D00154F7D /* WordLadderII.cpp */,
+				0E1BB41D1C8FABA300154F7D /* XQueens.cpp */,
+				0E1BB41F1C8FD8DD00154F7D /* NQueens.cpp */,
+				0E1BB4211C9001D500154F7D /* NQueensII.cpp */,
+				0ED947BA1C93523C00C46D8F /* Trie.cpp */,
+				0ED947BF1C93555E00C46D8F /* Trie.hpp */,
+				0ED947BD1C9353CA00C46D8F /* PalindromePairs.cpp */,
+				0ED947C01C93BC3800C46D8F /* SlidingWindowMaximum.cpp */,
+				0ED947C21C93CCE500C46D8F /* SkylineProblem.cpp */,
+				0ED947C51C93FCE400C46D8F /* TrappingRainWater.cpp */,
+				0ED947C71C9504BC00C46D8F /* AlienOrder.cpp */,
 			);
 			path = "LeetcodeC++";
 			sourceTree = "<group>";
@@ -160,18 +192,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ED947C61C93FCE400C46D8F /* TrappingRainWater.cpp in Sources */,
 				0ECA174F1C76C6B900BC514D /* LRUCache.cpp in Sources */,
+				0E1BB4201C8FD8DD00154F7D /* NQueens.cpp in Sources */,
 				0EACED751C7EA12F00646A75 /* ShortestDistanceFromAllBuildings.cpp in Sources */,
+				0ED947C81C9504BC00C46D8F /* AlienOrder.cpp in Sources */,
+				0ED947C11C93BC3800C46D8F /* SlidingWindowMaximum.cpp in Sources */,
 				0E7ACA061C76F9970046F9D7 /* MaximumSizeSubarraySumEqualsK.cpp in Sources */,
 				0ECA174A1C76806E00BC514D /* SurroundedRegions.cpp in Sources */,
 				0EF28AFB1C855FFF00B47D31 /* DistinctSubsequence.cpp in Sources */,
+				0E1BB4221C9001D500154F7D /* NQueensII.cpp in Sources */,
 				0EF28AF91C8541E200B47D31 /* BurstBalloon.cpp in Sources */,
 				0EACED731C7E857600646A75 /* test.cpp in Sources */,
+				0ED947BC1C93523C00C46D8F /* Trie.cpp in Sources */,
 				0EACED711C7E839A00646A75 /* WallsAndGates.cpp in Sources */,
 				0E682C5D1C7D754400F4ED68 /* RangeSumArrayImmutable.cpp in Sources */,
 				0EACED6F1C7E445E00646A75 /* RangeSumArrayMutable.cpp in Sources */,
 				0ECA174D1C76BBCC00BC514D /* TwoSumDesign.cpp in Sources */,
+				0ED947C41C93CCE500C46D8F /* SkylineProblem.cpp in Sources */,
+				0E1BB41B1C8F974D00154F7D /* WordLadderII.cpp in Sources */,
+				0E1BB41E1C8FABA300154F7D /* XQueens.cpp in Sources */,
 				0E647E791C7D507000F4F260 /* CoinChange.cpp in Sources */,
+				0ED947BE1C9353CA00C46D8F /* PalindromePairs.cpp in Sources */,
 				0E7ACA041C76EEEB0046F9D7 /* WordDistance.cpp in Sources */,
 				0E2BBD4E1C8E5CAD007A67BF /* WordCombinations.cpp in Sources */,
 				0E1BB4191C8F603100154F7D /* ScrambleString.cpp in Sources */,

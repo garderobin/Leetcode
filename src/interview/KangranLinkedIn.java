@@ -135,7 +135,7 @@ public class KangranLinkedIn {
 		int i = 0, n = s.length();
 		for (; i < n; ++i) {
 			char c = s.charAt(i);
-			if (pos[c] > 0) 		{ pos[c] = -1;  }	// c occurred once before
+			if 		(pos[c] > 0) 	{ pos[c] = -1;  }	// c occurred once before
 			else if (pos[c] == 0) 	{ pos[c] = i+1; }	// c never occurred before
 			else 					{				}	// c occurred more than once before, ignore it
 		}
