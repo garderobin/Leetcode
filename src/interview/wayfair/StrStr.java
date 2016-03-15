@@ -23,7 +23,7 @@ public class StrStr {
     }
     
     /*
-     * KMP algorithm. O(N) time, O(M) space. (N < M)
+     * KMP algorithm. O(N) time, O(M) space. (N > M)
      * 最后补充一点：由于KMP算法只预处理B串，因此这种算法很适合这样的问题：给定一个B串和一群不同的A串，问B是哪些A串的子串。
      */
     public int strStrKMP(String haystack, String needle){

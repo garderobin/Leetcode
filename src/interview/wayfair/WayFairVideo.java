@@ -1,7 +1,9 @@
 package interview.wayfair;
 
 public class WayFairVideo {
+	
 	public int solution() {
+		
 		return 0;
 	}
 	
