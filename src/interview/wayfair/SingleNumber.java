@@ -1,4 +1,4 @@
-package interview.wayFair;
+package interview.wayfair;
 
 public class SingleNumber {
 	public static int singleNumber(int[] nums) {

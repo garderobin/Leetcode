@@ -1,4 +1,4 @@
-package interview.wayFair;
+package interview.wayfair;
 
 public class SingleNumberII {
 	

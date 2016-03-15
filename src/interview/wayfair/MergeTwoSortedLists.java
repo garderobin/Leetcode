@@ -1,4 +1,4 @@
-package algorithm;
+package interview.wayfair;
 
 import dataStructure.ListNode;
 

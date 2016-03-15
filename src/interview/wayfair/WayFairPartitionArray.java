@@ -1,4 +1,4 @@
-package interview.wayFair;
+package interview.wayfair;
 /*
  * 一道coding题，一个array，里面有正负数，要求负的放左边，正的放右边，要保持正负数的相对顺序，要求用两种方法做。
  * 注意看leetcode 86题 Partition(LinkedList)

@@ -1,4 +1,4 @@
-package interview.wayFair;
+package interview.wayfair;
 
 import java.util.ArrayList;
 import java.util.Arrays;
