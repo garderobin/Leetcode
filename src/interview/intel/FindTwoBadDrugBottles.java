@@ -12,7 +12,7 @@ public class FindTwoBadDrugBottles {
 	public static void test() {
 		int[] test = {0, 1, 2, 5, 8, 50, 61, 72, 85, 98}; // 这就是分发。
 		List<Integer> sum = new ArrayList<Integer>();
-		for (int i = 0, count = 0; i < 10; ++i) {
+		for (int i = 0; i < 10; ++i) {
 			for (int j = i+1; j < 10; ++j) {
 				sum.add(test[i] + test[j]);
 			}
