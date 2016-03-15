@@ -19,7 +19,7 @@ public class InterviewTest {
 		int[] test = {0, 1, 2, 5, 8, 50, 61, 72, 85, 98};
 //		HashSet<Integer> set = new HashSet<Integer>();
 		List<Integer> sum = new ArrayList<Integer>();
-		for (int i = 0, count = 0; i < 10; ++i) {
+		for (int i = 0; i < 10; ++i) {
 			for (int j = i+1; j < 10; ++j) {
 //				if (!set.add(test[i] + test[j])) { System.out.println(test[i] + ", " + test[j]); }
 				sum.add(test[i] + test[j]);
