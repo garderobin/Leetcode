@@ -17,6 +17,12 @@
 		0E682C5D1C7D754400F4ED68 /* RangeSumArrayImmutable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E682C5C1C7D754400F4ED68 /* RangeSumArrayImmutable.cpp */; };
 		0E7ACA041C76EEEB0046F9D7 /* WordDistance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E7ACA031C76EEEB0046F9D7 /* WordDistance.cpp */; };
 		0E7ACA061C76F9970046F9D7 /* MaximumSizeSubarraySumEqualsK.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E7ACA051C76F9970046F9D7 /* MaximumSizeSubarraySumEqualsK.cpp */; };
+		0E9400CB1C98AF6A001AAA9A /* ImplementAtoi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E9400CA1C98AF6A001AAA9A /* ImplementAtoi.cpp */; };
+		0E9400CD1C98C2F2001AAA9A /* FreeABST.c in Sources */ = {isa = PBXBuildFile; fileRef = 0E9400CC1C98C2F2001AAA9A /* FreeABST.c */; };
+		0E9400CF1C98C57A001AAA9A /* ReverseStringPureC.c in Sources */ = {isa = PBXBuildFile; fileRef = 0E9400CE1C98C57A001AAA9A /* ReverseStringPureC.c */; };
+		0E9400D11C98C592001AAA9A /* ReverseStringCpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E9400D01C98C592001AAA9A /* ReverseStringCpp.cpp */; };
+		0E9400D31C98C5C3001AAA9A /* ReverseWordsInStringPureC.c in Sources */ = {isa = PBXBuildFile; fileRef = 0E9400D21C98C5C3001AAA9A /* ReverseWordsInStringPureC.c */; };
+		0E9400D51C98CB5D001AAA9A /* BSTPostOrderTraversal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E9400D41C98CB5D001AAA9A /* BSTPostOrderTraversal.cpp */; };
 		0EACED6F1C7E445E00646A75 /* RangeSumArrayMutable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EACED6E1C7E445E00646A75 /* RangeSumArrayMutable.cpp */; };
 		0EACED711C7E839A00646A75 /* WallsAndGates.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EACED701C7E839A00646A75 /* WallsAndGates.cpp */; };
 		0EACED731C7E857600646A75 /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EACED721C7E857600646A75 /* test.cpp */; };
@@ -57,6 +63,12 @@
 		0E682C5C1C7D754400F4ED68 /* RangeSumArrayImmutable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RangeSumArrayImmutable.cpp; sourceTree = "<group>"; };
 		0E7ACA031C76EEEB0046F9D7 /* WordDistance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WordDistance.cpp; sourceTree = "<group>"; };
 		0E7ACA051C76F9970046F9D7 /* MaximumSizeSubarraySumEqualsK.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MaximumSizeSubarraySumEqualsK.cpp; sourceTree = "<group>"; };
+		0E9400CA1C98AF6A001AAA9A /* ImplementAtoi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImplementAtoi.cpp; sourceTree = "<group>"; };
+		0E9400CC1C98C2F2001AAA9A /* FreeABST.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = FreeABST.c; sourceTree = "<group>"; };
+		0E9400CE1C98C57A001AAA9A /* ReverseStringPureC.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ReverseStringPureC.c; sourceTree = "<group>"; };
+		0E9400D01C98C592001AAA9A /* ReverseStringCpp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ReverseStringCpp.cpp; sourceTree = "<group>"; };
+		0E9400D21C98C5C3001AAA9A /* ReverseWordsInStringPureC.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ReverseWordsInStringPureC.c; sourceTree = "<group>"; };
+		0E9400D41C98CB5D001AAA9A /* BSTPostOrderTraversal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BSTPostOrderTraversal.cpp; sourceTree = "<group>"; };
 		0EACED6E1C7E445E00646A75 /* RangeSumArrayMutable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RangeSumArrayMutable.cpp; sourceTree = "<group>"; };
 		0EACED701C7E839A00646A75 /* WallsAndGates.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WallsAndGates.cpp; sourceTree = "<group>"; };
 		0EACED721C7E857600646A75 /* test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
@@ -87,6 +99,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E9400C91C98AF49001AAA9A /* Intel */ = {
+			isa = PBXGroup;
+			children = (
+				0E9400CA1C98AF6A001AAA9A /* ImplementAtoi.cpp */,
+				0E9400CC1C98C2F2001AAA9A /* FreeABST.c */,
+				0E9400CE1C98C57A001AAA9A /* ReverseStringPureC.c */,
+				0E9400D01C98C592001AAA9A /* ReverseStringCpp.cpp */,
+				0E9400D21C98C5C3001AAA9A /* ReverseWordsInStringPureC.c */,
+				0E9400D41C98CB5D001AAA9A /* BSTPostOrderTraversal.cpp */,
+			);
+			name = Intel;
+			sourceTree = "<group>";
+		};
 		0ECA17351C767FF800BC514D = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +131,7 @@
 		0ECA17401C767FF800BC514D /* LeetcodeC++ */ = {
 			isa = PBXGroup;
 			children = (
+				0E9400C91C98AF49001AAA9A /* Intel */,
 				0ECA17481C76806E00BC514D /* SurroundedRegions.cpp */,
 				0ECA174B1C76BBCC00BC514D /* TwoSumDesign.cpp */,
 				0ECA174E1C76C6B900BC514D /* LRUCache.cpp */,
@@ -192,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E9400D51C98CB5D001AAA9A /* BSTPostOrderTraversal.cpp in Sources */,
 				0ED947C61C93FCE400C46D8F /* TrappingRainWater.cpp in Sources */,
 				0ECA174F1C76C6B900BC514D /* LRUCache.cpp in Sources */,
 				0E1BB4201C8FD8DD00154F7D /* NQueens.cpp in Sources */,
@@ -202,10 +229,13 @@
 				0ECA174A1C76806E00BC514D /* SurroundedRegions.cpp in Sources */,
 				0EF28AFB1C855FFF00B47D31 /* DistinctSubsequence.cpp in Sources */,
 				0E1BB4221C9001D500154F7D /* NQueensII.cpp in Sources */,
+				0E9400CD1C98C2F2001AAA9A /* FreeABST.c in Sources */,
 				0EF28AF91C8541E200B47D31 /* BurstBalloon.cpp in Sources */,
 				0EACED731C7E857600646A75 /* test.cpp in Sources */,
 				0ED947BC1C93523C00C46D8F /* Trie.cpp in Sources */,
 				0EACED711C7E839A00646A75 /* WallsAndGates.cpp in Sources */,
+				0E9400CF1C98C57A001AAA9A /* ReverseStringPureC.c in Sources */,
+				0E9400CB1C98AF6A001AAA9A /* ImplementAtoi.cpp in Sources */,
 				0E682C5D1C7D754400F4ED68 /* RangeSumArrayImmutable.cpp in Sources */,
 				0EACED6F1C7E445E00646A75 /* RangeSumArrayMutable.cpp in Sources */,
 				0ECA174D1C76BBCC00BC514D /* TwoSumDesign.cpp in Sources */,
@@ -215,6 +245,8 @@
 				0E647E791C7D507000F4F260 /* CoinChange.cpp in Sources */,
 				0ED947BE1C9353CA00C46D8F /* PalindromePairs.cpp in Sources */,
 				0E7ACA041C76EEEB0046F9D7 /* WordDistance.cpp in Sources */,
+				0E9400D31C98C5C3001AAA9A /* ReverseWordsInStringPureC.c in Sources */,
+				0E9400D11C98C592001AAA9A /* ReverseStringCpp.cpp in Sources */,
 				0E2BBD4E1C8E5CAD007A67BF /* WordCombinations.cpp in Sources */,
 				0E1BB4191C8F603100154F7D /* ScrambleString.cpp in Sources */,
 			);
