@@ -12,6 +12,7 @@
 		0E1BB41E1C8FABA300154F7D /* XQueens.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E1BB41D1C8FABA300154F7D /* XQueens.cpp */; };
 		0E1BB4201C8FD8DD00154F7D /* NQueens.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E1BB41F1C8FD8DD00154F7D /* NQueens.cpp */; };
 		0E1BB4221C9001D500154F7D /* NQueensII.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E1BB4211C9001D500154F7D /* NQueensII.cpp */; };
+		0E27A6551C9BA8AF003401B7 /* ParkingLot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E27A6541C9BA8AF003401B7 /* ParkingLot.cpp */; };
 		0E2BBD4E1C8E5CAD007A67BF /* WordCombinations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E2BBD4D1C8E5CAD007A67BF /* WordCombinations.cpp */; };
 		0E647E791C7D507000F4F260 /* CoinChange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E647E781C7D507000F4F260 /* CoinChange.cpp */; };
 		0E682C5D1C7D754400F4ED68 /* RangeSumArrayImmutable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E682C5C1C7D754400F4ED68 /* RangeSumArrayImmutable.cpp */; };
@@ -58,6 +59,7 @@
 		0E1BB41D1C8FABA300154F7D /* XQueens.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XQueens.cpp; sourceTree = "<group>"; };
 		0E1BB41F1C8FD8DD00154F7D /* NQueens.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NQueens.cpp; sourceTree = "<group>"; };
 		0E1BB4211C9001D500154F7D /* NQueensII.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NQueensII.cpp; sourceTree = "<group>"; };
+		0E27A6541C9BA8AF003401B7 /* ParkingLot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParkingLot.cpp; sourceTree = "<group>"; };
 		0E2BBD4D1C8E5CAD007A67BF /* WordCombinations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WordCombinations.cpp; sourceTree = "<group>"; };
 		0E647E781C7D507000F4F260 /* CoinChange.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoinChange.cpp; sourceTree = "<group>"; };
 		0E682C5C1C7D754400F4ED68 /* RangeSumArrayImmutable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RangeSumArrayImmutable.cpp; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				0ED947C21C93CCE500C46D8F /* SkylineProblem.cpp */,
 				0ED947C51C93FCE400C46D8F /* TrappingRainWater.cpp */,
 				0ED947C71C9504BC00C46D8F /* AlienOrder.cpp */,
+				0E27A6541C9BA8AF003401B7 /* ParkingLot.cpp */,
 			);
 			path = "LeetcodeC++";
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				0E1BB41E1C8FABA300154F7D /* XQueens.cpp in Sources */,
 				0E647E791C7D507000F4F260 /* CoinChange.cpp in Sources */,
 				0ED947BE1C9353CA00C46D8F /* PalindromePairs.cpp in Sources */,
+				0E27A6551C9BA8AF003401B7 /* ParkingLot.cpp in Sources */,
 				0E7ACA041C76EEEB0046F9D7 /* WordDistance.cpp in Sources */,
 				0E9400D31C98C5C3001AAA9A /* ReverseWordsInStringPureC.c in Sources */,
 				0E9400D11C98C592001AAA9A /* ReverseStringCpp.cpp in Sources */,

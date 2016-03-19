@@ -1,4 +1,4 @@
-package algorithm;
+package interview.factset;
 
 import java.util.Stack;
 
