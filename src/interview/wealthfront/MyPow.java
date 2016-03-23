@@ -1,4 +1,4 @@
-package algorithm;
+package interview.wealthfront;
 
 public class MyPow {
 	
@@ -9,14 +9,13 @@ public class MyPow {
 	 * @param n
 	 * @return
 	 */
-	public double myPowDiscussion(double x, int n) {
-        if(n == 0)
-            return 1;
-        if(n<0){
+	public double myPow(double x, int n) {
+        if (n == 0) return 1;
+        if (n < 0) {
             n = -n;
             x = 1/x;
         }
-        return (n%2 == 0) ? myPowDiscussion(x*x, n/2) : x*myPowDiscussion(x*x, n/2);
+        return (n%2 == 0) ? myPow(x*x, n/2) : x * myPow(x*x, n/2);
     }
 	
 	public double myPow2(double x, int n) {

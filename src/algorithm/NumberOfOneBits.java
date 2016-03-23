@@ -58,16 +58,16 @@ public class NumberOfOneBits {
     }
 	
 	public static void main(String[] args) {
-		int num = 128;
-//		System.out.println(0 << 1);
-		for (int i = 0, j = 1; i <= num; ++i) {
-//			if (i == j << 1) { 
-//				System.out.println(); 
-////				j <<= 1;
-//			}
-//			System.out.print(hammingWeightDiscussion(i) + ", ");
-			System.out.println(i - (i & (-i)));
-		}
+//		int num = 128;
+////		System.out.println(0 << 1);
+//		for (int i = 0, j = 1; i <= num; ++i) {
+////			if (i == j << 1) { 
+////				System.out.println(); 
+//////				j <<= 1;
+////			}
+////			System.out.print(hammingWeightDiscussion(i) + ", ");
+//			System.out.println(i - (i & (-i)));
+//		}
 	}
 
 }

@@ -1,7 +1,6 @@
-package interview;
+package interview.kevin;
 
-public class InterviewTest {
-	
+public class KangranTapad {
 	public static int solution() {
 		return -1;
 	}
@@ -9,5 +8,4 @@ public class InterviewTest {
 	public static void main(String[] args) {
 		
 	}
-	
 }

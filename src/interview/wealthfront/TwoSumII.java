@@ -1,4 +1,4 @@
-package algorithm;
+package interview.wealthfront;
 
 import java.util.HashMap;
 import java.util.Map;
