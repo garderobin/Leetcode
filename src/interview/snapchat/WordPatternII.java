@@ -1,4 +1,4 @@
-package algorithm;
+package interview.snapchat;
 
 public class WordPatternII {
 	public static void main(String[] args) {

@@ -1,5 +1,6 @@
-package algorithm;
+package interview.snapchat;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -28,7 +29,7 @@ public class CourseSchedule {
 	    }
 
 	    int count = 0;
-	    Queue<Integer> queue = new LinkedList<Integer>();
+	    Queue<Integer> queue = new ArrayDeque<Integer>();
 	    for (int i=0; i<indegree.length; i++) {
 	        if (indegree[i] == 0) queue.offer(i);
 	    }
@@ -65,21 +66,17 @@ public class CourseSchedule {
         }
 
         for(int i=0; i<numCourses; i++){
-            if(!dfs(graph,visited,i))
-                return false;
+            if(!dfs(graph, visited, i)) return false;
         }
         return true;
     }
 
     private boolean dfs(ArrayList<Integer>[] graph, boolean[] visited, int course){
-        if(visited[course])
-            return false;
-        else
-            visited[course] = true;;
+        if(visited[course]) return false;
+        else visited[course] = true;
 
         for(int i=0; i<graph[course].size();i++){
-            if(!dfs(graph,visited,(int)graph[course].get(i)))
-                return false;
+            if(!dfs(graph, visited, (int)graph[course].get(i))) return false;
         }
         visited[course] = false;
         return true;

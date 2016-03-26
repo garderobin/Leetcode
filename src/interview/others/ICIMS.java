@@ -95,7 +95,7 @@ public class ICIMS {
 		}
 		
 		// right most of the array
-		if (leftPos > -1) { ++count; } // the tail extrema
+		if (leftPos > -1) { ++count; }
 		return count;
 	}
 	

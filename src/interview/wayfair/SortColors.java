@@ -2,6 +2,48 @@ package interview.wayfair;
 
 public class SortColors {
 	
+	/*
+	 * Counting sort.
+	 * O(n) time, O(k) space, two pass.
+	 */
+	public void sortColorsMy(int[] nums) {
+        int[] count = new int[3];       // For 3 colors
+        for(int x : nums) ++count[x];
+        
+        int p = 0;
+        for (int i = 0; i < count.length; ++i) {
+        	for (int j = 0; j < count[i]; ++j) nums[p++] = i;
+        }
+    }
+	
+	
+	/*
+	 * Counting sort.
+	 * 把0的部分省略了。
+	 * 最快。
+	 * O(n) time, O(k) space, two pass.
+	 */
+	public void sortColorsDiscussion2(int[] nums) {
+        int[] arr = new int[3];       // For 3 colors
+        int i=0;
+
+        for(int x : nums){
+            if(x==0){                 // In place sort for red color
+                nums[i] = 0;
+                i++;
+            }else
+                arr[x]++;
+        }
+
+        int j;
+        for(j=i; j<arr[1]+i;j++){      // White
+            nums[j] = 1;
+        }
+        for(;j<nums.length;j++){       // Blue
+            nums[j] = 2;
+        }
+    }
+	
 	/**
 	 * 这种做法异常简介
 	 * 岂是：当正面思考极难控制边界和跳过的时候就从反面，或者补集开始思考。
@@ -10,7 +52,6 @@ public class SortColors {
 	public static void sortColorsDiscussion(int[] nums) {
         int second = nums.length - 1, zero = 0;
         for (int i = 0; i <= second; i++) {
-            //while (nums[i]==2 && i<second) swap(A[i], A[second--]);
             while (nums[i] == 2 && i < second) swap(nums, i, second--);
             while (nums[i] == 0 && i > zero) swap(nums, i, zero++);
         }

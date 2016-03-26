@@ -1,4 +1,4 @@
-package interview.factset;
+package interview.snapchat;
 
 import dataStructure.TreeNode;
 
