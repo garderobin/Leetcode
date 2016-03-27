@@ -19,37 +19,28 @@ public class PathFromAToB {
      */
     public static int countPathByExactLength(int sx, int sy, int ex, int ey, int row, int col, int k) {
     	if (k <= 0 || sx > row || sx < 0 || ex > row || ex < 0 || sy > col || sy < 0 || ey > col || ey < 0) return 0; // invalid input
-    	// Make sure we start from a upper, left point to a lower, right point
-    	if (sx > ex) { 
-    		int tsx = sx, tsy = sy;
-    		sx = ex; sy = ey;
-    		ex = tsx; ey = tsy;
-    	}
-    	if (sy > ey) { //依纵中轴对称
-    		sy = col - 1 - sy;
-    		ey = col - 1 - ey;
-    	}
+
+    	int xmax = Math.max(sx, ex), ymax = Math.max(sy, ey), xmin = Math.min(sx, ex), ymin = Math.min(sy, ey);
     	
     	// Resize the board to limit memory usage in further DP board to at most k * k 
-    	int offset = (k - Math.max(ey - ex, sy - sx))/2; // offset means the maximum allows outwards distance.
+    	int offset = (k - Math.max(ymax - ymin, xmax - xmin))/2; // offset means the maximum allows outwards distance.
     	if (offset < 0) return 0; // k steps are not enough to reach B from A
-    	if (sx > offset) {
-    		ex -= sx - offset;
-    		sx = offset;
+    	int xd = xmin - offset, yd = ymin - offset, rLimit = xmax + offset + 1, cLimit = ymax + offset + 1;
+    	if (xd > 0) {
+    		ex -= xd; sx -= xd;
     	}
-    	if (sy > offset) {
-    		ey -= sy - offset;
-    		sy = offset;
+    	if (yd > 0) {
+    		ey -= yd; sy -= yd;
     	}
     	
-    	return countPathFromUpLeftCornorByLength(sx, sy, ex, ey, Math.min(row, ex + offset + 1), Math.min(col, ey + offset + 1), k);
-//    	return pathNum(new Point(sx, sy), new Point(ex, ey), Math.min(row, ex + offset + 1), k);
+    	return countPathInResizedRegion(sx, sy, ex, ey, Math.min(row, rLimit), Math.min(col, cLimit), k);
     }
     
-    private static int countPathFromUpLeftCornorByLength(int sx, int sy, int ex, int ey, int row, int col, int k) {
+    private static int countPathInResizedRegion(int sx, int sy, int ex, int ey, int row, int col, int k) {
     	int[] dir = {0, 1, -1, -1, 0, -1, 1, 1, 0};
-    	int[][][] dp = new int[row][col][2];
-    	dp[sx][sy][0] = 1;
+    	int[][][] dp = new int[row][col][2]; // backup the last update round result to prevent 
+    	dp[sx][sy][0] = 1;					 // different neighbors update a same point in a same round
+    	
     	// Time and space complexity are both O(row*col*k))
     	for (int i = 0; i < k; ++i) { 								// update the board for k times
     		for (int m = 0; m < row; ++m) {
@@ -65,6 +56,7 @@ public class PathFromAToB {
     			}
     		}
     	}
+    	
     	return dp[ex][ey][k%2];
     }
     

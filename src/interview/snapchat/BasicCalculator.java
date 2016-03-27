@@ -2,6 +2,10 @@ package interview.snapchat;
 
 import java.util.Stack;
 
+/*
+ * The expression string may contain open ( and closing parentheses ), 
+ * the plus + or minus sign -, non-negative integers and empty spaces .
+ */
 public class BasicCalculator {
 	
 	/**
