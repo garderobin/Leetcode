@@ -22,7 +22,7 @@ public class MeetingRoomWeight {
 	}
 	
 	/*
-	 * Use PriorityQueue to reduce average run time. 
+	 * Use PriorityQueue to reduce average Utils time. 
 	 * O(N^2) time, O(N) space.
 	 */
 	public static int meetingroomPQ(Interval[] meetings) {

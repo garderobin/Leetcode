@@ -18,7 +18,19 @@ import dataStructure.ListNode;
 import dataStructure.TreeNode;
 
 
-public class run {
+public class Run {
+	
+	public static String intArrayToString(int[] arr) {
+		if (arr == null || arr.length == 0) return "[]";
+		StringBuilder sb = new StringBuilder();
+		sb.append("[" + arr[0]);
+		for (int i = 1; i < arr.length; ++i) {
+			sb.append(',');
+			sb.append(arr[i]);
+		}
+		sb.append(']');
+		return sb.toString();
+	}
 	
 	public static void main (String args[]) {
 		testFindCelebrity(2);
