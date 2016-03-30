@@ -23,14 +23,16 @@ public class PathFromAToB {
     	int xmax = Math.max(sx, ex), ymax = Math.max(sy, ey), xmin = Math.min(sx, ex), ymin = Math.min(sy, ey);
     	
     	// Resize the board to limit memory usage in further DP board to at most k * k 
-    	int offset = (k - Math.max(ymax - ymin, xmax - xmin))/2; // offset means the maximum allows outwards distance.
+    	int offset = (k - Math.max(ymax - ymin, xmax - xmin)) / 2; // offset means the maximum allows outwards distance.
     	if (offset < 0) return 0; // k steps are not enough to reach B from A
     	int xd = xmin - offset, yd = ymin - offset, rLimit = xmax + offset + 1, cLimit = ymax + offset + 1;
     	if (xd > 0) {
-    		ex -= xd; sx -= xd;
+    		ex -= xd; 
+    		sx -= xd;
     	}
     	if (yd > 0) {
-    		ey -= yd; sy -= yd;
+    		ey -= yd; 
+    		sy -= yd;
     	}
     	
     	return countPathInResizedRegion(sx, sy, ex, ey, Math.min(row, rLimit), Math.min(col, cLimit), k);
@@ -59,21 +61,13 @@ public class PathFromAToB {
     	
     	return dp[ex][ey][k%2];
     }
-    
-    
-    /*
-     * Count unique paths of exact length k from start to end position.
-     */
-    public static int countPathByExactLengthLimit(int sx, int sy, int ex, int ey, int rol, int col, int k) {
-    	return -1;
-    }
       
     
     public static int pathNum(Point A, Point B, int size, int k) {
       	int[][][]dp = new int[size][size][2];
       	dp[A.x][A.y][0] = 1;
       	int i;
-      	// O(M*N*K) //
+      	// O(M*N*K) 
       	for(i = 1; i<=k ; i++){
       		for(int m = 0; m < size; m++){
       			for(int n = 0; n < size; n++){

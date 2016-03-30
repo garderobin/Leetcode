@@ -57,7 +57,6 @@ public class AddParenthesis {
 	public static int maxComputeAddParen(String input) {
 		if (input == null || input.length() == 0) return 0;
 		else {
-//			System.out.println(1+input.length()/3);
 			int[] vals = evalSeqDFS(input, 0, input.length());
 			return (vals == null) ? 0 : vals[0];
 		}
@@ -93,7 +92,6 @@ public class AddParenthesis {
 				}
 			}
 			
-//			System.out.println(m);
 			int[] vals = evalSeqDFSCaching(dp, ops, 0, m);
 			
 			return (vals[0] < vals[1]) ? 0 : vals[0];
@@ -168,7 +166,6 @@ public class AddParenthesis {
 	 * 		   	null 	  			- the sequence can not be evaluated (currently the only reason is dividing a zero)
 	 */
 	private static int[] evalSeqDFS(String input, int start, int end) {
-		count++;
 		if (start == end) return new int[]{0};
 		
 		boolean divideByZero = false;

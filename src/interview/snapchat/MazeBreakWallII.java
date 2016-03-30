@@ -20,7 +20,7 @@ public class MazeBreakWallII {
 		if (input == null || input.length == 0 || input[0].length == 0) return 0;
 		
 		final int[] dir = {0, -1, 0, 1, 0}; // no diagonal move allowed here.
-		final int myEntr = 2, myExit = 9, myRoad = 0, myWall = 5;
+		final int myEntr = 1, myExit = 9, myRoad = 0, myWall = 5;
 		int sx = -1, sy = -1, ex = -1, ey = -1, row = input.length, col = input[0].length; 
 		int[][] board = new int[row][col];
 		
