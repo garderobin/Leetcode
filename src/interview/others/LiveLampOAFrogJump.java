@@ -60,8 +60,8 @@ public class LiveLampOAFrogJump {
 	}
 	
 	public static int monkeyJumpKangran(int[] A, int D) {
+		if (A == null || A.length <= D) return 0;
 		int X = A.length, max = Integer.MIN_VALUE;
-    	if (A == null || X == 0 || X <= D) { return 0; }
         for(int i = 0; i < X; i++) { max = max > A[i] ? max : A[i]; }
         int B[] = new int[max + 1];
         for(int i = 0; i < X; i++) { B[i] = -1; }

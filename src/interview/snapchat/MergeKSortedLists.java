@@ -10,7 +10,7 @@ public class MergeKSortedLists {
 	 */
 	public static ListNode mergeKLists(ListNode[] lists) {
 		if (lists == null || lists.length == 0) { return null; }
-		if (lists.length == 0) { return lists[0]; }
+		if (lists.length == 1) { return lists[0]; }
         return divide(lists, 0, lists.length - 1);
     }
 	

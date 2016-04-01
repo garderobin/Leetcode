@@ -32,15 +32,11 @@ public class BullsAndCows {
 	
 	public static String getHint(String secret, String guess) {
 		int bulls = 0, cows = 0, len = secret.length();
-        HashMap<Character, Integer> ms = new HashMap<>();
-        HashMap<Character, Integer> mg = new HashMap<>();
-        Character cs, cg;
-        boolean smatch = false, gmatch = false;
+        HashMap<Character, Integer> ms = new HashMap<>(), mg = new HashMap<>();
+        
         for (int i = 0; i < len; i++) {
-        	smatch = false; 
-        	gmatch = false;
-        	cs = secret.charAt(i);
-        	cg = guess.charAt(i);
+        	boolean smatch = false, gmatch = false;
+        	char cs = secret.charAt(i), cg = guess.charAt(i);
         	if (cs == cg) {
         		++bulls; 
         		continue;

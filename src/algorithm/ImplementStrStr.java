@@ -3,7 +3,7 @@ package algorithm;
 public class ImplementStrStr {
 	
 	/**
-	 * 必须掌握的暴力解法。我还不会移植。
+	 * 必须掌握的暴力解法。
 	 * @param haystack
 	 * @param needle
 	 * @return
@@ -77,16 +77,10 @@ public class ImplementStrStr {
 	 * @return
 	 */
 	public static int strStr(String haystack, String needle) {
-		if ((haystack == null && needle == null) || (needle == null || needle.length() == 0)) {
-			return 0;
-		}
-		if (haystack == null) {
-			return -1;
-		}		
+		if (needle == null || needle.length() == 0) return 0;
+		if (haystack == null || haystack.length() < needle.length()) return -1;
+		
         int i = 0, j = 0, h = haystack.length(), n = needle.length();
-        if (h < n) {
-        	return -1;
-        }
         for (; i < h && j < n; i++) {
         	if (haystack.charAt(i) == needle.charAt(j)) {
         		j++;

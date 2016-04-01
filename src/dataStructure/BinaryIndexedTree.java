@@ -6,15 +6,18 @@ public class BinaryIndexedTree {
 
 	public BinaryIndexedTree(int[][] matrix) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {}
-        r = matrix.length;
-        c = matrix[0].length;
-        sums = new int[r+1][c+1];
-        vals = matrix;
-        for (int i = 0; i < r; i++) {
-        	for (int j = 0; j < c; j++) {
-        		update(i, j, matrix[i][j]);
-        	}
+        else {
+        	r = matrix.length;
+            c = matrix[0].length;
+            sums = new int[r+1][c+1];
+            vals = matrix;
+            for (int i = 0; i < r; i++) {
+            	for (int j = 0; j < c; j++) {
+            		update(i, j, matrix[i][j]);
+            	}
+            }
         }
+        
     }
 
     public void update(int row, int col, int val) {

@@ -46,7 +46,6 @@ public class PathSum {
 				rst.add(new ArrayList<Integer>(path));				
 			} else {
 				path.remove(path.size() - 1);
-				cur -= root.val;
 			}
 			return rst;
 		}

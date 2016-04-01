@@ -97,7 +97,7 @@ public class WordBreakII {
         	}
         }
         
-        // backtraking
+        // backtracking
         backtrack(rst, s, f, y, new StringBuilder(), 0, len);
         return rst;
     }
@@ -106,18 +106,16 @@ public class WordBreakII {
 		if (!f[start][end]) { return rst; }
 		if (start == end) {
 			rst.add(sb.toString().trim());
-			sb = new StringBuilder();
 			return rst;
 		}
 		if (start + 1 == end) {
 			if (y[start][end]) {
 				sb.append(s.substring(start, end));
 				rst.add(sb.toString());
-				sb = new StringBuilder();
 				return rst;
 			}
 		}
-		for (int i = start+1; i <= end; i++) {
+		for (int i = start+1; i <= end; ++i) {
         	if (i < end && !(y[start][i] && f[i][end])) { continue; }
         	if (i == end && !y[start][i]) { continue; }
         	sb.append(s.substring(start, i) + " ");

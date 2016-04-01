@@ -48,8 +48,8 @@ public class ReverseSingleLinkedList {
             } else {
                 p = 0;
             }
-            n1 = n1.next;
-            n2 = n2.next;
+            if (n1 != null) n1 = n1.next;
+            if (n2 != null) n2 = n2.next;
             prev.next = new ListNode(val);
             prev = prev.next;
         }

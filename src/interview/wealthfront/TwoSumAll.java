@@ -182,7 +182,7 @@ public class TwoSumAll {
 			if (x > high) high = x;
 			if (x < low) low = x;
 		}
-		if (Math.ceil(high/2) + Math.ceil(low/2) >= Integer.MAX_VALUE) {}
+		if ((int)((high + 1) / 2) >= Integer.MAX_VALUE - (int)((low + 1) / 2)) { return; }
 		else {
 			int[] counts = new int[high - low + 1]; // this will hold all possible values, from low to high	 
 		    for (int x : nums)

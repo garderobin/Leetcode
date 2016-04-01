@@ -3,13 +3,12 @@ package algorithm;
 public class ValidAnagram {
 
 	public static boolean isAnagram(String s, String t) {
-        if (s == t || s.equals(t)) {
-            return true;
-        } 
         if (s == null || t == null || s.length() != t.length()) {
             return false;
         }
-        
+        if (s == t || s.equals(t)) {
+            return true;
+        } 
         int len = s.length();
         int[] cs = new int[26], ct = new int[26];        
         for (int i = 0; i < len; i++) {

@@ -19,14 +19,19 @@ public class ListNode {
 	 * @param list
 	 */
 	public ListNode(int[] list) {
-		if (list == null || list.length == 0) { }
-		val = list[0];
-		ListNode cur = this, after;		
-		for (int i = 1; i < list.length; i++) {
-			after = new ListNode(list[i]);
-			cur.next = after;
-			cur = after;
+		if (list == null || list.length == 0) {
+			next = null;
 		}
+		else {
+			val = list[0];
+			ListNode cur = this, after;		
+			for (int i = 1; i < list.length; i++) {
+				after = new ListNode(list[i]);
+				cur.next = after;
+				cur = after;
+			}
+		}
+		
 	}
 	
 	/**

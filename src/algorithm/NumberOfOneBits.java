@@ -49,9 +49,7 @@ public class NumberOfOneBits {
 		}
         int c = 1; // the last result by dividing 2 or 3
         while (n > 1) {
-        	if (n % 2 == 1) {
-        		c++;
-        	}
+        	c += (n & 1);
         	n /= 2;
         }        
         return c;

@@ -72,9 +72,9 @@ public class MaxDepthOfBinaryTree {
 	public int findMaxDepthBFS(TreeNode root, int h) {
 		if (root.left == null && root.right == null) {
 			return h;
-		} else if (root.left != null && root.right == null) {
+		} else if (root.right == null) {
 			return findMaxDepth(root.left, h+1);
-		} else if (root.left == null && root.right != null) {
+		} else if (root.left == null) {
 			return findMaxDepth(root.right, h+1);
 		} else  {
 			return Math.max(findMaxDepth(root.left, h+1), findMaxDepth(root.right, h+1));

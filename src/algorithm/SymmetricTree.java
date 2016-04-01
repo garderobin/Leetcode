@@ -27,8 +27,7 @@ public class SymmetricTree {
 	public boolean myIsSymmetric(TreeNode l, TreeNode r) {
 		if (l == null && r == null) {
 			return true;
-		}
-		if ((l == null && r != null) || (l != null && r == null) || l.val != r.val) {
+		} else if (l == null || r == null || l.val != r.val) {
 			return false;
 		}
 				

@@ -9,11 +9,11 @@ public class PalindromePermutationII {
 	public static List<String> generatePalindromes(String s) {
 		List<String> rst = new LinkedList<String>();
 		if (s == null || s.length() == 0) { return rst; }
-		else if (s.length() == 0) { return Collections.singletonList(s); }
+		else if (s.length() == 1) { return Collections.singletonList(s); }
 		int n = s.length();
 		
 		// Count occurrence for each character. O(N) time, O(N) space.
-		int[] occr = new int[256];
+		int[] occr = new int[256]; // not work for non-ASCII codes!!!
 		for (int i = 0; i < n; ++i) { ++occr[s.charAt(i)]; }
 		
 		// Check validness. O(1) time, O(1) space. (always less then 256)
@@ -21,7 +21,7 @@ public class PalindromePermutationII {
 		int oddIndex = -1;
 		for (int i = 0; i < occr.length; ++i) {
 			if (occr[i] > 0) { evenIndexes.add(i); }
-			if (occr[i] % 2 == 1) { 
+			if ((occr[i] & 1) == 1) { 
 				if (oddIndex >= 0) { return new ArrayList<String>(); }
 				else { oddIndex = i; }
 			} 
