@@ -2,6 +2,14 @@ package interview.snapchat;
 
 import java.util.*;
 
+/*
+ * 没看懂输入是怎么回事
+ * 面试中不可能出这么难的题目。两种方法：树和状态机
+ * The first approach that can be used when parsing XML is to treat the entire document as a tree of nodes. This type of parser is called a DOM parser. I used a DOM parser on {insert relevant project experience}. We used a DOM parser because we needed to access different parts of the document at the same time.
+ * The second approach that can be used when parsing XML is to treat the document as a stream of events or nodes. This type of approach is called a SAX parser, I used a SAX parser on {insert relevant project experience}. We used a SAX parser because we couldn't fit the entire document in memory.
+ * http://stackoverflow.com/questions/6325436/algorithm-for-parsing-an-xml
+ * http://www.cs.nmsu.edu/~epontell/courses/XML/material/xmlparsers.html
+ */
 public class XMLParser {
 	public static void main(String[] args) {
 		ArrayList<String> XML = new ArrayList<>();
@@ -19,6 +27,19 @@ public class XMLParser {
 		print2(treeXML,"");
 		
 	}
+
+	   
+    static class XMLnode {
+	    String element;
+	    String text;
+	    ArrayList<XMLnode> content;
+	    public XMLnode(String element, String text){
+	        this.element = element;
+	        this.text = text;
+	        this.content = new  ArrayList<XMLnode>();
+	    }
+	}
+	
 	
     static XMLnode deserialize(Iterator<String> tokenizer) {		
   		String next = tokenizer.next();
@@ -43,17 +64,6 @@ public class XMLParser {
         return root;    
     }
 
-	   
-    static class XMLnode {
-	    String element;
-	    String text;
-	    ArrayList<XMLnode> content;
-	    public XMLnode(String element, String text){
-	        this.element = element;
-	        this.text = text;
-	        this.content = new  ArrayList<XMLnode>();
-	    }
-	}
 
     public static void print(XMLnode root) {
     	Queue<XMLnode> q = new LinkedList<XMLnode>();
