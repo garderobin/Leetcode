@@ -3,15 +3,15 @@ package algorithm;
 public class LongestSubstringWithAtMostTwoDistinctCharacters {
 	
 	/**
-	 * 记录两个指针: i是当前正在维持的合法子串的开头位置，j是此前一直连续着的字符的前一个位置
+	 * 记录两个指针: i是当前正在维持的合法子串的开头位置，j是在当前位置以前一直连续着的字符的前一个位置
 	 * 当第三个字符出现的时候，i应当被更新为j后面一位，而j被更新为前一位。
 	 * @param s
 	 * @return
 	 */
 	int lengthOfLongestSubstringTwoDistinctDiscussion(String s) {
-        int i = 0, j = -1;
+        int i = 0, j = -1; 
         int maxLen = 0, n = s.length();
-        for (int k = 1; k < n; k++) {
+        for (int k = 1; k < n; ++k) {
             if (s.charAt(k) == s.charAt(k-1)) continue;
             if (j > -1 && s.charAt(k) != s.charAt(j)) {
                 maxLen = (maxLen > k-i) ? maxLen : k-i;
