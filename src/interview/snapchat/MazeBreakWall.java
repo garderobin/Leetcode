@@ -49,7 +49,7 @@ public class MazeBreakWall {
 		
 		// Paint start and end point components.
 		if (!paintComponent(board, sx, sy, dir, myRoad, myEntr, myExit)) return 0; 
-		paintComponent(board, ex, ey, dir, myRoad, myExit, myEntr); //开头如果找不到结尾，结尾也一定找不到开头，所以不用检查了 
+		if (!paintComponent(board, ex, ey, dir, myRoad, myExit, myEntr)) return 0; //开头如果找不到结尾，结尾也一定找不到开头，所以其实不用检查
 		
 		return findMinBreak(board, sx, sy, dir, myEntr, myExit, Integer.MAX_VALUE, 0);
 	}

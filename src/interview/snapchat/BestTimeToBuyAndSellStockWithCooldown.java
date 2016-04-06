@@ -1,4 +1,4 @@
-package interview.google;
+package interview.snapchat;
 
 public class BestTimeToBuyAndSellStockWithCooldown {
 	

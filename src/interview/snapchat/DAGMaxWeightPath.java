@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Find the maximum total weight path with given steps(depth) and start node.
+ * 这里是dfs的解法，这个题的BFS版本参见SnapsMaxWeightPath.java
+ */
 public class DAGMaxWeightPath {
 	
 	static int max = 0;

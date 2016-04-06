@@ -10,13 +10,11 @@ package interview.snapchat;
  ******************************************************************************/
 
 public class QuadTree<Key extends Comparable<Key>, Value>  {
-//    private Node root;
 	Node root;
 
     // helper node data type
-//    private class Node {
 	class Node {
-        Key x, y;              // x- and y- coordinates
+        Key x, y;              // x-axis and y-axis coordinates
         Node NW, NE, SE, SW;   // four subtrees
         Value value;           // associated data
 

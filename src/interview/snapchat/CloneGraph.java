@@ -1,4 +1,4 @@
-package algorithm;
+package interview.snapchat;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,6 +6,16 @@ import java.util.HashSet;
 
 import dataStructure.UndirectedGraphNode;
 
+/**
+ * Clone an undirected graph. Each node in the graph contains a label and a list of its neighbors.
+ * 
+ * Definition for undirected graph.
+ * class UndirectedGraphNode {
+ *     int label;
+ *     List<UndirectedGraphNode> neighbors;
+ *     UndirectedGraphNode(int x) { label = x; neighbors = new ArrayList<UndirectedGraphNode>(); }
+ * };
+ */
 public class CloneGraph {
 	public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
 		if (node == null) {
