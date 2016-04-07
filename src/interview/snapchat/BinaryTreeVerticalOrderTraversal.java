@@ -9,6 +9,9 @@ import java.util.Queue;
 import dataStructure.TreeNode;
 
 public class BinaryTreeVerticalOrderTraversal {
+	
+
+	
 	class TreeNodeVertical {
 		public int val;
 		public int vIndex;
@@ -23,6 +26,7 @@ public class BinaryTreeVerticalOrderTraversal {
 	}
 	
 	int max = 0, min = 0; 
+	
 	
 	public List<List<Integer>> verticalOrder(TreeNode root) {
 	    if (root == null) { return new ArrayList<List<Integer>>(); }
