@@ -1,10 +1,10 @@
 package dataStructure;
 
 public class DLinkedNode {
-	int key; 
-	int value;
-	DLinkedNode prev;
-	DLinkedNode post;
+	public int key; 
+	public int value;
+	public DLinkedNode prev;
+	public DLinkedNode post;
 	
 	public DLinkedNode() {}
 	

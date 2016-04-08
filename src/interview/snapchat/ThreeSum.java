@@ -1,4 +1,4 @@
-package algorithm;
+package interview.snapchat;
 
 import java.util.ArrayList;
 import java.util.Arrays;
