@@ -6,6 +6,9 @@ public class BigInteger implements Comparable<BigInteger> {
 	boolean negative;
 	byte[] digits; //每个byte存一个十进制的digit, 正序从左到右存储, 不存符号位
 	
+	public static final BigInteger ZERO = new BigInteger(new byte[]{0});
+    public static final BigInteger ONE = new BigInteger(new byte[]{1});
+	
 	public BigInteger(byte[] digits) {
         this.digits = digits;
         negative = false;
@@ -40,6 +43,7 @@ public class BigInteger implements Comparable<BigInteger> {
 			trailingZero &= (digits[i] == 0);
 			if (!trailingZero) sb.append(digits[i]);
 		}
+		if (sb.length() == 0 || (sb.length() == 1 && sb.charAt(0) == '-')) sb.append('0');
 		return sb.toString();
 	}
 	
@@ -120,14 +124,13 @@ public class BigInteger implements Comparable<BigInteger> {
 	
 	byte[] substract(byte[] d2) { //被减数一定是正数且一定大于减数
 		byte[] d1 = this.digits;
-		int carry = 0;
 	    byte[] rst = new byte[d1.length];
-	    for (int i = d1.length - 1, j = d2.length - 1; i > 0; --i, --j) {
-	        int r = 10 + d1[i] - (j < 0 ? 0 : d2[j]) - carry;
-	        carry = r < 10 ? 1 : 0;
-	        rst[i] = (byte) (r % 10);
+	    int i = d1.length - 1;
+	    for (int c = 0, j = d2.length - 1; j >= 0 || c == 1; --i, --j, c = c < 10 ? 1 : 0) {
+	        c = 10 + d1[i] - (j < 0 ? 0 : d2[j]) - c;
+	        rst[i] = (byte) (c % 10);
 	    }
-	    rst[0] = (byte) carry;
+	    for (; i >= 0; --i) rst[i] = d1[i];
 	    return rst;
 	}
 
