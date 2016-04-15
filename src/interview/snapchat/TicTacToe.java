@@ -105,7 +105,7 @@ public class TicTacToe {
 		
 		// Traverse columns to find a must-win move
 		for (int j = 0; j < n; ++j) {
-			if (unreach[j] >= 0 && canWin(unreach[j]--, j, 0, grid, unreach)) {
+			if (unreach[j] >= 0 && canWin(unreach[j]--, j, 0, grid, unreach) == 1) {
 				return j; 
 			}
 		}
@@ -113,30 +113,35 @@ public class TicTacToe {
 	}
 	
 
-	public boolean canWin(int x, int y, int player, char[][] grid, int[] unreach) {
+	public int canWin(int x, int y, int player, char[][] grid, int[] unreach) {
 		// Check immediate win: the 10 three-consecutive positions it may result in a winner
 		char sign = (player == 0) ? 'X' : 'O';
 		grid[x][y] = sign;
 		int m = grid.length, n = grid[0].length;
-		if (x+2 < m && grid[x+1][y] == sign && grid[x+2][y] == sign) return true; // vertical wins
+		if (x+2 < m && grid[x+1][y] == sign && grid[x+2][y] == sign) return 1; // vertical wins
 		boolean w = y-1 >= 0 && grid[x][y-1] == sign, e = y+1 < n && grid[x][y+1] == sign,
 				nw = x-1 >= 0 && y-1 >= 0 && grid[x-1][y-1] == sign,
 				ne = x-1 >= 0 && y+1 < n && grid[x-1][y+1] == sign,
 				se = x+1 < m && y+1 < n && grid[x+1][y+1] == sign,
 				sw = x+1 < m && y-1 >= 0 && grid[x+1][y-1] == sign ;
 		if ((w && e) || (w && y-2 >= 0 && grid[x][y-2] == sign) ||
-				(e && y+2 < n && grid[x][y+2] == sign)) { return true; } // horizontal wins
+				(e && y+2 < n && grid[x][y+2] == sign)) { return 1; } // horizontal wins
 		if ((nw && se) || (sw && ne) || 
 				(nw && x-2 >= 0 && y-2 >= 0 && grid[x-2][y-2] == sign) ||
 				(ne && x-2 >= 0 && y+2 < n && grid[x-2][y+2] == sign) ||
 				(se && x+2 < m && y+2 < n && grid[x+2][y+2] == sign) ||
-				(sw && x+2 < m && y-2 >= 0 && grid[x+2][y-2] == sign)) { return true; } // diagnal wins
+				(sw && x+2 < m && y-2 >= 0 && grid[x+2][y-2] == sign)) { return 1; } // diagnal wins
 		
 		// Traverse the other player's next possible moves
+		boolean opponentMustLose = true;
 		for (int j = 0; j < n; ++j) {
-			if (unreach[j] >= 0 && canWin(unreach[j]--, j, player ^ 1, grid, unreach)) return false;
+			if (unreach[j] >= 0) {
+				int opponent = canWin(unreach[j]--, j, player ^ 1, grid, unreach);
+				if (opponent == 1) return -1;
+				else opponentMustLose &= (opponent == -1);
+			}
 		}
 		grid[x][y] = '\u0000';
-		return true;
+		return opponentMustLose ? 1 : 0;
 	}
 }
