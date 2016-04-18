@@ -1,28 +1,27 @@
 package algorithm;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.HashMap;
-import java.util.LinkedList;
 
 public class MinimumWindowSubstring {
 	
 	/**
-	 * 还没有明白！需要再看！
-	 * @param s
-	 * @param t
-	 * @return
+	 * Deque + HashMap, O(N) time, O(N) space.
 	 */
 	public String minWindowDiscussion(String s, String t) {
-        if (s.length()==0 || t.length()==0 || s.length() < t.length()) return "";
-        int left = t.length(), start = -1, end = s.length();
-        LinkedList<Integer> queue= new LinkedList<Integer>();
-        HashMap<Character,Integer> map= new HashMap<Character,Integer>();
+        if (s == null || t == null || s.isEmpty() || t.isEmpty() || s.length() < t.length()) return "";
+        
+        int left = t.length(), start = -1, end = s.length(), sLen = s.length(), tLen = t.length();
+        Deque<Integer> queue= new ArrayDeque<Integer>();
+        HashMap<Character,Integer> map = new HashMap<Character,Integer>();
 
-        for (int i = 0; i < t.length(); i++){
+        for (int i = 0; i < tLen; ++i) {
             char c = t.charAt(i);
-            map.put(c, map.containsKey(c) ? map.get(c) + 1 : 1);
+            map.put(c, 1 + map.getOrDefault(c, 0));
         }
 
-        for (int i = 0; i < s.length(); i++){
+        for (int i = 0; i < sLen; ++i){
             char c = s.charAt(i);
             if (!map.containsKey(c)) { continue; }
 
