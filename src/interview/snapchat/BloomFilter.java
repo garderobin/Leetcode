@@ -1,88 +1,81 @@
 package interview.snapchat;
 
+import java.util.ArrayList;
 import java.util.BitSet;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * bloomfilter， 支持add， mightcontains，resize，remove
- * see http://www.javamex.com/tutorials/collections/bloom_filter_java.shtml
+/*
+ * Ask: 需要考虑并发吗？
+ * http://www.jiuzhang.com/interview/31/ 
+ * 该数据结构类似于HashSet，put函数存key进去，contains查询是否存在，remove删除对应的key。它提供了一组hash函数列表hashFunc。
+question:
+1)该数据结构有个特点，contains函数如果return false，那key一定不存在Bloomfilter内，但如果return true，则可能存在，可能不存在，为什么？
+2)实现这个数据结构的三个函数
+3)这个数据结构有什么缺点？怎么Scale？写出代码
+
+ * 我当下的设计既能导致false negative， 又会导致false positive.
  */
-public class BloomFilter {
-	// Generating hash codes
+public class BloomFilter<Key extends Comparable<Key>> {
+//	private Key[] table; // 只在初始化的时候有用 = =
+	private List<Key> table;
+
+	@SuppressWarnings("unused")
+	private List hashFunc; // 我认为这个hashFunc应该起到的作用是下面的hashCode(Key k)
 	
-	private static final int MAX_HASHES = 8;
-	private static final long[] byteTable;
-	private static final long HSTART = 0xBB40E64DA205B064L;
-	private static final long HMULT = 7664345821815920749L;
-  
-	static {
-		byteTable = new long[256 * MAX_HASHES];
-		long h = 0x544B2FBACAAF1684L;
-		for (int i = 0; i < byteTable.length; i++) {
-			for (int j = 0; j < 31; j++)
-				h = (h >>> 7) ^ h; h = (h << 11) ^ h; h = (h >>> 10) ^ h;
-				byteTable[i] = h;
+	//我自己添加的数据结构
+	//1:hashFunc不是我自己写的，不知道hash最多需要占用多少位置，所以采取可增长的
+	private BitSet data; // not thread safe!!!!!
+	
+//	private int 
+	
+	
+	public BloomFilter(Key[] input) {
+		if (input == null || input.length == 0) {
+			data = new BitSet();
+		} else {
+			int numKeys = input.length, eleLen = input[0].toString().length();
+			data = new BitSet(numKeys * eleLen);
+			table = new ArrayList<Key>(numKeys);
+			
+			for (Key k: input) {
+				table.add(k);
+				put(k);
+			}
 		}
 	}
 
-	private long hashCode(String s, int hcNo) {
-		long h = HSTART;
-		final long hmult = HMULT;
-		final long[] ht = byteTable;
-		int startIx = 256 * hcNo;
-		for (int len = s.length(), i = 0; i < len; i++) {
-			char ch = s.charAt(i);
-			h = (h * hmult) ^ ht[startIx + (ch & 0xff)];
-			h = (h * hmult) ^ ht[startIx + ((ch >>> 8) & 0xff)];
+	public boolean contains(Key k) { // it's just a might contains
+		int hash = k.hashCode(); // replace here with given hashFunc!!!
+		for (int i = 0; hash > 0; hash >>= 1, ++i) {
+			if ((hash & 1) == 1 && !data.get(i)) {
+				return false;
+			}
 		}
-		return h;
-	}
-	
-	
-	// Implementing the constructor, add() and contains() functions
-	private final BitSet data;
-	private final int noHashes;
-	private final int hashMask;
-
-	public BloomFilter(int log2noBits, int noHashes) {
-	    if (log2noBits < 1 || log2noBits > 31)
-	    	throw new IllegalArgumentException("Invalid number of bits");
-	    if (noHashes < 1 || noHashes > MAX_HASHES)
-	    	throw new IllegalArgumentException("Invalid number of hashes");
-
-	    this.data = new BitSet(1 << log2noBits);
-	    this.noHashes = noHashes;
-	    this.hashMask = (1 << log2noBits) - 1;
-	}
-	
-	public BloomFilter(int noItems, int bitsPerItem, int noHashes) {
-	    int bitsRequired = noItems * bitsPerItem;
-	    if (bitsRequired >= Integer.MAX_VALUE) {
-	    	throw new IllegalArgumentException("Bloom filter would be too big");
-	    }
-	    int logBits = 4;
-	    while ((1 << logBits) < bitsRequired)
-	    	logBits++;
-	    if (noHashes < 1 || noHashes > MAX_HASHES)
-	    	throw new IllegalArgumentException("Invalid number of hashes");
-	    this.data = new BitSet(1 << logBits);
-	    this.noHashes = noHashes;
-	    this.hashMask = (1 << logBits) - 1;
-	}
-	
-	public void add(String s) {
-	    for (int n = 0; n < noHashes; n++) {
-	    	long hc = hashCode(s, n);
-	    	int bitNo = (int) (hc) & this.hashMask;
-	    	data.set(bitNo);
-	    }
+		return true;
 	}
 
-	public boolean contains(String s) {
-	    for (int n = 0; n < noHashes; n++) {
-	    	long hc = hashCode(s, n);
-	    	int bitNo = (int) (hc) & this.hashMask;
-	    	if (!data.get(bitNo)) return false;
-	    }
-	    return true;
+	public void put(Key k) {
+		int hash = k.hashCode(); // replace here with given hashFunc!!!
+		for (int i = 0; hash > 0; hash >>= 1, ++i) {
+			if ((hash & 1) == 1) {
+				data.set(i); // causing possible false positive for contains();
+			}
+		}
+		table.add(k);
 	}
+
+	public void remove(Key k) {
+		int hash = k.hashCode(); // replace here with given hashFunc!!!
+		for (int i = 0; hash > 0; hash >>= 1, ++i) {
+			if ((hash & 1) == 1) {
+				data.clear(i); // causing possible false negative for contains()
+			}
+		}
+		//table.remove(k);
+	}
+
 }
+
+

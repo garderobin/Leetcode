@@ -7,11 +7,19 @@ import interview.snapchat.BigInteger;
 
 public class InterviewTest {
 	
-	public static int solution() {
-		return -1;
+	public static void main(String[] args) {
+		testBloomFilter();
 	}
 	
-	public static void main(String[] args) {
+	public static void testBloomFilter() {
+//		String s = "127.0.0.1";
+//		Integer a = 1;
+		String a = "ß∂åƒœ∑®†©åß∂";
+		String b = a.toString();
+		System.out.println(b);
+	}
+	
+	public static void testBigInteger() {
 		List<String[]> test = Arrays.asList(
 				new String[]{"-5000", "-1234"},
 				new String[]{"-1234", "-5000"},
@@ -35,5 +43,7 @@ public class InterviewTest {
 //			System.out.println(b1.compareTo(b2));
 		}
 	}
+	
+	
 	
 }
