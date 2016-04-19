@@ -3,8 +3,7 @@ package interview.snapchat;
 import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+
 
 /*
  * Ask: 需要考虑并发吗？
@@ -22,7 +21,7 @@ public class BloomFilter<Key extends Comparable<Key>> {
 	private List<Key> table;
 
 	@SuppressWarnings("unused")
-	private List hashFunc; // 我认为这个hashFunc应该起到的作用是下面的hashCode(Key k)
+	private List<String> hashFunc; // 我认为这个hashFunc应该起到的作用是下面的hashCode(Key k)
 	
 	//我自己添加的数据结构
 	//1:hashFunc不是我自己写的，不知道hash最多需要占用多少位置，所以采取可增长的

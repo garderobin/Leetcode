@@ -11,7 +11,7 @@ import java.util.Map;
  * 目前，我对para用non-alphebetic (unicode)分割开作为单词之间的区分，匹配的时候case-sensitive
  * 
  * Ask：可以有overlapping吗？， 例如abcd 同时包含abc和bcd?
- * Ask: para单词以空格间隔开吗？目前我
+ * Ask: para单词以空格间隔开吗？
  * Ask: 考虑大小写吗？
  * Ask: 需要考虑标点符号吗？
  * (先把word简化成character来做的，就是LC的minimum window substring)
@@ -19,13 +19,28 @@ import java.util.Map;
 public class MinimumWindowSubstringII {
 	
 	public static void main(String[] args) {
-//		System.out.println(Character.isAlphabetic('の'));
 		List<String> words = Arrays.asList("I", "will", "be", "back");
 		String para = "I will be back!!! will I will  I be back?";
 		System.out.println(shortestSubstr(words, para));
 	}
 	
+	// 如果Para是隔开的， 用LRU实现，遍历一遍即可。
+	   // for(i-->dict.size()){
+	   // word = para[i];
+	   // if(dict.contains(word));
+	   // LRU.put(word,i);//插入到tail前，如果LRU已含有word,修改index,移到tail前
+	   // if(LRU.size()==dict.size()){
+	   //      min = Math.min(min, LRU.tail.prev.idx-LRU.head.next.idx);
+	   //      LRU.remove(head.next);//删除第一个dict含有的单词
+	   //   }
+	   // }
+	public static String shortestSubstrLRU(List<String> words, String para) {
+		return null;
+	}
 	
+	/*
+	 * Sliding Window Version
+	 */
 	public static String shortestSubstr(List<String> words, String para) {
 		if (para == null || para.isEmpty() || words == null || words.isEmpty()) return "";
 		int start = 0, minLen = Integer.MAX_VALUE, totalLen = 0;
