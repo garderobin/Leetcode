@@ -10,10 +10,10 @@ public class NumberOfOneBits {
 	 */
 	
 	/* An Integer in Java has 32 bits, e.g. 0010 1000 0111 1001 0100 0010 0001 1010.
-		To count the 1s in the Integer representation with put the input int n in bit AND with 1 
+		To size the 1s in the Integer representation with put the input int n in bit AND with 1 
 		(that is represented as 00000000000000000000000000000001), 
 		and if this operation result is 1, that means that the last bit of the input integer is 1. 
-		Thus we add it to the 1s count.
+		Thus we add it to the 1s size.
 		ones = ones + (n & 1); 
 		
 		Then we shift the input Integer by one on the right, to check for the next bit.

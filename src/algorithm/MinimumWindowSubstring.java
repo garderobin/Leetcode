@@ -63,6 +63,6 @@ public class MinimumWindowSubstring {
 //        	tmap.put(c, (tmap.containsKey(c)) ? tmap.get(c) + 1 : 1);
 //        }
 //        
-//        int[] f = new int[tLen]; //f[i][count] 存储 t
+//        int[] f = new int[tLen]; //f[i][size] 存储 t
 //    }
 }

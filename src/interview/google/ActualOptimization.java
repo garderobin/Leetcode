@@ -13,7 +13,7 @@ public class ActualOptimization {
 		int[] mods = {1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000};
 		boolean bottomFound = false;
 		int len = 0, dupIndex = -1;
-		for (len = mods.length; len > 0 && X < mods[len-1]; len--) {} // find the digit count.
+		for (len = mods.length; len > 0 && X < mods[len-1]; len--) {} // find the digit size.
 		for (int i=1, j=len-1, prev=X/mods[j], remain=X%mods[j], digit=-1; i<len; i++, prev=digit, remain%=mods[j] ) {
 			digit=remain/mods[--j]; 
 			if (digit == prev) { 

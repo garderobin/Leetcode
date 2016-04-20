@@ -12,7 +12,7 @@ public class StrobogrammaticNumberIII {
 		if (ch == '+' || ch == '0') { return strobogrammaticInRange(low, high.substring(1)); }
 		
 //		boolean startFromZero = low.startsWith("0");
-//		int[] count = new int[highLen], sum = new int[highLen];
+//		int[] size = new int[highLen], sum = new int[highLen];
 		return -1;
     }
 	
@@ -24,7 +24,7 @@ public class StrobogrammaticNumberIII {
 	 * 只要开头为零，整个就是零
 	 * 这里存在互相矛盾，待会在改。
 	 * @param high
-	 * @param count
+	 * @param size
 	 * @param sum
 	 * @return
 	 */

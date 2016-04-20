@@ -56,11 +56,11 @@ public class UglyNumberII {
         }
 //        int[] ugly = new int[n]; // n个 ugly number.
 //        ugly[0] = 1;
-//        int count = 1, curIndex = 0;
-//        while (count < n) {
-//        	ugly[count] = ugly[curIndex] * 2;
-//        	ugly[count + 1] = ugly[curIndex] * 3;
-//        	ugly[count]
+//        int size = 1, curIndex = 0;
+//        while (size < n) {
+//        	ugly[size] = ugly[curIndex] * 2;
+//        	ugly[size + 1] = ugly[curIndex] * 3;
+//        	ugly[size]
 //        }
 //        return ugly[n-1];
         int i = 1, count = 0;

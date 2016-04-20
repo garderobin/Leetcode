@@ -42,7 +42,7 @@ public class MajorityElementII {
 		 }
 		 count1 = 0;
 		 count2 = 0;
-		 //count the number for the 2 elements
+		 //size the number for the 2 elements
 		 for(int n:nums){
 		     if(n == m1) count1++;
 		     else if(n == m2) count2++;

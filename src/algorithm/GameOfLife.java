@@ -110,61 +110,61 @@ public class GameOfLife {
 	}
 	
 //	private int countLiveNeighbors(int[][] board, int x, int y) {
-//		int count = 0, rows = board.length - 1, cols = board[0].length - 1;
+//		int size = 0, rows = board.length - 1, cols = board[0].length - 1;
 //		//上左，上中，上右，中左，中右，下左，下中，下右
 //		boolean a = (rows > 0), b = (cols > 0);
 //		if (x == 0 && y == 0) {
-//			count += (b && board[0][1] > 0) ? 1 : 0;
-//			count += (a && b && board[1][1] > 0) ? 1 : 0;
-//			count += (a && b && board[1][0] > 0) ? 1 : 0;
+//			size += (b && board[0][1] > 0) ? 1 : 0;
+//			size += (a && b && board[1][1] > 0) ? 1 : 0;
+//			size += (a && b && board[1][0] > 0) ? 1 : 0;
 //		} else if (x == rows && y == cols) {
-//			count += (a && b && board[rows-1][cols-1] > 0) ? 1 : 0;
-//			count += (a && board[rows-1][cols] > 0) ? 1 : 0;
-//			count += (b && board[rows][cols-1] > 0) ? 1 : 0;
+//			size += (a && b && board[rows-1][cols-1] > 0) ? 1 : 0;
+//			size += (a && board[rows-1][cols] > 0) ? 1 : 0;
+//			size += (b && board[rows][cols-1] > 0) ? 1 : 0;
 //		} else if (x == 0 && y == cols) {
-//			count += (b && board[0][cols-1] > 0) ? 1 : 0;
-//			count += (a && b && board[1][cols-1] > 0) ? 1 : 0;
-//			count += (a && board[1][cols] > 0) ? 1 : 0;
+//			size += (b && board[0][cols-1] > 0) ? 1 : 0;
+//			size += (a && b && board[1][cols-1] > 0) ? 1 : 0;
+//			size += (a && board[1][cols] > 0) ? 1 : 0;
 //		} else if (x == rows && y == 0) {
-//			count += (a && board[rows-1][0] > 0) ? 1 : 0;
-//			count += (a && b && board[rows-1][1] > 0) ? 1 : 0;
-//			count += (board[rows][0] > 0) ? 1 : 0;
+//			size += (a && board[rows-1][0] > 0) ? 1 : 0;
+//			size += (a && b && board[rows-1][1] > 0) ? 1 : 0;
+//			size += (board[rows][0] > 0) ? 1 : 0;
 //		} else if (x == 0) {
-//			count += (board[0][y-1] > 0) ? 1 : 0;
-//			count += (board[0][y+1] > 0) ? 1 : 0;
-//			count += (a && board[1][y-1] > 0) ? 1 : 0;
-//			count += (a && board[1][y] > 0) ? 1 : 0;
-//			count += (a && board[1][y+1] > 0) ? 1 : 0;
+//			size += (board[0][y-1] > 0) ? 1 : 0;
+//			size += (board[0][y+1] > 0) ? 1 : 0;
+//			size += (a && board[1][y-1] > 0) ? 1 : 0;
+//			size += (a && board[1][y] > 0) ? 1 : 0;
+//			size += (a && board[1][y+1] > 0) ? 1 : 0;
 //		} else if (y == 0) {
-//			count += (board[x-1][0] > 0) ? 1 : 0;
-//			count += (b && board[x-1][1] > 0) ? 1 : 0;
-//			count += (b && board[x][1] > 0) ? 1 : 0;
-//			count += (board[x+1][0] > 0) ? 1 : 0;
-//			count += (b && board[x+1][1] > 0) ? 1 : 0;
+//			size += (board[x-1][0] > 0) ? 1 : 0;
+//			size += (b && board[x-1][1] > 0) ? 1 : 0;
+//			size += (b && board[x][1] > 0) ? 1 : 0;
+//			size += (board[x+1][0] > 0) ? 1 : 0;
+//			size += (b && board[x+1][1] > 0) ? 1 : 0;
 //		} else if (x == rows) {
-//			count += (board[rows-1][y-1] > 0) ? 1 : 0;
-//			count += (board[rows-1][y] > 0) ? 1 : 0;
-//			count += (board[rows-1][y+1] > 0) ? 1 : 0;
-//			count += (board[rows][y-1] > 0) ? 1 : 0;
-//			count += (board[rows][y+1] > 0) ? 1 : 0;
+//			size += (board[rows-1][y-1] > 0) ? 1 : 0;
+//			size += (board[rows-1][y] > 0) ? 1 : 0;
+//			size += (board[rows-1][y+1] > 0) ? 1 : 0;
+//			size += (board[rows][y-1] > 0) ? 1 : 0;
+//			size += (board[rows][y+1] > 0) ? 1 : 0;
 //		} else if (y == cols) {
-//			count += (board[x-1][cols-1] > 0) ? 1 : 0;
-//			count += (board[x-1][cols] > 0) ? 1 : 0;
-//			count += (board[x][cols-1] > 0) ? 1 : 0;
-//			count += (board[x+1][cols-1] > 0) ? 1 : 0;
-//			count += (board[x+1][cols] > 0) ? 1 : 0;
+//			size += (board[x-1][cols-1] > 0) ? 1 : 0;
+//			size += (board[x-1][cols] > 0) ? 1 : 0;
+//			size += (board[x][cols-1] > 0) ? 1 : 0;
+//			size += (board[x+1][cols-1] > 0) ? 1 : 0;
+//			size += (board[x+1][cols] > 0) ? 1 : 0;
 //		} else {
-//			count += (board[x-1][y-1] > 0) ? 1 : 0;
-//			count += (board[x-1][y] > 0) ? 1 : 0;
-//			count += (board[x-1][y+1] > 0) ? 1 : 0;
-//			count += (board[x][y-1] > 0) ? 1 : 0;
-//			count += (board[x][y+1]  > 0) ? 1 : 0;
-//			count += (board[x+1][y-1] > 0) ? 1 : 0;
-//			count += (board[x+1][y] > 0) ? 1 : 0;
-//			count += (board[x+1][y+1] > 0) ? 1 : 0;
+//			size += (board[x-1][y-1] > 0) ? 1 : 0;
+//			size += (board[x-1][y] > 0) ? 1 : 0;
+//			size += (board[x-1][y+1] > 0) ? 1 : 0;
+//			size += (board[x][y-1] > 0) ? 1 : 0;
+//			size += (board[x][y+1]  > 0) ? 1 : 0;
+//			size += (board[x+1][y-1] > 0) ? 1 : 0;
+//			size += (board[x+1][y] > 0) ? 1 : 0;
+//			size += (board[x+1][y+1] > 0) ? 1 : 0;
 //		}
 //		
-//		return count;
+//		return size;
 //		
 //	}
 	

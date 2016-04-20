@@ -26,7 +26,7 @@ public class WayFairPartitionArray {
 	 */
 	public static void partitionArray2(int[] nums) {
 		if (nums == null || nums.length < 2) { return; }
-		// First pass: count negative numbers and positive numbers.
+		// First pass: size negative numbers and positive numbers.
 		int left = 0, right = 0;
 		int[] backup = new int[nums.length];
 		for (int i = 0; i < nums.length; ++i) {

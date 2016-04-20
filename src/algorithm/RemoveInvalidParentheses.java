@@ -48,11 +48,11 @@ public class RemoveInvalidParentheses {
 	}
 	
 	static int[] tol ; // left-side trailing open containing the current index
-	static int[] aol ; // left-side accumulate open count
-	static int[] acl ; // left-side accumulate close count
+	static int[] aol ; // left-side accumulate open size
+	static int[] acl ; // left-side accumulate close size
 	static int[] tcr ; // right-side trailing close containing the current index
-	static int[] acr ; // right-side accumulate close count
-	static int[] aor ; // right-side accumulate open count
+	static int[] acr ; // right-side accumulate close size
+	static int[] aor ; // right-side accumulate open size
 	static int[] bl ;  // balance counting from left;
 	static int[] br ;  // balance counting from left;
 	

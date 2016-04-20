@@ -110,7 +110,7 @@ public class WhitePagesOA {
 		
 		List<Integer> npath = null;
 		for (int i = start+1, limit = Math.min(nums.length, start + nums[start] + 1); i < limit; ++i) {
-//			System.out.println(++count + ",\tstart=" + start + ",\ti=" + i);
+//			System.out.println(++size + ",\tstart=" + start + ",\ti=" + i);
 			List<Integer> mpath = dfs(nums, i, new ArrayList<Integer>(path));
 			if (mpath != null && mpath.size() < minSteps) {
 				if(minStart < nums.length) { nums[minStart] = 0; } // prune the last not-shortest path.
@@ -125,7 +125,7 @@ public class WhitePagesOA {
 	}
 	
 //	private static List<Integer> dfs(int[] nums, int start, List<Integer> path) {
-//		System.out.println(++count + ",\tstart=" + start);
+//		System.out.println(++size + ",\tstart=" + start);
 //		if (start == nums.length) {  return path;  }
 //		if (nums[start] <= 0) { return null; }
 //		
@@ -135,7 +135,7 @@ public class WhitePagesOA {
 //		
 //		List<Integer> npath = null;
 //		for (int i = start+1, limit = Math.min(nums.length, start + nums[start]) + 1; i < limit; ++i) {
-////			System.out.println(++count + ",\tstart=" + start + ",\ti=" + i);
+////			System.out.println(++size + ",\tstart=" + start + ",\ti=" + i);
 //			List<Integer> mpath = dfs(nums, i, new ArrayList<Integer>(path));
 //			if (mpath != null && mpath.size() < minSteps) {
 //				if(minStart < nums.length) { nums[minStart] = 0; } // prune the last not-shortest path.

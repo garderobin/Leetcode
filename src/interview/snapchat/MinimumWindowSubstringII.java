@@ -23,7 +23,7 @@ public class MinimumWindowSubstringII {
 		String para = "I will be back!!! will I will  I be back?";
 		System.out.println(shortestSubstr(words, para));
 	}
-	
+	//LRU不能处理重复？
 	// 如果Para是隔开的， 用LRU实现，遍历一遍即可。
 	   // for(i-->dict.size()){
 	   // word = para[i];

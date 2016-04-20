@@ -30,12 +30,12 @@ public class AddParenthesis {
 				}
 				count = 0;
 				maxComputeAddParenDFSCaching(sb.toString());
-				System.out.println("caching count = " + count);
+				System.out.println("caching size = " + count);
 				count = 0;
 				maxComputeAddParen(sb.toString());
-				System.out.println("no-cach count = " + count);
+				System.out.println("no-cach size = " + count);
 			}
-//			count = 0;
+//			size = 0;
 //			List<Integer> rst = diffWaysToCompute(s);
 ////			System.out.println(rst);
 //			Set<Integer> set = new HashSet<>();
@@ -46,11 +46,11 @@ public class AddParenthesis {
 //			System.out.println(rst);
 			
 //			System.out.println(maxComputeAddParen(s));
-//			System.out.println("count = " + count);
-//			count = 0;
+//			System.out.println("size = " + size);
+//			size = 0;
 //			System.out.println(s);
 //			System.out.println(maxComputeAddParenDFSCaching(s));
-//			System.out.println("count = " + count);
+//			System.out.println("size = " + size);
 		}
 	}
 	
@@ -69,7 +69,7 @@ public class AddParenthesis {
 		else {
 			int[][][] dp = new int[1 + input.length()/2][1 + input.length()/2][2];
 			char[] ops = new char[input.length()/2];
-			int m = 0, num = 0; // m is operator count
+			int m = 0, num = 0; // m is operator size
 			
 			// Initialize each max with INT_MIN and each min with INT_MAX, dp[i][i] = ith number
 			for (int i = 0; i < dp.length; ++i) 

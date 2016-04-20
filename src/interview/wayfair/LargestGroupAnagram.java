@@ -19,7 +19,7 @@ public class LargestGroupAnagram {
 	 * 
 	 * Then we start our traversing:
 	 * For every given input word, we generate its anagram key by counting sort which takes a linear time and a constant space.
-	 * (Generate Key Step 1:)That is, we keep an integer array of size 26 which are our buckets and then use one pass to record each letter's occurrence count.
+	 * (Generate Key Step 1:)That is, we keep an integer array of size 26 which are our buckets and then use one pass to record each letter's occurrence size.
 	 * (Generate Key Step 2:)Then we traverse our letter buckets and use a StringBuilder to generate the final anagram key. The process takes also linear time.
 	 * We put the key and update its value list as well as the max length and largest group's key.
 	 * 

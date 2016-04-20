@@ -72,10 +72,10 @@ public class MaxPointsOnALine {
         Map<Integer, Map<Integer, Integer>> pc = new HashMap<>();
         Queue<Integer> xq = new PriorityQueue<>();
         
-        // count max points on vertical or horizon lines, O(N) time.
+        // size max points on vertical or horizon lines, O(N) time.
         for (Point p: points) {
         	if (pc.containsKey(p.y)) { // thinking about duplicates
-        		Map<Integer, Integer> xcm = pc.get(p.y); // x count map
+        		Map<Integer, Integer> xcm = pc.get(p.y); // x size map
         		if (xcm.containsKey(p.x)) { xcm.put(p.x, xcm.get(p.x) + 1); }
         		else 					  { xcm.put(p.x, 1); }
         		pc.put(p.y, xcm);
@@ -104,7 +104,7 @@ public class MaxPointsOnALine {
         int[] vpos = new int[xq.size()]; // the indexes of x from left to right
         for (int i = 0; i < vpos.length; ++i) {  vpos[i] = xq.poll();  }
         
-        // count max points on every other possible slope, O(N^3)
+        // size max points on every other possible slope, O(N^3)
         for (int i = 0, xn = vpos.length; i < xn; ++i) {
 			int x0 = vpos[i];
 			for (int y0: v.get(x0)) {

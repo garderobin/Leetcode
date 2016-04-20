@@ -28,7 +28,7 @@ public class MinimumWindowSubstring {
 		int start = 0, minLen = Integer.MAX_VALUE, unuse = t.length();
 		 
 		// Count character apperances to build a dictionary
-		Map<Character, Integer> dict = new HashMap<>(); // word count map. Key: character. Value: appearance times in t.
+		Map<Character, Integer> dict = new HashMap<>(); // word size map. Key: character. Value: appearance times in t.
 		for (int i = 0, tLen = t.length(); i < tLen; ++i) {
 			char c = t.charAt(i);
 			dict.put(c, 1 + dict.getOrDefault(c, 0));

@@ -11,7 +11,7 @@ public class HIndexII {
 
         while (count > 0) {
 //        	System.out.println("begin: first=" + first + ",\tmid=" + mid + 
-//        			",\tstep=" + step + ",\tcount=" + count);
+//        			",\tstep=" + step + ",\tcount=" + size);
             step = count / 2;
             mid = first + step;
             if (citations[mid] < len - mid) {
@@ -22,7 +22,7 @@ public class HIndexII {
                 count = step;
             }
 //            System.out.println("after: first=" + first + ",\tmid=" + mid + 
-//        			",\tstep=" + step + ",\tcount=" + count);
+//        			",\tstep=" + step + ",\tcount=" + size);
         }
 
         return len - first;

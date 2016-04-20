@@ -22,22 +22,22 @@ public class CountCompleteTreeNodes {
 	
 	/*
 	public static int countNodes(TreeNode root) {
-        int count = 0;
+        int size = 0;
         if (root == null) {
-        	return count;
+        	return size;
         }
         
-        count = myCountNodes(root, 1, 0, 1);                
-        return count;
+        size = myCountNodes(root, 1, 0, 1);                
+        return size;
     }
 	
-	public static int myCountNodes(TreeNode root, int levelCount, int leefCount, int count) {
+	public static int myCountNodes(TreeNode root, int levelCount, int leefCount, int size) {
 		if (root.left == null && root.right == null) {
 			if (levelCount > 1) {
-				count -= levelCount;
+				size -= levelCount;
 				levelCount = 0;
 				leefCount++;
-				count += leefCount;
+				size += leefCount;
 				//return myCountNodes
 			}
 		}
@@ -47,13 +47,13 @@ public class CountCompleteTreeNodes {
 				leefCount += 2;
 				//return
 			}
-			return myCountNodes(root.left, levelCount, 0, count + levelCount);
+			return myCountNodes(root.left, levelCount, 0, size + levelCount);
 		} else if (root.left != null && root.right == null) {
 			leefCount++;
 			//return myCountNodes(root)
 			
 		}
-		return count;
+		return size;
 	}
 	*/
 }

@@ -22,7 +22,7 @@ public class SubstringWithConcatenationOfAllWords {
         String str = null, tmp = null;
         
         for (int i = 0; i < K; i++) { // 充分利用每个单词等长这个条件，超过K的位置会被前面的计算cover到的。
-            int count = 0;  // remark: reset count 
+            int count = 0;  // remark: reset size 
             for (int l = i, r = i; r + K <= N; r += K) {
                 str = S.substring(r, r + K);
                 

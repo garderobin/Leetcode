@@ -21,7 +21,7 @@ public class FactorialTrailingZeroes {
         //System.out.println(rank);
         for(int i=rank; i>0; i--){
             int a = n/(int)Math.pow(5,i);
-            //System.out.println("a = " + a + "\tpow = " + Math.pow(5,i) + "\t count = " + count + "\ti = " + i);
+            //System.out.println("a = " + a + "\tpow = " + Math.pow(5,i) + "\t size = " + size + "\ti = " + i);
             count = a - count;
             number += count*i;
             count = a;

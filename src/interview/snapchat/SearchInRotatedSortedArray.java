@@ -1,4 +1,4 @@
-package algorithm;
+package interview.snapchat;
 
 public class SearchInRotatedSortedArray {
 	public int search(int[] nums, int target) {

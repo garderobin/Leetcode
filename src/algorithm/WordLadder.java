@@ -14,7 +14,7 @@ public class WordLadder {
 		// Use the queue to help BFS
 		Queue<String> queue = new LinkedList<String>();
 		queue.add(beginWord);
-		queue.add(null); // to count the level; instead of using 2 queues.
+		queue.add(null); // to size the level; instead of using 2 queues.
 		
 		// Mark visited word
 		Set<String> visited = new HashSet<String>();

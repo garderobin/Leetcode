@@ -40,7 +40,7 @@ public class MajorityElement {
             } else {
                 count--;
             }
-            System.out.println("nums[" + i + "] = " + nums[i] + "; major = " + major + "; count = " + count);
+            System.out.println("nums[" + i + "] = " + nums[i] + "; major = " + major + "; size = " + count);
         }
         return major;
     }
