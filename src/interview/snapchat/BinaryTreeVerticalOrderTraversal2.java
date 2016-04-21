@@ -22,7 +22,7 @@ public class BinaryTreeVerticalOrderTraversal2 {
 	        TreeNode node = q.pollFirst();
 	        int i = idx.pollFirst();
 	        
-	        rst.get(idx.pollFirst()).add(q.pollFirst().val);
+	        rst.get(i).add(node.val);
 	        
 	        if (node.left != null) {
 	            q.offerLast(node.left);

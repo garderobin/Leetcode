@@ -48,7 +48,7 @@ public class BigInteger implements Comparable<BigInteger> {
 	}
 	
 	
-	public BigInteger add(BigInteger other) { //只处理正加正
+	public BigInteger add(BigInteger other) { 
 		boolean neg1 = this.isNegative(), neg2 = other.isNegative();
 		if (neg1 ^ neg2) return neg1 ? other.substract(this, true) : this.substract(other, true);
 		else return new BigInteger(this.add(other.getDigits()), neg1);

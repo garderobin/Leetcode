@@ -8,7 +8,8 @@ public class MeetingRoomWeight {
 	public static void main(String[] args) {
 		int[][] test = {{0,2,3}, {1,4,7}, {2,3,5}, {2,5,4}, {4,6,9}};
 		Interval[] interval = new Interval[test.length];
-		for (int i = 0; i < test.length; ++i) interval[i] = new Interval(test[i][0], test[i][1], test[i][2]);
+		for (int i = 0; i < test.length; ++i) 
+			interval[i] = new Interval(test[i][0], test[i][1], test[i][2]);
 		int res = meetingroomPQ(interval);
 		System.out.println(res);
 	}
