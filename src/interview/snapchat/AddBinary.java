@@ -17,7 +17,7 @@ public class AddBinary {
         for (int c = 0, i = n-1, j = m-1, k = s.length-1; i >= 0 || j >= 0 || c == 1; c /= 2) {
             c += i >= 0 ? a.charAt(i--) - '0' : 0;
             c += j >= 0 ? b.charAt(j--) - '0' : 0;
-            s[k--] = (char)((c&1) + '0'); //为操作符优先级低于加减，使用的时候必须加上括号。
+            s[k--] = (char)((c&1) + '0'); //位操作符优先级低于加减，使用的时候必须加上括号。
         }
         return (new String(s)).trim(); //第一位可能没有赋值, 默认值是\x，所以必须trim()
     }
