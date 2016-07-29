@@ -1,9 +1,7 @@
-package interview;
+package interview.snapchat;
 
 import java.util.Arrays;
 import java.util.List;
-
-import interview.snapchat.BigInteger;
 
 public class InterviewTest {
 	

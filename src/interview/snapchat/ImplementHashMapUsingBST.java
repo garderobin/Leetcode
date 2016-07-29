@@ -1,4 +1,4 @@
-package interview;
+package interview.snapchat;
 //Implement a Map using Binary Search Tree. Implement the following methods:
 //a) V get(K key)
 //b) void put(K key, V value)
