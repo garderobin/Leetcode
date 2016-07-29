@@ -77,7 +77,7 @@ class Throttler2 {
     public boolean allowAccess() {
     	long time = System.nanoTime();
     	if (bucket.size() < qps || (time - bucket.peekFirst()) > 1000000) {
-            if (bucket.size() > qps) {
+            if (bucket.size() >= qps) {
             	bucket.pollFirst();
             }
             bucket.offerLast(time);
