@@ -22,7 +22,10 @@ class RepeatedStringMatchImpl4(RepeatedStringMatch):
 
 
 class RepeatedStringMatchImplKMP(RepeatedStringMatch):
-
+    # KMS algorithm: https://blog.csdn.net/v_july_v/article/details/7041827
+    # KMS python impl: https://gist.github.com/m00nlight/daa6786cc503fde12a77
+    # Time: O(len(A)+len(B))
+    # Space: O(len(B))
     def repeated_string_match(self, A, B):
         if self.pattern_contains_element_out_of_target(A, B):
             return -1
