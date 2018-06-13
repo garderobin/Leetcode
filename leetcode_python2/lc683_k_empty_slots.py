@@ -14,9 +14,40 @@ class KEmptySlots:
         """
 
 
+class KEmptySlotImpl3(KEmptySlots):
+    # Time: O(N)
+    # Space: O(N/(K+1))
+    # Idea: if we split the array into fix-length buckets with size (k+1),
+    # Then the final window left border and right border must be in two adjacent buckets.
+    # If the new bloom position is the lower bloom position of its bucket,
+    # It might create a k empty window with the upper bloom position of its left adjacent bucket.
+    # If the new bloom position is the upper bloom position of its bucket,
+    # It might create a k empty window with the lower bloom position of its right adjacent bucket.
+    def k_empty_slots(self, flowers, k):
+        if not flowers or k + 2 > len(flowers) or k < 0:
+            return -1
+
+        n = len(flowers)
+        bucket_count = n // (k + 1) + 1
+        upper, lower = [-1 for _ in xrange(bucket_count)], [20001 for _ in xrange(bucket_count)]
+
+        for day_index, bloom_pos in enumerate(flowers):
+            bucket = (bloom_pos - 1) // (k + 1)
+            if bloom_pos < lower[bucket]:
+                lower[bucket] = bloom_pos
+                if bucket > 0 and bloom_pos - upper[bucket - 1] == k + 1:
+                    return day_index + 1
+            if bloom_pos > upper[bucket]:
+                upper[bucket] = bloom_pos
+                if bucket + 1 < bucket_count and lower[bucket + 1] - bloom_pos == k + 1:
+                    return day_index + 1
+        return -1
+
+
 class KEmptySlotImpl2(KEmptySlots):
 
-    # Time complexity???
+    # Time complexity: maybe worst case O(N^2)
+    # 但是general case真的很快
     # 在不得不每次都遍历列表的情况下，多花空间维护temp表也不失为一个好方法
     def k_empty_slots(self, flowers, k):
         n = len(flowers)
@@ -34,26 +65,14 @@ class KEmptySlotImpl2(KEmptySlots):
                 if bloom_position < window[0] or bloom_position > window[1]:
                     empty_windows_after_bloom.append(window)
                 else:
-                    if bloom_position > window[0] + k:
+                    if bloom_position - window[0] > k:
                         empty_windows_after_bloom.append((window[0], bloom_position))
-                    if bloom_position < window[1] - k:
+                    if window[1] - bloom_position > k:
                         empty_windows_after_bloom.append((bloom_position, window[1]))
+                    # ignore all the size < k splits
 
                 empty_windows = empty_windows_after_bloom
         return -1
-
-    @staticmethod
-    def k_empty_window_is_created_by_insert(bloom_position, window, n, k):
-        """
-        :param bloom_position: int
-        :param window: (int, int)
-        :param n: int
-        :param k: int
-        :return: True if this new bloom position creates a k empty window, False if not.
-        """
-        cut_left_to_k_empty_window = window[0] > 0 and bloom_position == window[0] + k + 1
-        cut_right_to_k_empty_window = window[1] <= n and bloom_position == window[1] - k - 1
-        return cut_left_to_k_empty_window or cut_right_to_k_empty_window
 
 
 class KEmptySlotsImpl(KEmptySlots):

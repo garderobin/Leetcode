@@ -1,5 +1,4 @@
 if __name__ == "__main__":
-    for i in xrange(10):
-        print i
-        if i == 5:
-            i += 1
+    tuple1 = (1, 2)
+    tuple2 = (1, 2)
+    print tuple1 == tuple2
