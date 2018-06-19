@@ -16,9 +16,35 @@ class SortTransformedArray:
         """
 
 
-class SortTransformedArrayImplDoublePointer(SortTransformedArray):
+class SortTransformedArrayImplFromBorder(SortTransformedArray):
+    """
+    Starts from the left/right border.
+    If a < 0, two borders compete for current smallest.
+    If a > 0, two borders compete for current largest.
+    """
+    def sort_transformed_array(self, nums, a, b, c):
+        nums = [x * x * a + x * b + c for x in nums]
+        ret = [0] * len(nums)
+        p1, p2 = 0, len(nums) - 1
+        i, d = (p1, 1) if a < 0 else (p2, -1)
+        while p1 <= p2:
+            if nums[p1] * -d > nums[p2] * -d:
+                ret[i] = nums[p1]
+                p1 += 1
+            else:
+                ret[i] = nums[p2]
+                p2 -= 1
+            i += d
+        return ret
+
+
+class SortTransformedArrayImplFromExtreme(SortTransformedArray):
     def sort_transformed_array(self, nums, a, b, c):
         """
+        Starts from extreme point to both direction's border.
+        ax^2 + bx + c = a(x + b/(2a))^2 - b*b/(4a)
+        If a < 0, two pointers compete for current largest.
+        If a > 0, two pointers compete for current smallest.
         Performance is not that good. Perhaps due to desc?
         """
         def transform(i):
@@ -178,7 +204,7 @@ class SortTransformedArrayImplDoublePointer(SortTransformedArray):
 
 
 if __name__ == "__main__":
-    sol = SortTransformedArrayImplDoublePointer()
+    sol = SortTransformedArrayImplFromExtreme()
     # nums = [-99,-94,-90,-88,-84,-83,-79,-68,-58,-52,-52,-50,-47,-45,-35,-29,-5,-1,9,12,13,25,27,33,36,38,40,46,47,49,57,57,61,63,73,75,79,97,98]
     # a, b, c = -2, 44, -56
     # nums = [-98,-97,-96,-93,-90,-89,-89,-88,-85,-83,-83,-79,-78,-78,-76,-74,-63,-63,-63,-62,-59,-59,-57,-55,-54,-53,-49,-45,-41,-37,-35,-31,-25,-22,-20,-20,-17,-16,-16,-15,-13,-12,-12,-11,-4,-1,0,5,6,7,8,9,13,16,16,29,29,29,31,31,32,32,33,33,34,35,36,39,41,42,43,45,47,49,53,56,59,59,65,66,68,68,70,75,78,80,80,81,82,84,85,85,89,90,90,92,99,99]
