@@ -1,3 +1,4 @@
+# coding=utf-8
 from abc import ABCMeta, abstractmethod
 
 
@@ -40,85 +41,42 @@ class TrieNode:
 class Trie:
     def __init__(self, root):
         self.root = root
-        self.has_word_finished = False
 
     def insert(self, word):
         """
         Insert the word into trie
         and return if the word can be built one character at a time by other words in trie.
         """
-        if word.startswith('enstlljknxfhhzwlerfrgyvmcgseaa'):
-            print 'word: ', word, self.root.children['e'].children['n'].children['s'].children['t'].children['l'].children['l']\
-                .children['j'].children['k'].children['n'].children['x'].children['f'].children['h'].children['h']\
-                .children['z'].children['w'].children['l'].children['e'].children['r'].children['f'].children['r']\
-                .children['g'].children['y'].children['v'].children['m'].children['c'].children['g'].children['s']\
-                .children['e'].children['a']
         cur_node = self.root
         index_last_char = 0
         is_qualified = True
-
-        # if word.startswith('enstlljknxfhhzwlerfrgyvmcgsea'):
-        #     print 'starts with enstlljknxfhhzwlerfrgyvmcgsea.'
-
         for index, char in enumerate(word):
-            if word.startswith('enstlljknxfhhzwlerfrgyvmcgseaa'):
-                print '1st loop', index, char, is_qualified
             if char in cur_node.children:
-                if word.startswith('enstlljknxfhhzwlerfrgyvmcgseaa'):
-                    print 'if start', cur_node
-                #     now_has_word_finished = self.root.children['e'].children['n'].children['s'].children['t'].children['l']\
-                #         .children['l']\
-                #     .children['j'].children['k'].children['n'].children['x'].children['f'].children['h'].children['h']\
-                #     .children['z'].children['w'].children['l'].children['e'].children['r'].children['f'].children['r']\
-                #     .children['g'].children['y'].children['v'].children['m'].children['c'].children['g'].children['s']\
-                #     .children['e'].children['a'].has_word_finished
-                #     print char, 'now_has_word_finished', now_has_word_finished, \
-                #         'cur_node.has_word_finished', cur_node.has_word_finished, \
-                #         'previous is_qualified', is_qualified
-
                 is_qualified = is_qualified and (index == 0 or cur_node.has_word_finished)
                 cur_node = cur_node.children[char]
-                if word.startswith('enstlljknxfhhzwlerfrgyvmcgseaa'):
-                    print 'if end', cur_node, is_qualified
-
+                index_last_char += 1  # 没有这一句有些case就一定出错 为什么？
             else:
                 index_last_char = index
                 break
 
         is_qualified = is_qualified and index_last_char == len(word) - 1
         for index in xrange(index_last_char, len(word)):
-            if word.startswith('enstlljknxfhhzwlerfrgyvmcgsea') or word == 'enstlljknxfhhzwlerfrgyvmcgse':
-                print '2nd loop', index, word[index]
             char = word[index]
-            cur_node.children[char] = TrieNode(char, {}, index == len(word) - 1)
+            cur_node.children[char] = TrieNode(char, {}, False)
             cur_node = cur_node.children[char]
 
-        # cur_node.has_word_finished = True
-        self.has_word_finished = cur_node.has_word_finished
-        if word.startswith('enstlljknxfhhzwlerfrgyvmcgsea') or word == 'enstlljknxfhhzwlerfrgyvmcgse':
-            print 'using cur node, %s has word finished: ' % word, self.has_word_finished
-            self.has_word_finished = self.root.children['e'].children['n'].children['s'].children['t'].children['l'].children['l']\
-                .children['j'].children['k'].children['n'].children['x'].children['f'].children['h'].children['h']\
-                .children['z'].children['w'].children['l'].children['e'].children['r'].children['f'].children['r']\
-                .children['g'].children['y'].children['v'].children['m'].children['c'].children['g'].children['s']\
-                .children['e'].has_word_finished
-            print 'has word finished: ', self.has_word_finished
-
-        if word.startswith('enstlljknxfhhzwlerfrgyvmcgsea') or word == 'enstlljknxfhhzwlerfrgyvmcgse':
-            print word, 'is_qualified', is_qualified, 'cur_node', cur_node, 'e_node', self.root.children['e'].children['n'].children['s'].children['t'].children['l'].children['l']\
-                .children['j'].children['k'].children['n'].children['x'].children['f'].children['h'].children['h']\
-                .children['z'].children['w'].children['l'].children['e'].children['r'].children['f'].children['r']\
-                .children['g'].children['y'].children['v'].children['m'].children['c'].children['g'].children['s']\
-                .children['e']
-
+        cur_node.has_word_finished = True
         return is_qualified
 
 
-class LongestWordInDictionaryImplHashTable(LongestWordInDictionary):
+class LongestWordInDictionaryImplSet(LongestWordInDictionary):
+    """
+    Time: O(nlogn) because sorting is nlogn.
+    """
     def longest_word(self, words):
-        def is_word_qualified(str_collection, single_word):
-            for index in xrange(1, len(single_word), 1):
-                if single_word[:index] not in str_collection:
+        def is_word_qualified(words_set, word):
+            for index in xrange(1, len(word), 1):
+                if word[:index] not in words_set:
                     return False
             return True
 
