@@ -121,6 +121,8 @@ class ReorganizeStringImplHeapQ(ReorganizeString):
     """
     Priority Queue (heapq): Greedy: always insert current top 1 char + current top 2 char.
     慎选PriorityQueue, 因为每次操作都是O(logN), 所以很难达成最终线性。而且进出的边界条件容易出错。
+    但是优点：易于拓展，至少对此题来说可以不局限于2位相邻的检查要求。这一点其他几个linear算法做不到。
+
     思路：处理相邻问题，那就每次都两个邻值一批操作
     因为p_a初始值是0， 所以能确保一次出堆后再进堆仍然是有最多count的在堆顶
     假设in counter: d > c > b > a
