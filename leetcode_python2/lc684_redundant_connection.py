@@ -18,16 +18,15 @@ class RedundantConnectionImplWeightedQuickUnion(RedundantConnection):
     """
     def find_redundant_connection(self, edges):
         n = len(edges)
-        parents = [x for x in xrange(1, n+1)]
-        weights = [1 for _ in xrange(1, n+1)]
+        parents = [x for x in xrange(n + 1)]
+        weights = [1 for _ in xrange(n + 1)]
 
         for e in edges:
-            p, q = e
-            p_root, q_root = self.find_tree(p, parents), self.find_tree(q, parents)
-            if p_root == q_root:
+            p, q = self.find_tree(e[0], parents), self.find_tree(e[1], parents)
+            if p == q:
                 return e
             else:
-                (small_tree, large_tree) = (q_root, p_root) if weights[q_root] < weights[p_root] else (p_root, q_root)
+                (small_tree, large_tree) = (q, p) if weights[q] < weights[p] else (p, q)
                 parents[small_tree] = large_tree
                 weights[large_tree] += weights[small_tree]
         return edges[-1]
