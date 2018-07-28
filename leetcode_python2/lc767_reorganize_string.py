@@ -132,6 +132,14 @@ class ReorganizeStringImplHeapQ(ReorganizeString):
     总之永远是当前剩下最多的前两名元素互相消耗
     Time: O(NlogN)
     Space: O(N)
+
+    collections.Counter():
+    http://takeip.com/what-is-the-time-complexity-of-collections-counter-in-python.html
+     Counter is just a subclass of dict.
+     Constructing it is O(n), because it has to iterate over the input,
+     but operations on individual elements remain O(1).
+     Note also from that source that it does not keep an order internally,
+     but simply sorts by most common on output, in the __repr__ method
     """
     def reorganize_string(self, S):
         res = ""
@@ -140,7 +148,7 @@ class ReorganizeStringImplHeapQ(ReorganizeString):
         for char, count in c.items():
             if count + count > 1 + len(S):
                 return ''
-            heapq.heappush(pq, (-count, char))
+            heapq.heappush(pq, (-count, char))  # 因为heapq是最小堆，所以用-count来做排序索引，以此保持最大的在前面
         p_a, p_b = 0, ''  # 因为p_a初始值是0， 所以能确保一次出堆后再进堆仍然是有最多count的在堆顶
         while pq:
             a, b = heapq.heappop(pq)
