@@ -40,7 +40,7 @@ class RearrangeKDistanceApartGreedyTwoAuxiliaryArray(RearrangeKDistanceApart):
     Time limit exceeded.
     https://leetcode.com/problems/rearrange-string-k-distance-apart/discuss/83193/Java-15ms-Solution-with-Two-auxiliary-array.-O(N)-time.
     Greedy: Every time we want to find the best candidate: which is the character with the largest remaining count.
-    Time: O(N)???
+    Time: O(N)??? 只beat了14%, 非常慢
     Space: O(N)
     """
     def rearrange_string(self, s, k):
@@ -52,7 +52,7 @@ class RearrangeKDistanceApartGreedyTwoAuxiliaryArray(RearrangeKDistanceApart):
             counts[c] += 1
             valid[c] = 0
 
-        res = ''
+        res = [''] * len(s)
         for index in xrange(len(s)):
             candidate_char = self.find_valid_max(counts, valid, index)
             if not candidate_char:
@@ -60,8 +60,8 @@ class RearrangeKDistanceApartGreedyTwoAuxiliaryArray(RearrangeKDistanceApart):
             else:
                 counts[candidate_char] -= 1
                 valid[candidate_char] = index + k
-                res += candidate_char
-        return res
+                res[index] = candidate_char
+        return ''.join(res)
 
     def find_valid_max(self, counts, valid, index):
         candidate_char, max_count = None, -1
@@ -105,7 +105,7 @@ class RearrangeKDistanceApartImplList(RearrangeKDistanceApart):
 
 class RearrangeKDistanceApartImplSorting(RearrangeKDistanceApart):
     """
-    没通过，不正确
+    没通过，不正确, 第一个test case就不正确
     """
     def rearrange_string(self, s, k):
         if k <= 1:
@@ -114,24 +114,28 @@ class RearrangeKDistanceApartImplSorting(RearrangeKDistanceApart):
         counters = Counter(s).items()
         counters.sort(key=lambda x: x[1], reverse=True)
 
-        res = ''
+        res, j = [''] * len(s), 0
         while counters[0][1] > 0:
             if (counters[0][1] - 1) * k > len(s) + 1:
                 return ''
             for i in xrange(k):
                 if len(res) == len(s):
-                    return res
+                    return ''.join(res)
                 char, count = counters[i]
                 if count > 0:
-                    res += char
+                    res[j] = char
+                    j += 1
                     counters[i] = (char, count - 1)
             counters.sort(key=lambda x: x[1], reverse=True)
-        return res
+        return ''.join(res)
 
 
 class RearrangeKDistanceApartImplPriorityQueue(RearrangeKDistanceApart):
     """
     Time Limit Exceeded on the 57th test case.
+    但是把res改成数组之后又连简单的test case都会错：
+    "aa"
+    2
     """
     def rearrange_string(self, s, k):
         if k <= 1:
