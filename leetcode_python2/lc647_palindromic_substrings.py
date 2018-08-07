@@ -15,6 +15,7 @@ class PalindromicSubstrings:
 
 class PalindromicSubstringsImpl2(PalindromicSubstrings):
     """
+    模板：同向双指针 https://media-cdn.jiuzhang.com/session/Chapter_1._%E9%80%8F%E6%9E%90%E7%83%AD%E9%97%A8IT%E4%BC%81%E4%B8%9AFollow%E9%9D%A2%E8%AF%95%E9%A2%98_v6.0.pdf
     实在太优秀：
     把只包含一种字符的回文总数简单计算 m(m+1)/2
     把包含不同字符的回文从不对称的中心向两边扩展。
