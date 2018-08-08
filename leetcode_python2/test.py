@@ -34,5 +34,6 @@ if __name__ == "__main__":
     # l1, r1, l2, r2 = Point(0, 5), Point(8, 3), Point(8, 3), Point(10, 0)
     # ans = Solution().doOverlap(l1, r1, l2, r2)
     # print ans
-    t = '0123'
-    print t[0:2]
+    len1, len2 = 2, 3
+    partners1, partners2 = dict([(_, -1) for _ in xrange(len2)]), dict([(_, -1) for _ in xrange(len1)])
+    print partners1, partners2
