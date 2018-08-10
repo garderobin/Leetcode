@@ -2,6 +2,9 @@
 import heapq
 from collections import deque, defaultdict, Counter
 
+from lc271_encode_and_decode_strings import EncodeAndDecodeStringsImpl
+
+
 class Point:
     def __init__(self, a=0, b=0):
         self.x = a
@@ -30,10 +33,19 @@ class Solution:
 
 
 if __name__ == "__main__":
-    # # l1, r1, l2, r2 = Point(0, 8), Point(8, 0), Point(6, 6), Point(10, 0)
-    # l1, r1, l2, r2 = Point(0, 5), Point(8, 3), Point(8, 3), Point(10, 0)
-    # ans = Solution().doOverlap(l1, r1, l2, r2)
-    # print ans
-    len1, len2 = 2, 3
-    partners1, partners2 = dict([(_, -1) for _ in xrange(len2)]), dict([(_, -1) for _ in xrange(len1)])
-    print partners1, partners2
+    strs = ['a:bc', 'def']
+    encoded_char_list = []
+    escape_char, connector_suffix, escaped_original_char = ':', ':;', '::'
+    # for s in strs:
+    #     for c in s:
+    #         encoded_char_list.append(c)
+    #         if c == escape_char:
+    #             encoded_char_list.append(escape_char)
+
+    # def transform_single_string(s):
+    #     for ch in s:
+    #         encoded_char_list.append(escaped_original_char if ch == escape_char else ch)
+    # map(lambda x: transform_single_string(x), strs)
+    sol = EncodeAndDecodeStringsImpl()
+    print sol.encode(strs)
+    # print encoded_char_list
