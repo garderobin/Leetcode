@@ -32,20 +32,39 @@ class Solution:
                     or rec_right_is_on_bottom_of_rec_left)
 
 
-if __name__ == "__main__":
-    strs = ['a:bc', 'def']
-    encoded_char_list = []
-    escape_char, connector_suffix, escaped_original_char = ':', ':;', '::'
-    # for s in strs:
-    #     for c in s:
-    #         encoded_char_list.append(c)
-    #         if c == escape_char:
-    #             encoded_char_list.append(escape_char)
+class TrieNode(object):
+    @classmethod
+    def init_root(cls):
+        return cls(None, dict(), False)
 
-    # def transform_single_string(s):
-    #     for ch in s:
-    #         encoded_char_list.append(escaped_original_char if ch == escape_char else ch)
-    # map(lambda x: transform_single_string(x), strs)
-    sol = EncodeAndDecodeStringsImpl()
-    print sol.encode(strs)
-    # print encoded_char_list
+    @classmethod
+    def init_with_val(cls, val):
+        return cls(val, dict(), False)
+
+    def __init__(self, val, sons, has_word_finished):
+        self.val = val
+        self.sons = sons
+        self.has_word_finished = has_word_finished
+
+    def __str__(self):
+        return '%s, %s, %d' % (self.val, self.sons, self.has_word_finished)
+
+
+class TestObj(object):
+    def __init__(self, n):
+        self.father = [x for x in xrange(1, n + 1)]
+        self.components = set(self.father)
+
+
+if __name__ == "__main__":
+    obj = TestObj(5)
+    print 'father', obj.father
+    print 'components', obj.components
+
+    obj.father.append(100)
+    print 'father', obj.father
+    print 'components', obj.components
+
+
+
+
