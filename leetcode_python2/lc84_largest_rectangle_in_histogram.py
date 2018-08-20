@@ -14,6 +14,10 @@ class LargestRectangleInHistogram(object):
 
 
 class LargestRectangleInHistogramImplMonotonousStack(LargestRectangleInHistogram):
+    """
+    Time: O(n）
+    Space: O(n)
+    """
     @staticmethod
     def _get_first_lower_bar_indexes(heights, start, end, increment):
         monotonous_stack = [start]
@@ -38,6 +42,8 @@ class LargestRectangleInHistogramImplMonotonousStack(LargestRectangleInHistogram
 
 class LargestRectangleInHistogramImplOnePassMoreMultiplication(LargestRectangleInHistogram):
     """
+    Time: O(N)
+    Space: O(N)
     For every bar ‘x’, we calculate the area with ‘x’ as the smallest bar in the rectangle.
     Then the largest rectangle is the max of them.
     We need to know index of the first smaller (smaller than ‘x’) bar on left of ‘x’ -- 'left index'
@@ -46,6 +52,8 @@ class LargestRectangleInHistogramImplOnePassMoreMultiplication(LargestRectangleI
     Every bar is pushed to stack once. A bar is popped from stack when a bar of smaller height is seen.
     When a bar is popped, we calculate the area with the popped bar as smallest bar.
     The current index tells us the ‘right index’ and index of previous item in stack is the ‘left index’.
+    E.g. for [1,2,5,3] when i = 3 and h = 3, the rect we calculate is width = 1 and height = 5,
+    left (stack top) and right (current index i) are both outer bounds.
     """
     def largest_rectangle_area(self, heights):
         if not heights:
@@ -55,6 +63,7 @@ class LargestRectangleInHistogramImplOnePassMoreMultiplication(LargestRectangleI
         for i, h in enumerate(heights + [0]):
             while index_stack and heights[index_stack[-1]] > h:  # 一定不要忘了stack存的只是index! TODO:这里为什么不是>=?
                 # 因为是单调升序序列所以保证了使用heights[index_stack.pop()]的正确性
+                # 这里else i 而不是else 1, 这事原histogram数组就是自然单调升序的情况，相当于left = -1 而不是index_stack顶
                 max_rect = max(max_rect, heights[index_stack.pop()] * (i - index_stack[-1] - 1 if index_stack else i))
             index_stack.append(i)
         return max_rect
