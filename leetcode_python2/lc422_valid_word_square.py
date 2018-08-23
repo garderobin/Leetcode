@@ -6,7 +6,7 @@ class ValidWordSquare:
     __metaclass__ = ABCMeta
 
     @abstractmethod
-    def valid_word_wquare(self, words):
+    def valid_word_square(self, words):
         """
         :type words: List[str]
         :rtype: bool
@@ -14,7 +14,7 @@ class ValidWordSquare:
 
 
 class ValidWordSquareImpl(ValidWordSquare):
-    def valid_word_wquare(self, words):
+    def valid_word_square(self, words):
         if len(words) != len(words[0]):
             return False
 

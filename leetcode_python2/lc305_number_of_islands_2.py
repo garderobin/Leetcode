@@ -15,6 +15,7 @@ class NumberOfIslands2:
         """
 
 
+# https://www.lintcode.com/submission/15648143/
 class NumberOfIslands2ImplUnionFind(NumberOfIslands2):
     """
     FIXME
