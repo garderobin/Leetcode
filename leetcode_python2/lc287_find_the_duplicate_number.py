@@ -16,7 +16,7 @@ class FindTheDuplicateNumber:
 class FindTheDuplicateNumberImplBinarySearch(FindTheDuplicateNumber):
     @staticmethod
     def count_smaller_or_equal(nums, target):
-        return len(filter(lambda x: x < target, nums))
+        return len(filter(lambda x: x <= target, nums))
 
     """
     Time: O(nlogn)
@@ -28,10 +28,10 @@ class FindTheDuplicateNumberImplBinarySearch(FindTheDuplicateNumber):
         start, end = 1, len(nums) - 1
         while start + 1 < end:
             mid = (start + end) // 2
-            if self.count_smaller_or_equal(nums, mid) < mid:    # 什么时候带等于号非常讲究
-                start = mid
-            else:
+            if self.count_smaller_or_equal(nums, mid) > mid:    # 什么时候带等于号非常讲究
                 end = mid
+            else:
+                start = mid
         return start if self.count_smaller_or_equal(nums, start) > start else end
 
 

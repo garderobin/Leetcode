@@ -1,10 +1,15 @@
 # coding=utf-8
+from collections import Counter
+
+
 def my_max(a, b):
     print 'my_max', a, b
     return max(a, b)
 
 
 if __name__ == "__main__":
+    s = 'abccccdd'
+    Counter(s).i
     board = [["O", "X", "O", "O"], ["X", "O", "X", "O"], ["X", "O", "X", "O"]]
     n, m, max_m_n = len(board), len(board[0]), max(len(board), len(board[0]))
 
