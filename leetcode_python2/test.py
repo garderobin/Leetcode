@@ -1,14 +1,12 @@
 # coding=utf-8
 from _bisect import bisect_right
+from collections import deque
 
 if __name__ == "__main__":
-    # arr = [20, 30, 45, 100, 110, 120]
-    # insert_index = bisect_right(arr, 45, 1)
-    arr = [54, 23, 102, 90, 40, 74, 112, 74, 76, 21]
-    sorted_arr = sorted(arr)
-    a_limit = map(lambda b: b + b - 15, sorted_arr)
-    print sorted_arr
-    print a_limit
+    set_of_arr = {[0, 1, 2], [1, 2, 3]}
+    print [0, 1, 2] in set_of_arr
+    print [1, 2, 3] in set_of_arr
+    print [2, 3, 4] in set_of_arr
 
 
 
