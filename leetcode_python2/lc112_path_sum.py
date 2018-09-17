@@ -39,10 +39,3 @@ class PathSumImpl(PathSum):
             return new_path_sum == target
         else:
             return self.dfs(target, node.left, new_path_sum) or self.dfs(target, node.right, new_path_sum)
-
-
-class TreeNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None

@@ -30,10 +30,3 @@ class BinaryTreeUpsideDownImplDFS(BinaryTreeUpsideDown):
         root.right = None
 
         return new_root
-
-
-class TreeNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None

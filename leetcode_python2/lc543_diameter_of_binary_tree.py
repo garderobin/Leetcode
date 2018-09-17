@@ -29,7 +29,6 @@ class DiameterOfBinaryTreeImpl(DiameterOfBinaryTree):
         return 1 + max(hl, hr), max(global_diameter, hl + hr, dl, dr)   # 这么写千万别忘了带上dl, dr
 
 
-
 class DiameterOfBinaryTreeDepth(DiameterOfBinaryTree):
     def __init__(self):
         self.diameter = 0
@@ -61,10 +60,3 @@ class DiameterOfBinaryTreeNaive(DiameterOfBinaryTree):
         hl, dl = self.dfs(node.left, height + 1, global_diameter)
         hr, dr = self.dfs(node.right, height + 1, global_diameter)
         return max(hl, hr), max(global_diameter, hl + hr - height - height, dl, dr)
-
-
-class TreeNode:
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None

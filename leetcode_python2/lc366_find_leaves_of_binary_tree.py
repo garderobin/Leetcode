@@ -18,10 +18,3 @@ class FindLeavesOfBinaryTree(object):
         cur_depth = 1 + max(self.dfs(depth_layers, root.left), self.dfs(depth_layers, root.right))
         depth_layers[cur_depth].append(root.val)
         return cur_depth
-
-
-class TreeNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
