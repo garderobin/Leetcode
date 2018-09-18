@@ -1,5 +1,5 @@
+# coding=utf-8
 from abc import ABCMeta, abstractmethod
-from collections import deque
 
 
 class LongestUnivaluePath:
@@ -15,24 +15,26 @@ class LongestUnivaluePath:
 
 class LongestUnivaluePathImplDFS(LongestUnivaluePath):
     """
-    TODO: Wrong
+    TODO: 这种类型是我的弱点，需要经常复习
     """
+    def __init__(self):
+        self.result = 0
+
     def longest_univalue_path(self, root):
-        return self.dfs(root, None, 0, 0)[1]
-
-    def dfs(self, root, parent, cur_len, max_len):
         if not root:
-            return cur_len, max_len
+            return 0
+        self.dfs(root)
+        return self.result
 
-        if parent and parent.val == root.val:
-            cur_len += 1
-            max_len = max(cur_len, max_len)
-        else:
-            cur_len = 0
+    def dfs(self, root):    # 如果这里需要传参，要传得参数必须是只有一位的数组，不能直接传一个int var，那样传不了引用
+        if (not root.left) and (not root.right):
+            return 0
 
-        new_len = cur_len
-        left_len, max_len = self.dfs(root.left, root, new_len, max_len)
-        right_len, max_len = self.dfs(root.right, root, new_len, max_len)
-        if root.left and root.right and root.val == root.left.val == root.right.val:
-            max_len = max(max_len, left_len + right_len - cur_len - cur_len)
-        return max(cur_len, left_len, right_len), max_len
+        left_to_leaf = self.dfs(root.left) if root.left else 0
+        right_to_leaf = self.dfs(root.right) if root.right else 0
+
+        here_to_leaf_through_left = left_to_leaf + 1 if root.left and root.left.val == root.val else 0
+        here_to_leaf_through_right = right_to_leaf + 1 if root.right and root.right.val == root.val else 0
+
+        self.result = max(self.result, here_to_leaf_through_left + here_to_leaf_through_right)
+        return max(here_to_leaf_through_left, here_to_leaf_through_right)
