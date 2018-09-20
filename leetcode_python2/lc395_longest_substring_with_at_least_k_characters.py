@@ -15,6 +15,134 @@ class LongestSubstringWithAtLeastKRepeatingCharacters:
         """
 
 
+class LongestSubstringWithAtLeastKRepeatingCharactersImpl(LongestSubstringWithAtLeastKRepeatingCharacters):
+
+    def longest_substring(self, s, k):
+        if not s or len(s) < k:
+            return 0
+        res = 0
+        for allowed_unique in xrange(1, 27):
+            n, i, unique, no_less_than_k = len(s), 0, 0, 0
+            counts = defaultdict(int)
+            for j, c in enumerate(s):
+                while i < j and unique > allowed_unique or no_less_than_k > allowed_unique:
+                    if counts[s[i]] == k:
+                        no_less_than_k -= 1
+                    counts[s[i]] -= 1
+                    if counts[s[i]] == 0:
+                        unique -= 1
+                    i += 1
+
+                    # if counts[s[j]] == 0:
+                    #     unique += 1
+                    # counts[s[j]] += 1
+                    # if counts[s[j]] == k:
+                    #     no_less_than_k += 1
+                    # j += 1
+
+                # if allowed_unique == 2:
+                #     print allowed_unique, i, j, unique, no_less_than_k
+
+                if unique == allowed_unique and no_less_than_k == allowed_unique:
+                    res = max(res, j - i)
+
+                # if counts[s[i]] == k:
+                #     no_less_than_k -= 1
+                # counts[s[i]] -= 1
+                # if counts[s[i]] == 0:
+                #     unique -= 1
+                if counts[s[j]] == 0:
+                    unique += 1
+                counts[s[j]] += 1
+                if counts[s[j]] == k:
+                    no_less_than_k += 1
+        return res
+
+
+class LongestSubstringWithAtLeastKRepeatingCharactersImplTwoPointers(LongestSubstringWithAtLeastKRepeatingCharacters):
+    """
+    源自java 答案
+    https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/discuss/87739/Java-Strict-O(N)-Two-Pointer-Solution
+    1. 用26个lower letter的常数性质，构造的sliding window不是确切size的window, 而是内涵了多少个unique char的window
+    2. 这个题即使用了26个lower letter的window, 用九章的模板也非常难套，因为动左或者动右都需要立刻检查边界条件，
+    所以要被下来这个模板：
+    while j < n:
+        if window too large:
+            i++ (缩减window)
+        else:
+            j++ (扩大window)
+        if window meets requirement:
+            比较最优解
+    return 最优解
+    3. 在比较最优解这一步， 是j - i 而不是j - i + 1, 因为本质是(j - 1) - i + 1, 这个最优区间是[i, j-1]
+    """
+    def longest_substring(self, s, k):
+        if not s or len(s) < k:
+            return 0
+        res = 0
+        for window_unique in xrange(1, 27):
+            i, j, unique, no_less_than_k = 0, 0, 0, 0
+            counts = defaultdict(int)
+            while j < len(s):
+                if unique > window_unique:
+                    if counts[s[i]] == k:
+                        no_less_than_k -= 1
+                    counts[s[i]] -= 1
+                    if counts[s[i]] == 0:
+                        unique -= 1
+                    i += 1
+                else:
+                    if counts[s[j]] == 0:
+                        unique += 1
+                    counts[s[j]] += 1
+                    if counts[s[j]] == k:
+                        no_less_than_k += 1
+                    j += 1
+
+                if unique == window_unique and no_less_than_k == window_unique:
+                    res = max(res, j - i)
+        return res
+
+    def longest_substring_backup(self, s, k):
+        if not s or len(s) < k:
+            return 0
+        res = 0
+        for window_unique in xrange(1, 26):
+            start, unique, no_less_than_k = 0, 0, 0
+            counts = defaultdict(int)
+            for end, end_char in enumerate(s):
+                # if unique < window_unique:
+                #     if counts[end_char] == 0:
+                #         unique += 1
+                #     counts[end_char] += 1
+                #     if counts[end_char] == k:
+                #         no_less_than_k += 1
+                # else:
+                #     if counts[s[start]] == k:
+                #         no_less_than_k -= 1
+                #     counts[s[start]] -= 1
+                #     if counts[s[start]] == 0:
+                #         unique -= 1
+                #     start += 1
+                while unique > window_unique:
+                    if counts[s[start]] == k:
+                        no_less_than_k -= 1
+                    counts[s[start]] -= 1
+                    if counts[s[start]] == 0:
+                        unique -= 1
+                    start += 1
+
+                if counts[end_char] == 0:
+                    unique += 1
+                    counts[end_char] += 1
+                if counts[end_char] == k:
+                    no_less_than_k += 1
+
+                if unique == window_unique and no_less_than_k == window_unique:
+                    res = max(res, end - start + 1)
+        return res
+
+
 class LongestSubstringWithAtLeastKCharactersImplSlidingWindow(LongestSubstringWithAtLeastKRepeatingCharacters):
     """
     这道题想要O(N), 不能用九章的同向双指针模板，必须用sliding window。

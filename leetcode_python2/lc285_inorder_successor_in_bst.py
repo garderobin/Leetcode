@@ -28,10 +28,3 @@ class InorderSuccessorInBSTImplRecursion(InorderSuccessorInBSTImplIteration):
         else:
             left = self.inorder_successor(root.left, p)
             return left if left else root
-
-
-class TreeNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None

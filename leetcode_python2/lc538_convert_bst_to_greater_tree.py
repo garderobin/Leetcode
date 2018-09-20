@@ -19,10 +19,3 @@ class ConvertBSTToGreaterTree(object):
         root.val = cur_sum
         cur_sum = self.reverse_in_order_traversal(cur_sum, root.left)
         return cur_sum
-
-
-class TreeNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None

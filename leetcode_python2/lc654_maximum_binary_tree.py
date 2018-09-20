@@ -6,6 +6,7 @@
 #         self.left = None
 #         self.right = None
 from abc import ABCMeta, abstractmethod
+from data_structures.binary_tree import TreeNode
 
 
 class MaximumBinaryTree(object):
@@ -16,7 +17,7 @@ class MaximumBinaryTree(object):
         """
         看到区间极值就应该想到单调栈
         :param nums:
-        :return: 
+        :return:
         """
         """
         :type nums: List[int]
@@ -34,10 +35,3 @@ class MaximumBinaryTree(object):
             stack.append(node)
 
         return stack[0]
-
-
-class TreeNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
