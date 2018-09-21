@@ -1,5 +1,9 @@
+# coding=utf-8
 class Trie(object):
-
+    """
+    这是一种基本写法
+    另一种更好的用途更广泛的写法见data_structures里的Trie
+    """
     def __init__(self):
         """
         Initialize your data structure here.
