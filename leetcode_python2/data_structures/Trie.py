@@ -50,3 +50,15 @@ class Trie(object):
                 return False
             node = node.sons[c]
         return True
+
+    def match(self, father, word, start):
+        """
+        TODO match 函数要熟练写
+        """
+        cur_node = father
+        for j in xrange(start, len(word)):
+            if word[j] not in cur_node.sons:
+                return False
+            else:
+                cur_node = cur_node.sons[word[j]]
+        return bool(cur_node.word)
