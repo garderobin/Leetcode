@@ -1,5 +1,8 @@
 # coding=utf-8
 class WordDictionary(object):
+    """
+    TODO: 需要复习: Trie的基本写法和变形，这题为了适应'.'而做的backtrack
+    """
 
     def __init__(self):
         """
