@@ -1,4 +1,7 @@
 # coding=utf-8
+from data_structures.Trie import TrieNode
+
+
 class MagicDictionary(object):
 
     def __init__(self):
@@ -21,6 +24,8 @@ class MagicDictionary(object):
         Returns if there is any word in the trie that equals to the given word after modifying exactly one character
         :type word: str
         :rtype: bool
+
+        Time: O(N ^ 2)
         """
         if not word:
             return False
@@ -36,6 +41,9 @@ class MagicDictionary(object):
         return False
 
     def replace(self, word, father, replace_index):
+        """
+        Time: O(26 * N) = O(N)
+        """
         for candidate in father.sons.itervalues():
             if candidate.val != word[replace_index]:
                 if self.match(candidate, word, replace_index + 1):
@@ -52,6 +60,7 @@ class MagicDictionary(object):
 
     def match(self, father, word, start):
         """
+        Time: O(N - start) = O(N)
         TODO match 函数要熟练写
         """
         cur_node = father
@@ -62,12 +71,6 @@ class MagicDictionary(object):
                 cur_node = cur_node.sons[word[j]]
         return bool(cur_node.word)
 
-
-class TrieNode(object):
-    def __init__(self, val='', word='', sons=None):
-        self.val = val
-        self.word = word
-        self.sons = sons if sons else dict()
 
 # Your MagicDictionary object will be instantiated and called as such:
 # obj = MagicDictionary()
