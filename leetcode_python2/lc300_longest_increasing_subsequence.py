@@ -15,6 +15,7 @@ class LongestIncreasingSubSequence:
 
 class LongestIncreasingSubSequenceImplBinarySearchStandardTemplate(LongestIncreasingSubSequence):
     """
+    TODO: 变种很多，需要经常复习：DP滚动数组
     经典的滚动数组应用场景：
     因为答案只关心长度而不关心sub-sequence内容，所以可以用滚动数组，永远存储当前lis,
     当有新的increasing sub-sequence出现的时候，按大小一个一个插入并覆盖滚动数组，如果lis确实变长了，append到结尾就行

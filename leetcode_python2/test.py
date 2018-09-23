@@ -7,3 +7,4 @@ from mock0915_1_sum_of_subarray_sums import SumOfAllSubarraySumsImplSlidingWindo
 
 if __name__ == "__main__":
     print math.ceil(2.5)
+    print abs(2)
