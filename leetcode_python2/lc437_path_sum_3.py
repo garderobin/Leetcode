@@ -48,8 +48,11 @@ class PathSum3ImplBFS(PathSum3):
 
 class PathSum3ImplDFSRecursion(PathSum3):
     """
+    https://leetcode.com/problems/path-sum-iii/description/
     Memory limit exceeded
     TODO: 怎么分析递归的空间复杂度？
+    Time: O(NlogN) on average, O(N^2) on worst case, O(h * (2 ^ h)), h = logN, N = 整个树的所有节点数
+    Space: O(NlogN), O(h * (2 ^ h))
     """
     def path_sum(self, root, sum):
         return self.dfs(root, sum, 0, {0}, 0)

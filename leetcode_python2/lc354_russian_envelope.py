@@ -18,6 +18,8 @@ class RussianDollEnvelopeImplLIS2(RussianDollEnvelope):
     """
     在按(w, -h)排过序以后就完全不用考虑width, 只用height来做lis就可以了。
     用排序来降维, 并且在dp的时候只是用降维过了的结果，思路非常威武
+    Time: O(NlogN)
+    Space: O(N)
     """
     def max_envelopes(self, envelopes):
         lis = []

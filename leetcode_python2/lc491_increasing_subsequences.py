@@ -17,7 +17,8 @@ class IncreasingSubsequences:
 class IncreasingSubsequencesImplDP2(IncreasingSubsequences):
     """
     Time: O(N * (2 ^ N)): 1*(2^1) + 2*(2^2) + ... + (n-1)*(2^(n-1)) < n*(2 + 2^2 + ... + 2^(n-1)) = n*(2^n - 2)
-    Space: O(2 ^ N): the total possible permutations of N nums
+    用错位相减法可以的出正确结论
+    Space: O(N * (2 ^ N)): the total possible permutations of N nums
     TODO: 经常复习，这题要和lc300: Longest Increasing Subsequences, lc354 Russian Doll Envelope一起看
     """
     def find_subsequences(self, nums):

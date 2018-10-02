@@ -36,8 +36,9 @@ class TargetSumImplSubsetSumBackpack(TargetSum):
 
 class TargetSumImplMemoSearch(TargetSum):
     """
-    Time: O(N * S)  # TODO: 不知道对不对 O(2 ^ N)
-    Space: O(N * S)  or O(2 ^ N)
+    https://leetcode.com/problems/target-sum/description/
+    Time: O(N * S) memo search极限情况就是转换成dp以后的复杂度
+    Space: O(N * S)
     """
     def __init__(self):
         self.prefix_sums = []
