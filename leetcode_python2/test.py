@@ -6,6 +6,6 @@ from collections import deque, defaultdict, Counter
 from mock0915_1_sum_of_subarray_sums import SumOfAllSubarraySumsImplSlidingWindow, SumOfAllSubarraySumsImplCounter
 
 if __name__ == "__main__":
-    b = [1, 3, 4, 2]
-    a = reversed(b)
-    print a
+    time_set = {(4, 26), (21, 2), (3, 55)}
+    for time in time_set:
+        print time
