@@ -1,7 +1,7 @@
 # coding=utf-8
 import heapq
 from abc import ABCMeta, abstractmethod
-from collections import defaultdict
+from collections import defaultdict, Counter
 
 
 class TopKFrequentWords:
@@ -30,6 +30,14 @@ class TopKFrequentWordsImplHeapify(TopKFrequentWords):
         h = [(-count, key) for key, count in counts.items()]
         heapq.heapify(h)
         return [heapq.heappop(h)[1] for _ in range(k)]
+
+
+class TopKFrequentWordsImplCounter(TopKFrequentWords):
+
+    def top_k_frequent(self, words, k):
+        counter = Counter(words)
+        reverse_counter = sorted(map(lambda (word, count): (-count, word), counter.iteritems()))
+        return [reverse_counter[i][1] for i in xrange(k)]
 
 
 class TopKFrequentWordsImplBucketSorting(TopKFrequentWords):
