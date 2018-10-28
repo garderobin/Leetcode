@@ -1,6 +1,9 @@
 # coding=utf-8
+from collections import defaultdict
+
+from data_structures.binary_tree import TreeNode
 
 if __name__ == "__main__":
-    s = '(([{[]}]'
-    a = []
-    print ''.join(list(s).pop())
+    a = defaultdict(int)
+    a[0] = 1
+    print len(a)

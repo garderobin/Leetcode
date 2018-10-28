@@ -71,6 +71,7 @@ class GenerateParenthesis2ImplBacktrack(GenerateParenthesis2):
 
 
 if __name__ == '__main__':
-    sol = GenerateParenthesis2()
+    sol = GenerateParenthesis2ImplBacktrack()
     paren = sol.generateParenthesis(2, ['()', '[]', '{}'])
-    print len(paren)
+    unique = set(paren)
+    print len(paren), len(unique)
