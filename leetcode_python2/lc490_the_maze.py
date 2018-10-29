@@ -62,7 +62,7 @@ class TheMazeImplBFS(TheMaze):
 class TheMazeDFSImpl2(TheMaze):
     """
     DFS with pruning.
-    Pre-processing to optimize time complexity.
+    Pre-processing step using dynamic programming to optimize time complexity.
     Time: O(N * M) (total position numbers of the maze)
     """
     def has_path(self, maze, start, destination):

@@ -1,3 +1,4 @@
+# coding=utf-8
 import heapq
 from abc import ABCMeta, abstractmethod
 
@@ -15,21 +16,48 @@ class TheMazeII:
         """
 
 
-class TheMazeShortestDistanceImplDFS(TheMazeII):
+DIRS = [(1, 0), (-1, 0), (0, 1), (0, -1)]
+
+
+class TheMazeImplBFSDijkstraNoPreProcessing(TheMazeII):
+
     def shortest_distance(self, maze, start, destination):
-        pass
+        heap = [(0, start[0], start[1])]
+        visited = set([])
+
+        while heap:
+            dist, x, y = heapq.heappop(heap)
+
+            if (x, y) in visited:
+                continue
+            visited.add((x, y))
+
+            if x == destination[0] and y == destination[1]:
+                return dist
+
+            for dx, dy in DIRS:
+                (steps, i, j) = self.roll(x, y, dx, dy, maze)
+                if (i, j) in visited:
+                    continue
+                heapq.heappush(heap, (dist + steps, i, j))
+        return -1
+
+    def roll(self, x, y, dx, dy, maze):
+        rows, cols = len(maze), len(maze[0])
+        i, j = x + dx, y + dy
+        steps = 0
+        while (0 <= i < rows and 0 <= j < cols) and maze[i][j] == 0:
+            i += dx
+            j += dy
+            steps += 1
+        return steps, i - dx, y - dy
 
 
-class TheMazeShortestDistanceImplDijkstra(TheMazeII):
+class TheMazeShortestDistanceImplBFSDijkstra(TheMazeII):
     """
-    heapq: https://github.com/qiwsir/algorithm/blob/master/heapq.md
-    dijkstra algorithm: https://blog.csdn.net/yalishadaa/article/details/55827681
+    单源最短路径Dijkstra algorithm 核心想法： best-first search, 所以要用heap而不是deque
+    Time: worst case O(E + VlogV)
     """
-    def shortest_distance(self, maze, start, destination):
-        pass
-
-
-class TheMazeShortestDistanceImplBFS(TheMazeII):
     def shortest_distance(self, maze, start, destination):
         roll_once_lengths, stop_positions = self.get_rolling_stop_length_and_positions(maze)
         visited, q, res = set(), [], None
@@ -45,6 +73,7 @@ class TheMazeShortestDistanceImplBFS(TheMazeII):
             for dir_index in xrange(4):
                 next_length, next_pos = roll_once_lengths[r][c][dir_index], stop_positions[r][c][dir_index]
                 heapq.heappush(q, (length + next_length, next_pos))
+                # 这里保证了同样的next_pos, 一定是len小的排在前面，所以不再需要专门的松弛操作
         return res if res else -1
 
     def get_rolling_stop_length_and_positions(self, maze):
