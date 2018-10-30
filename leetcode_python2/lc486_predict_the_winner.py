@@ -1,3 +1,4 @@
+# coding=utf-8
 from abc import ABCMeta, abstractmethod
 
 
@@ -38,9 +39,9 @@ class PredictTheWinnerImpl2(PredictTheWinner):
 
 class PredictTheWinnerImpl(PredictTheWinner):
     # for 0 <= i < j < len(nums),
-    # s[i][j] is the max score that the first player on this round can get with the current array is
+    # s[i][j] is the max score that the first player on this round can get with the current array is nums[i:j+1]
     # the [i, j] sub-array of the initial input
-    # s[i][j] = sum[i][j] - min(s[i+1][j], s[i][j-1])
+    # s[i][j] = sum[i][j] - min(s[i+1][j], s[i][j-1]) 观察可以知道min里面比较的两个区间有相同的宽度
     # for 0 < i < n, 0 <= w < n, g[i][w] = s[i][i+w]
     # g[i][w] = sum[i][i+w] - min(g[i+1][m-1], g[i][m-1])
     def first_player_can_win(self, nums):
@@ -63,13 +64,4 @@ class PredictTheWinnerImpl(PredictTheWinner):
 
         return score[0] * 2 >= sums[0]
 
-
-
-if __name__ == "__main__":
-    # sol = TheMazeDFSImpl2()
-    sol = PredictTheWinnerImpl()
-    maze = [[0, 0, 1, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 1, 0], [1, 1, 0, 1, 1], [0, 0, 0, 0, 0]]
-    start, destination = [0, 4], [4, 4]
-    res = sol.has_path(maze, start, destination)
-    print res
 

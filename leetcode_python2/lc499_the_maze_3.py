@@ -1,3 +1,6 @@
+from heapq import heappush, heappop
+
+
 DIRS = [('d', 1, 0), ('l', 0, -1), ('r', 0, 1), ('u', -1, 0)]
 
 
@@ -13,7 +16,7 @@ class Solution(object):
         visited = set([])
 
         while heap:
-            dist, path, x, y = heapq.heappop(heap)
+            dist, path, x, y = heappop(heap)
 
             if (x, y) in visited:
                 continue
@@ -26,7 +29,7 @@ class Solution(object):
                 (steps, i, j) = self.roll(x, y, dx, dy, maze, hole)
                 if (i, j) in visited:
                     continue
-                heapq.heappush(heap, (dist + steps, path + dir_symbol, i, j))
+                heappush(heap, (dist + steps, path + dir_symbol, i, j))
 
         return "impossible"
 
