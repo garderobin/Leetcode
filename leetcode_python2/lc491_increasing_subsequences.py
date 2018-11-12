@@ -8,17 +8,45 @@ class IncreasingSubsequences:
     @abstractmethod
     def find_subsequences(self, nums):
         """
+        https://leetcode.com/problems/increasing-subsequences/description/
         :type nums: List[int]
         :rtype: List[List[int]]
         """
 
 
+class IncreasingSubsequencesImplDP2(IncreasingSubsequences):
+    """
+    Time: O(N * (2 ^ N)): 1*(2^1) + 2*(2^2) + ... + (n-1)*(2^(n-1)) < n*(2 + 2^2 + ... + 2^(n-1)) = n*(2^n - 2)
+    用错位相减法可以的出正确结论
+    Space: O(N * (2 ^ N)): the total possible permutations of N nums
+    TODO: 经常复习，这题要和lc300: Longest Increasing Subsequences, lc354 Russian Doll Envelope一起看
+    """
+    def find_subsequences(self, nums):
+        if not nums:
+            return []
+
+        result_set = set([])
+        working_set = set([])   # allows single element tuple
+
+        for i, num in enumerate(nums):
+            for seq_tuple in list(working_set):             # O(2^i), 循环内要修改working_set, 所以不能直接iterate set
+                if seq_tuple[-1] <= num:
+                    new_seq_tuple = seq_tuple + (num, )     # O(i)
+                    working_set.add(new_seq_tuple)
+                    result_set.add(new_seq_tuple)
+
+            working_set.add((num,))
+
+        # O(2 ^ n)
+        return list(result_set)
+
+
 class IncreasingSubsequencesImplDP(IncreasingSubsequences):
     """
-    https://leetcode.com/problems/increasing-subsequences/description/
-    下面做法通过了，但是我不是很确定我的复杂度对不对, 求帮看下Q_Q
-    Time: O((N ^ 3) * (2 ^ N))
-    Space: O((N ^ 2) * (2 ^ N))
+    Time: O(N * (2 ^ N))
+    Space: O(2 ^ N)
+    从前向后遍历写起来要简单太多了不容易错，这种从后向前遍历在原数组wost case(两边大中间小)的时候有一定剪枝作用
+    但写起来太容易错
     """
     def find_subsequences(self, nums):
         if not nums:
@@ -28,24 +56,27 @@ class IncreasingSubsequencesImplDP(IncreasingSubsequences):
         n = len(nums)
 
         # O(n)
-        f = [set([]) for _ in xrange(n)]  # f[i] = set of increasing subsequence tuples whose first element is nums[i]
+        f = {n - 1: set([])}  # f[i] = set of increasing subsequence tuples whose first element is nums[i]
         # 这里绝对不能写成 f = [set([])] * n, 这里set的声明方式也不能用{[]}替代.
 
-        for i in xrange(n - 2, -1, -1):     # O(n)
-            for j in xrange(i + 1, n):      # O(n)
+        # sum((n - i) * 2 ^ (n - i + 1)) < O(n * (2 ^ n))
+        for i in xrange(n - 2, -1, -1):
+            f[i] = set([])
+            for j in xrange(i + 1, n):
                 if nums[j] < nums[i]:   # 这里不是increasing stack只是个简单点临界检查，白板多推几种情况就看出来了
                     continue
 
                 f[i].add((nums[i], nums[j]))
                 result_set.add((nums[i], nums[j]))
 
-                # O((n - j) * 2 ^ (n - j)), result count += (2 ^ (n - j))
+                # previous tuples: 2 ^ (n - j)), length of each previous tuple: O(n - j)
+                # result count += (2 ^ (n - j))
                 for seq_tuple in f[j]:  # set可以直接iterate, 不用先转换为list
-                    new_seq_tuple = (nums[i],) + seq_tuple  # 学会用 tuple concatenation
+                    new_seq_tuple = (nums[i],) + seq_tuple  # 熟练用 tuple concatenation
                     f[i].add(new_seq_tuple)
                     result_set.add(new_seq_tuple)
 
-        # O(n * n * (2 ^ n))
+        # O(2 ^ n)
         return list(result_set)   # 内部的tuple不需要重新转化为list
 
 

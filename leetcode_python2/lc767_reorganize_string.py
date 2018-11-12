@@ -15,6 +15,25 @@ class ReorganizeString:
         """
 
 
+class ReorganizeStringImpl4(ReorganizeString):
+
+    def reorganize_string(self, S):
+        counter = Counter(S)
+        n = len(S)
+        if counter.most_common(1)[0][1] > (n + 1) // 2:
+            return ''
+
+        # ss = sorted(S, key=lambda c: (-counter[c], c))
+        ss = []
+        for c, count in counter.most_common():  # most_common: O(nlogk), k = 26 so it a linear operation here
+            ss.extend(c * count)    # extend(a len k string): O(k)
+
+        res = [''] * n
+        cut = (n + 1) // 2
+        res[::2], res[1::2] = ss[:cut], ss[cut:]
+        return ''.join(res)
+
+
 class ReorganizeStringImplBucketSorting(ReorganizeString):
     """
     Python string operation: https://waymoot.org/home/python_string/

@@ -14,6 +14,10 @@ class TrappingRainWater:
 
 
 class TrappingRainWaterImpl(TrappingRainWater):
+    """
+    Time: O(N)
+    Space: O(1)
+    """
     def trap(self, height):
         if not height:
             return 0

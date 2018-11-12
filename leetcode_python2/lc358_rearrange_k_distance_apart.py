@@ -22,10 +22,10 @@ class RearrangeKDistanceApartImplHeap(RearrangeKDistanceApart):
         if k == 0:
             return s
         counts = Counter(s)
-        heap = [[counts[key], key] for key in counts]
+        heap = [[counts[key], key] for key in counts]   # 这里决不能用tuple, 且不能用for c in s, 因为这是Counter不是自己写的map
         res, j = ['']*len(s), 0
         while j < len(s):
-            heap.sort(reverse=True)
+            heap.sort(reverse=True)     # TODO 复习这种手动sorting的方式维护heap
             for i in range(k):
                 if i >= len(heap) or heap[i][0] == 0:
                     return ''.join(res) if j == len(s) else ''

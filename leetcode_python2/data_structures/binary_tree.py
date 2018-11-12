@@ -57,4 +57,5 @@ if __name__ == '__main__':
     # drawtree(deserialize('[1,2,3,null,null,4,null,null,5]'))
     # drawtree(deserialize('[2,1,3,1,7,9,1,2,null,1,1,null,null,8,8,null,null,null,null,7]'))
     # drawtree(deserialize('[0,1,3,1,7,9,1,2,null,1,1,null,null,8,8,null,null,null,null,7]'))
-    drawtree(deserialize('[-1,-2,3,0,null,4,-5]'))
+    # drawtree(deserialize('[-1,-2,3,0,null,4,-5]'))
+    drawtree(deserialize('[1,2,3,4,5,6,null,8,null,7]'))

@@ -16,6 +16,7 @@ class WordSearch2:
 
 class WordSearch2ImplTrie(WordSearch2):
     """
+    https://leetcode.com/problems/word-search-ii/description/
     TODO
     Time:
     Space: O(sum_of_words_lens_in_dict + NM)
@@ -24,6 +25,12 @@ class WordSearch2ImplTrie(WordSearch2):
 
     @staticmethod
     def build_trie_from_words(words):
+        """
+        Time: O(sum_of_words_lens_in_dict)
+        假设board是N*N，word avg length: k, word num: m
+        O(4^(N*N) * N*N * k)
+        Space: O(sum_of_words_lens_in_dict)
+        """
         trie = Trie()
         for word in words:
             trie.add(word)
@@ -36,7 +43,7 @@ class WordSearch2ImplTrie(WordSearch2):
     def find_words(self, board, words):
         if board is None or len(board) == 0:
             return []
-        trie = self.build_trie_from_words(words)
+        trie = self.build_trie_from_words(words)    # O(sum_of_words_lens_in_dict)
         result = set([])  # 这一步不能是list! 而且这里不能写成result = {}, 还有, flatten visited非常容易出错，还不如存二维set
         rows, cols = len(board), len(board[0])
         for i in xrange(rows):

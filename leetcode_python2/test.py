@@ -1,14 +1,8 @@
 # coding=utf-8
-from _bisect import bisect_right
-from collections import deque
+from collections import defaultdict
+from string import ascii_lowercase
 
-from mock0915_1_sum_of_subarray_sums import SumOfAllSubarraySumsImplSlidingWindow, SumOfAllSubarraySumsImplCounter
+from data_structures.binary_tree import TreeNode
 
 if __name__ == "__main__":
-    s = ''
-    t = None
-    if s:
-        print 'hello'
-    else:
-        print 'world'
-    print bool(s), bool(t)
+    print ascii_lowercase

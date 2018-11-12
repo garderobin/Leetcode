@@ -1,19 +1,45 @@
+# coding=utf-8
 """
 TODO： 这题还没有做，是抄的答案！
 至少要熟练滚动数组的做法
 https://www.jiuzhang.com/solution/backpack/#tag-highlight-lang-python
 这里抄上去的是最优解
 """
+from abc import ABCMeta, abstractmethod
 
 
-class Solution:
-    """
-    @param m: An integer m denotes the size of a backpack
-    @param A: Given n items with size A[i]
-    @return: The maximum size
-    """
+class Backpack:
+    __metaclass__ = ABCMeta
 
-    def backPack(self, m, A):
+    @abstractmethod
+    def backpack(self, m, A):
+        """
+        @param m: An integer m denotes the size of a backpack
+        @param A: Given n items with size A[i]
+        @return: The maximum size
+        """
+
+
+class BackpackImplDP(Backpack):
+
+    def backpack(self, m, A):
+        if not A:
+            return 0
+
+        f = [False] * (m + 1)  # f[i] = the backpack can be filled with total weight i.
+        f[0] = True
+        result = 0
+        for w in A:
+            for i in xrange(m, w - 1, -1):
+                if f[i - w]:
+                    result = max(result, i)
+                    f[i] = True
+        return result
+
+
+class BackpackImplMergeInterval(Backpack):
+
+    def backpack(self, m, A):
         A.sort()
 
         intervals = [[0, 0]]
